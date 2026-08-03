@@ -238,7 +238,7 @@ ul#menu ul.revamp-nav-dropdown li a.active {
   min-height: calc(100vh - 92px) !important;
   background-image:
     linear-gradient(90deg, rgba(255,253,249,.98) 0%, rgba(255,253,249,.91) 30%, rgba(255,253,249,.40) 51%, rgba(255,253,249,0) 70%),
-    url('../images/bpc-hero-mangala-v3.png') !important;
+    url('../images/bpc-hero-mangala-v3.webp') !important;
   background-position: center !important;
   background-size: cover !important;
   display: flex;
@@ -497,7 +497,7 @@ input, select, textarea {
   .banner_mobilspvt {
     background-image:
       linear-gradient(180deg, rgba(255,253,249,.92) 0%, rgba(255,253,249,.82) 45%, rgba(255,253,249,.22) 100%),
-      url('../images/bpc-hero-mangala-v3.png') !important;
+      url('../images/bpc-hero-mangala-v3.webp') !important;
     background-position: 67% center !important;
   }
   .banner_mobilspvt .container-fluid { align-items: flex-start; }
