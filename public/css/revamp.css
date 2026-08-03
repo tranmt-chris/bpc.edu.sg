@@ -1104,3 +1104,49 @@ input, select, textarea {
   .team .team-grid { margin-left: 18px; margin-right: 18px; }
 }
 */
+
+/* Simple modern resource pages */
+.legacy-resource-page { display: none !important; }
+.resource-modern, .key.he-codes { min-height: 100vh; background: #f7f3ea; color: #28231f; font-family: Arial, Helvetica, sans-serif; }
+.resource-modern-shell { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+.resource-modern-hero { padding: 150px 0 54px; background: linear-gradient(135deg, #fffaf0, #efe4cf); border-bottom: 1px solid rgba(92,54,25,.12); }
+.resource-modern-kicker { margin: 0 0 10px; color: #a76513; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.resource-modern-hero h1, .key-cont > h3 { margin: 0; color: #4d2215 !important; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.7rem, 7vw, 5rem); line-height: 1; }
+.resource-modern-hero p:last-child { max-width: 650px; margin: 20px 0 0; color: #625a52; font-size: 1.12rem; line-height: 1.7; }
+.resource-modern-body { padding: 64px 0 70px; }
+.resource-modern-card { display: grid; grid-template-columns: minmax(0,1fr) 260px; gap: 50px; align-items: center; padding: clamp(28px,5vw,58px); background: #fff; border: 1px solid rgba(92,54,25,.12); border-radius: 18px; box-shadow: 0 18px 45px rgba(55,38,24,.08); }
+.resource-modern-copy h2 { margin: 0 0 18px; color: #4d2215; font: 700 clamp(1.8rem,4vw,2.7rem)/1.15 Georgia, serif; }
+.resource-modern-copy > p:not(.resource-modern-kicker) { max-width: 690px; color: #625a52; font-size: 1.03rem; line-height: 1.75; }
+.resource-modern-button { display: inline-flex; gap: 10px; align-items: center; margin-top: 14px; padding: 14px 21px; border-radius: 7px; background: #a76513; color: #fff !important; font-weight: 700; text-decoration: none !important; }
+.resource-modern-button:hover { background: #824d0d; }
+.resource-modern-mark { display: grid; place-content: center; aspect-ratio: 1; border-radius: 50%; background: #4d2215; color: #fff8e8; text-align: center; box-shadow: inset 0 0 0 9px rgba(255,255,255,.08); }
+.resource-modern-mark span { color: #e5a73c; font: italic 700 5.5rem/.8 Georgia, serif; }
+.resource-modern-mark strong { font-size: 1.25rem; letter-spacing: .06em; }
+.resource-modern-credit { width: min(1080px,calc(100% - 40px)); margin: 18px auto 0; color: #756c63; font-size: .88rem; }
+.resource-modern-footer { padding: 24px 20px; border-top: 1px solid rgba(92,54,25,.12); color: #756c63; text-align: center; }
+.resource-modern-footer p { margin: 0; }
+
+/* Key Dates keeps all schedule content in a cleaner centered presentation. */
+.key.he-codes { overflow: visible; background: #f7f3ea !important; }
+.key .key-cont { padding: 150px 20px 64px !important; background: linear-gradient(180deg,#fffaf0 0,#f7f3ea 310px) !important; }
+.key-cont > h3 { text-align: center; }
+.key .container-fluid { width: min(1080px,100%); margin: 38px auto 0; padding: 0 !important; }
+.key .row { display: block; margin: 0; }
+.key .col-lg-6 { width: 100%; max-width: none; padding: 0; }
+.key .welcome-left { width: 100%; padding: clamp(20px,4vw,42px); border: 1px solid rgba(92,54,25,.12); border-radius: 18px; background: #fff; box-shadow: 0 18px 45px rgba(55,38,24,.08); }
+.key .welcome-left > h2, .key table + h2, .key table h2 { color: #4d2215; font: 700 clamp(1.4rem,3vw,2rem)/1.2 Georgia, serif; }
+.key table { width: 100% !important; margin: 20px auto 34px !important; border-collapse: separate !important; border-spacing: 0; overflow: hidden; border: 1px solid #e3d8ca; border-radius: 10px; color: #3c3530; }
+.key table th { padding: 14px 16px !important; border: 0 !important; border-bottom: 1px solid #dbc8ae !important; background: #f0e3cf !important; color: #5a2e19; font-size: .95rem; }
+.key table td { padding: 13px 16px !important; border: 0 !important; border-bottom: 1px solid #eee6dc !important; background: #fff !important; line-height: 1.5; }
+.key table tr:last-child td { border-bottom: 0 !important; }
+.key .keyu { text-decoration: none; }
+.key .mobi-kha_copy_right { width: min(1080px,calc(100% - 40px)); margin: 0 auto !important; padding: 24px 0 !important; color: #756c63; text-align: center !important; }
+@media (max-width: 700px) {
+  .resource-modern-hero { padding-top: 125px; }
+  .resource-modern-card { grid-template-columns: 1fr; }
+  .resource-modern-mark { width: 170px; margin: 0 auto; }
+  .key .key-cont { padding-top: 125px !important; }
+  .key .welcome-left { padding: 14px; border-radius: 12px; }
+  .key table { display: block; overflow-x: auto; font-size: .86rem; }
+  .key table td, .key table th { min-width: 145px; padding: 11px 12px !important; }
+}
