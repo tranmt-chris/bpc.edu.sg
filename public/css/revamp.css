@@ -1122,6 +1122,7 @@ input, select, textarea {
 .resource-modern-mark { display: grid; place-content: center; aspect-ratio: 1; border-radius: 50%; background: #4d2215; color: #fff8e8; text-align: center; box-shadow: inset 0 0 0 9px rgba(255,255,255,.08); }
 .resource-modern-mark span { color: #e5a73c; font: italic 700 5.5rem/.8 Georgia, serif; }
 .resource-modern-mark strong { font-size: 1.25rem; letter-spacing: .06em; }
+.resource-modern-image { width: 100%; aspect-ratio: 4 / 3; border-radius: 14px; object-fit: cover; box-shadow: 0 12px 30px rgba(55,38,24,.14); }
 .resource-modern-credit { width: min(1080px,calc(100% - 40px)); margin: 18px auto 0; color: #756c63; font-size: .88rem; }
 .resource-modern-footer { padding: 24px 20px; border-top: 1px solid rgba(92,54,25,.12); color: #756c63; text-align: center; }
 .resource-modern-footer p { margin: 0; }
