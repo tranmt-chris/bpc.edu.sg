@@ -1,0 +1,136 @@
+(function () {
+  var header = document.querySelector('header');
+  var menu = document.getElementById('menu');
+  if (!header || !menu) return;
+
+  var currentPage = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  var navigation = [
+    { label: 'Home', href: 'index.html' },
+    { label: 'About', items: [
+      ['About the College', 'about.html'],
+      ['Our Staff', 'team.html'],
+      ['Academic Staff', 'teamac.html'],
+      ['Administrative Staff', 'teamnac.html'],
+      ['Visiting Lecturers', 'teamvisit.html']
+    ]},
+    { label: 'Programmes', items: [
+      ['All Courses', 'courses.html'],
+      ['Introduction to Buddhism', 'intro.html'],
+      ['Introduction to Buddhism — Chinese', 'introc.html'],
+      ['Diploma in Buddhism', 'dip.html'],
+      ['Diploma in Buddhism — Chinese', 'dipc.html'],
+      ['BA in Buddhist Studies', 'ba.html'],
+      ['MA in Buddhist Studies', 'ma.html']
+    ]},
+    { label: 'Resources', items: [
+      ['Key Dates', 'key.html'],
+      ['Recommended Texts', 'books.html'],
+      ['eLibrary', 'elibrary.html']
+    ]},
+    { label: 'Community', items: [
+      ['Alumni', 'alumni.html'],
+      ['Gallery', 'gallery.html']
+    ]},
+    { label: 'Contact', href: 'contact.html' }
+  ];
+
+  function navItem(group, index) {
+    if (group.href) {
+      var active = currentPage === group.href.toLowerCase() ? ' active' : '';
+      return '<li class="revamp-nav-item"><a class="revamp-nav-link' + active + '" href="' + group.href + '">' + group.label + '</a></li>';
+    }
+    var groupActive = group.items.some(function (item) { return currentPage === item[1].split('#')[0].toLowerCase(); });
+    var children = group.items.map(function (item) {
+      var active = currentPage === item[1].split('#')[0].toLowerCase() ? ' class="active"' : '';
+      return '<li><a' + active + ' href="' + item[1] + '">' + item[0] + '</a></li>';
+    }).join('');
+    var dropdownId = 'revamp-nav-dropdown-' + index;
+    return '<li class="revamp-nav-group' + (groupActive ? ' current' : '') + '">' +
+      '<button class="revamp-nav-trigger" type="button" aria-expanded="false" aria-controls="' + dropdownId + '">' + group.label + '<span aria-hidden="true">⌄</span></button>' +
+      '<ul class="revamp-nav-dropdown" id="' + dropdownId + '">' + children + '</ul></li>';
+  }
+
+  menu.innerHTML = '<li><ul class="submenu revamp-primary-nav">' + navigation.map(navItem).join('') + '</ul></li>';
+
+  var brandLink;
+  var legacyLogo = header.querySelector('.logo');
+
+  if (!legacyLogo) {
+    var logo = document.createElement('a');
+    logo.className = 'revamp-logo';
+    logo.href = 'index.html';
+    logo.setAttribute('aria-label', 'Buddhist and Pali College of Singapore home');
+    logo.innerHTML = '<img src="images/bpclogo3x3b.png" alt="Buddhist and Pali College of Singapore Logo">';
+    header.insertBefore(logo, menu);
+    brandLink = logo;
+  } else {
+    brandLink = legacyLogo.querySelector('a');
+  }
+
+  if (brandLink) {
+    brandLink.classList.add('revamp-brand-link');
+    brandLink.setAttribute('aria-label', 'Buddhist and Pali College of Singapore home');
+    if (!brandLink.querySelector('.revamp-brand-name')) {
+      var brandName = document.createElement('span');
+      brandName.className = 'revamp-brand-name';
+      brandName.innerHTML = '<span>Buddhist and Pali</span><span>College of Singapore</span>';
+      brandLink.appendChild(brandName);
+    }
+  }
+
+  var toggle = document.createElement('button');
+  toggle.className = 'revamp-menu-toggle';
+  toggle.type = 'button';
+  toggle.setAttribute('aria-label', 'Open navigation');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.innerHTML = '&#9776;';
+  header.insertBefore(toggle, menu);
+
+  function closeNavigation() {
+    document.body.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation');
+    toggle.innerHTML = '&#9776;';
+    menu.querySelectorAll('.revamp-nav-group.is-open').forEach(function (group) {
+      group.classList.remove('is-open');
+      group.querySelector('.revamp-nav-trigger').setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  toggle.addEventListener('click', function () {
+    var open = document.body.classList.toggle('nav-open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    toggle.innerHTML = open ? '&times;' : '&#9776;';
+  });
+
+  menu.addEventListener('click', function (event) {
+    var trigger = event.target.closest('.revamp-nav-trigger');
+    if (trigger) {
+      var group = trigger.closest('.revamp-nav-group');
+      var open = !group.classList.contains('is-open');
+      menu.querySelectorAll('.revamp-nav-group.is-open').forEach(function (item) {
+        item.classList.remove('is-open');
+        item.querySelector('.revamp-nav-trigger').setAttribute('aria-expanded', 'false');
+      });
+      group.classList.toggle('is-open', open);
+      trigger.setAttribute('aria-expanded', String(open));
+      return;
+    }
+    if (event.target.closest('a')) {
+      closeNavigation();
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeNavigation();
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 1100 && document.body.classList.contains('nav-open')) closeNavigation();
+  });
+
+  document.querySelectorAll('form[action="html_form_send.php"] input[name="FormStarted"]').forEach(function (field) {
+    field.value = String(Date.now());
+  });
+})();
