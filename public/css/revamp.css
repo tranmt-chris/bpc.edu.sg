@@ -1152,3 +1152,44 @@ input, select, textarea {
   .key table { display: block; overflow-x: auto; font-size: .86rem; }
   .key table td, .key table th { min-width: 145px; padding: 11px 12px !important; }
 }
+/* Shared site footer generated from content/site.json. */
+.bpc-shared-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.25rem clamp(1.25rem, 5vw, 5rem);
+  background: #3f1f16;
+  color: #fff8ed;
+}
+
+.bpc-shared-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.bpc-shared-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.bpc-shared-social a {
+  color: inherit;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 640px) {
+  .bpc-shared-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Keep staff portraits aligned regardless of the legacy Bootstrap margin classes. */
+.team .team-bottom {
+  row-gap: 3rem;
+}
+
+.team .team-bottom > .team-grid {
+  margin-top: 0 !important;
+}

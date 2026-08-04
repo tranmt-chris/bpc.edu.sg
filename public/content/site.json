@@ -1,0 +1,51 @@
+{
+  "navigation": [
+    { "label": "Home", "href": "index.html" },
+    {
+      "label": "About",
+      "items": [
+        ["About the College", "about.html"],
+        ["Our Staff", "team.html"],
+        ["Academic Staff", "teamac.html"],
+        ["Administrative Staff", "teamnac.html"],
+        ["Visiting Lecturers", "teamvisit.html"]
+      ]
+    },
+    {
+      "label": "Programmes",
+      "items": [
+        ["All Courses", "courses.html"],
+        ["Introduction to Buddhism", "intro.html"],
+        ["Introduction to Buddhism — Chinese", "introc.html"],
+        ["Diploma in Buddhism", "dip.html"],
+        ["Diploma in Buddhism — Chinese", "dipc.html"],
+        ["BA in Buddhist Studies", "ba.html"],
+        ["MA in Buddhist Studies", "ma.html"]
+      ]
+    },
+    {
+      "label": "Resources",
+      "items": [
+        ["Key Dates", "key.html"],
+        ["Recommended Texts", "books.html"],
+        ["eLibrary", "elibrary.html"]
+      ]
+    },
+    {
+      "label": "Community",
+      "items": [
+        ["Alumni", "alumni.html"],
+        ["Gallery", "gallery.html"]
+      ]
+    },
+    { "label": "Contact", "href": "contact.html" }
+  ],
+  "footer": {
+    "copyright": "© 2019–2026 Buddhist and Pali College of Singapore. All rights reserved.",
+    "social": [
+      { "label": "Facebook", "href": "https://www.facebook.com/bpcsin/", "icon": "facebook-square" },
+      { "label": "Instagram", "href": "https://www.instagram.com/buddhist_pali_college/", "icon": "instagram" },
+      { "label": "YouTube", "href": "https://www.youtube.com/channel/UCjBK7PgFNmG5EJcNXoWJysA", "icon": "youtube" }
+    ]
+  }
+}

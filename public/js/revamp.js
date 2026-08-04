@@ -1,38 +1,14 @@
 (function () {
+  var content = window.BPC_CONTENT || {};
   var header = document.querySelector('header');
-  var menu = document.getElementById('menu');
-  if (!header || !menu) return;
+  if (!header) return;
+
+  var menu = document.createElement('ul');
+  menu.id = 'menu';
+  header.replaceChildren(menu);
 
   var currentPage = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  var navigation = [
-    { label: 'Home', href: 'index.html' },
-    { label: 'About', items: [
-      ['About the College', 'about.html'],
-      ['Our Staff', 'team.html'],
-      ['Academic Staff', 'teamac.html'],
-      ['Administrative Staff', 'teamnac.html'],
-      ['Visiting Lecturers', 'teamvisit.html']
-    ]},
-    { label: 'Programmes', items: [
-      ['All Courses', 'courses.html'],
-      ['Introduction to Buddhism', 'intro.html'],
-      ['Introduction to Buddhism — Chinese', 'introc.html'],
-      ['Diploma in Buddhism', 'dip.html'],
-      ['Diploma in Buddhism — Chinese', 'dipc.html'],
-      ['BA in Buddhist Studies', 'ba.html'],
-      ['MA in Buddhist Studies', 'ma.html']
-    ]},
-    { label: 'Resources', items: [
-      ['Key Dates', 'key.html'],
-      ['Recommended Texts', 'books.html'],
-      ['eLibrary', 'elibrary.html']
-    ]},
-    { label: 'Community', items: [
-      ['Alumni', 'alumni.html'],
-      ['Gallery', 'gallery.html']
-    ]},
-    { label: 'Contact', href: 'contact.html' }
-  ];
+  var navigation = content.navigation || [];
 
   function navItem(group, index) {
     if (group.href) {
@@ -129,6 +105,52 @@
   window.addEventListener('resize', function () {
     if (window.innerWidth > 1100 && document.body.classList.contains('nav-open')) closeNavigation();
   });
+
+  var programme = content.programmes && content.programmes[currentPage];
+  var programmeHero = document.querySelector('.programme-modern-hero');
+  if (programme && programmeHero) {
+    document.documentElement.lang = programme.language || 'en';
+    var kicker = programmeHero.querySelector('.programme-modern-kicker');
+    var title = programmeHero.querySelector('h1');
+    var lead = programmeHero.querySelector('.programme-modern-lead');
+    var primary = programmeHero.querySelector('.programme-modern-primary');
+    var secondary = programmeHero.querySelector('.programme-modern-secondary');
+    if (kicker) kicker.textContent = programme.kicker;
+    if (title) title.textContent = programme.title;
+    if (lead) lead.textContent = programme.lead;
+    if (primary && programme.primary) {
+      primary.textContent = programme.primary.label;
+      primary.href = programme.primary.href;
+    }
+    if (secondary && programme.secondary) {
+      secondary.textContent = programme.secondary.label;
+      secondary.href = programme.secondary.href;
+    }
+  }
+
+  var galleryGrid = document.querySelector('[data-gallery-grid]');
+  if (galleryGrid && Array.isArray(content.gallery)) {
+    galleryGrid.innerHTML = content.gallery.map(function (event) {
+      var alt = event.title + (event.date ? ', ' + event.date : '');
+      return '<div class="col-md-4 gal-img"><a href="' + event.href + '" rel="noreferrer" target="_blank">' +
+        '<img src="' + event.image + '" alt="' + alt.replace(/"/g, '&quot;') + '" class="img-fluid" loading="lazy" decoding="async"></a></div>';
+    }).join('');
+  }
+
+  var footer = document.querySelector('[data-site-footer]');
+  if (!footer) {
+    footer = document.createElement('footer');
+    footer.setAttribute('data-site-footer', '');
+    document.body.appendChild(footer);
+  }
+  footer.className = 'bpc-shared-footer';
+  if (content.footer) {
+    var social = (content.footer.social || []).map(function (item) {
+      return '<a href="' + item.href + '" rel="noreferrer" target="_blank" aria-label="' + item.label + '">' +
+        '<i class="fa fa-' + item.icon + '" aria-hidden="true"></i></a>';
+    }).join('');
+    footer.innerHTML = '<p>' + content.footer.copyright + '</p><div class="bpc-shared-social">' + social + '</div>';
+  }
 
   document.querySelectorAll('form[action="html_form_send.php"] input[name="FormStarted"]').forEach(function (field) {
     field.value = String(Date.now());
