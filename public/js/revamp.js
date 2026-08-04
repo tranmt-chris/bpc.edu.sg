@@ -130,6 +130,7 @@
     if (window.innerWidth > 1100 && document.body.classList.contains('nav-open')) closeNavigation();
   });
 
-  var contactForm = document.querySelector('form[action="html_form_send.php"]');
-  if (contactForm) contactForm.action = '/html_form_send.php';
+  document.querySelectorAll('form[action="html_form_send.php"] input[name="FormStarted"]').forEach(function (field) {
+    field.value = String(Date.now());
+  });
 })();
