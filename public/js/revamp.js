@@ -131,5 +131,5 @@
   });
 
   var contactForm = document.querySelector('form[action="html_form_send.php"]');
-  if (contactForm) contactForm.action = 'https://www.bpc.edu.sg/html_form_send.php';
+  if (contactForm) contactForm.action = '/html_form_send.php';
 })();
