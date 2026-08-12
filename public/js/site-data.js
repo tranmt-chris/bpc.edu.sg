@@ -152,12 +152,12 @@ window.BPC_CONTENT = {
       "title": "Diploma in Buddhism",
       "lead": "A one-year programme offering a structured foundation in Buddhist teachings, society, history, psychology, counselling and Pali studies.",
       "primary": {
-        "label": "Register for the Diploma",
+        "label": "Register for course preview",
         "href": "https://docs.google.com/forms/d/e/1FAIpQLSeX5REr1E58533E5L4ZjDEeXmot4qMEln7CiCSPHQMDCIzY5A/viewform"
       },
       "secondary": {
-        "label": "Enquire via WhatsApp",
-        "href": "https://wa.me/6591297763"
+        "label": "Register directly",
+        "href": "https://drive.google.com/file/d/1gL0ORYdOe-txBKi0eo1mKbBdI5od8Vi7/view"
       }
     },
     "dipc.html": {
