@@ -51,7 +51,6 @@ next-env.d.ts
 /AGENTS.md
 /pnpm-workspace.yaml
 public/ebulletin/
-public/uploads/
 media-originals/
 public/images/bpc-hero-mangala-v2.png
 public/images/bpc-hero-concept.png
