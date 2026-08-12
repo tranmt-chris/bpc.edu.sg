@@ -45,7 +45,7 @@
 	
 	<link href="//fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900&amp;subset=latin-ext" rel="stylesheet">
 	
-	<link rel="stylesheet" href="css/revamp.css">
+	<link rel="stylesheet" href="css/revamp.css?v=20260812-gallery-redesign">
 </head>
 
 <body>
@@ -54,28 +54,36 @@
 	
 
 	
-	<div class="gallery he-codes">
-		
-		<div class="gallery-cont text-center pt-5">
-			<h3 class="title text-center text-wh font-weight-bold">Gallery</h3>
-			<div class="container pt-5">
-				<div class="row news-grids text-center no-gutters" data-gallery-grid></div>
-
-				<div class="center-style">
-                    <a href="elibrary.html" class="btn button-style mt-sm-5 mt-4">eLibrary</a>
-				</div>
+	<main class="gallery-modern">
+		<section class="gallery-modern-hero">
+			<div class="gallery-modern-shell">
+				<p class="gallery-modern-kicker">Gallery</p>
+				<h1>College Life in Pictures</h1>
+				<p>Explore moments of learning, fellowship and celebration from the BPC community.</p>
 			</div>
-		</div>
-		
-		
-		
-		
-	</div>
+		</section>
+
+		<section class="gallery-modern-content">
+			<div class="gallery-modern-shell">
+				<div class="gallery-modern-section-heading">
+					<p class="gallery-modern-kicker">Recent highlights</p>
+					<h2>Latest Events</h2>
+				</div>
+				<div class="gallery-modern-grid gallery-modern-grid-latest" data-gallery-latest></div>
+
+				<div class="gallery-modern-section-heading gallery-modern-archive-heading">
+					<p class="gallery-modern-kicker">Through the years</p>
+					<h2>From the Archive</h2>
+				</div>
+				<div class="gallery-modern-grid" data-gallery-archive></div>
+			</div>
+		</section>
+	</main>
 	
 	
 	<footer data-site-footer></footer>
 	<script src="js/site-data.js?v=20260804-content-refactor"></script>
-	<script src="js/revamp.js?v=20260804-content-refactor"></script>
+	<script src="js/revamp.js?v=20260812-gallery-redesign"></script>
 </body>
 
 </html>

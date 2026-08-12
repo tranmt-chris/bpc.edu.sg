@@ -128,13 +128,61 @@
     }
   }
 
-  var galleryGrid = document.querySelector('[data-gallery-grid]');
-  if (galleryGrid && Array.isArray(content.gallery)) {
-    galleryGrid.innerHTML = content.gallery.map(function (event) {
+  var galleryLatest = document.querySelector('[data-gallery-latest]');
+  var galleryArchive = document.querySelector('[data-gallery-archive]');
+  if ((galleryLatest || galleryArchive) && Array.isArray(content.gallery)) {
+    var renderGalleryEvents = function (events) {
+      return events.map(function (event) {
       var alt = event.title + (event.date ? ', ' + event.date : '');
-      return '<div class="col-md-4 gal-img"><a href="' + event.href + '" rel="noreferrer" target="_blank">' +
-        '<img src="' + event.image + '" alt="' + alt.replace(/"/g, '&quot;') + '" class="img-fluid" loading="lazy" decoding="async"></a></div>';
-    }).join('');
+        return '<article class="gallery-modern-card"><a href="' + event.href + '" rel="noreferrer" target="_blank" aria-label="View ' + alt.replace(/"/g, '&quot;') + '">' +
+          '<div class="gallery-modern-image"><img src="' + event.image + '" alt="' + alt.replace(/"/g, '&quot;') + '" loading="lazy" decoding="async"><span class="gallery-modern-view">View album <i class="fa fa-external-link" aria-hidden="true"></i></span></div>' +
+          '<div class="gallery-modern-card-copy"><h3>' + event.title + '</h3>' +
+          (event.date ? '<time>' + event.date + '</time>' : '<span>View photographs</span>') + '</div></a></article>';
+      }).join('');
+    };
+    var latestEvents = content.gallery.filter(function (event) { return event.date && /2026/.test(event.date); });
+    var archiveEvents = content.gallery.filter(function (event) { return !event.date || !/2026/.test(event.date); });
+    if (galleryLatest) galleryLatest.innerHTML = renderGalleryEvents(latestEvents);
+    if (galleryArchive) galleryArchive.innerHTML = renderGalleryEvents(archiveEvents);
+  }
+
+  var alumniGrid = document.querySelector('[data-alumni-grid]');
+  var alumniFilters = document.querySelector('[data-alumni-filters]');
+  if (alumniGrid) {
+    var alumniCards = Array.from(alumniGrid.children);
+    alumniCards.forEach(function (item, index) {
+      var card = item.querySelector('.med-blog');
+      var text = item.textContent || '';
+      var yearMatch = text.match(/20\d{2}/);
+      item.className = 'alumni-modern-item' + (index === 0 ? ' alumni-modern-featured' : '');
+      item.dataset.year = yearMatch ? yearMatch[0] : 'Older';
+      if (card) card.classList.add('alumni-modern-card');
+      item.querySelectorAll('.blog-title a[href="#"]').forEach(function (titleLink) {
+        var destination = item.querySelector('.blog-btn');
+        if (destination) {
+          titleLink.href = destination.href;
+          titleLink.target = '_blank';
+          titleLink.rel = 'noreferrer';
+        }
+      });
+    });
+    if (alumniFilters) {
+      var recentYears = ['All'].concat(Array.from(new Set(alumniCards.map(function (item) { return item.dataset.year; }))).slice(0, 3));
+      recentYears.push('Older');
+      alumniFilters.innerHTML = recentYears.map(function (year, index) {
+        return '<button type="button" class="' + (index === 0 ? 'active' : '') + '" data-alumni-year="' + year + '">' + year + '</button>';
+      }).join('');
+      alumniFilters.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-alumni-year]');
+        if (!button) return;
+        var selected = button.dataset.alumniYear;
+        alumniFilters.querySelectorAll('button').forEach(function (item) { item.classList.toggle('active', item === button); });
+        alumniCards.forEach(function (item) {
+          var isOlder = !recentYears.slice(1, -1).includes(item.dataset.year);
+          item.hidden = selected !== 'All' && (selected === 'Older' ? !isOlder : item.dataset.year !== selected);
+        });
+      });
+    }
   }
 
   document.querySelectorAll('.team .team-text h1, .team .team-text h2, .team .team-text h4').forEach(function (heading) {
@@ -146,6 +194,18 @@
         heading.replaceChild(email, node);
       }
     });
+  });
+
+  document.querySelectorAll('.texts-modern .cart-grid').forEach(function (card) {
+    var image = card.querySelector('img');
+    var info = card.querySelector('.info');
+    if (!image || !info || card.querySelector('.texts-modern-book-title')) return;
+    var title = document.createElement('h2');
+    title.className = 'texts-modern-book-title';
+    title.textContent = image.alt;
+    card.insertBefore(title, info);
+    var price = info.querySelector('li');
+    if (price) price.textContent = price.textContent + ' donation';
   });
 
   var footer = document.querySelector('[data-site-footer]');
