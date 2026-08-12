@@ -5,7 +5,7 @@
       "label": "About",
       "items": [
         ["About the College", "about.html"],
-        ["Our Staff", "team.html"],
+        ["Our People", "team.html"],
         ["Academic Staff", "teamac.html"],
         ["Administrative Staff", "teamnac.html"],
         ["Visiting Lecturers", "teamvisit.html"]

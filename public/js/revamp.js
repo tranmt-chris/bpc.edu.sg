@@ -137,6 +137,17 @@
     }).join('');
   }
 
+  document.querySelectorAll('.team .team-text h1, .team .team-text h2, .team .team-text h4').forEach(function (heading) {
+    Array.from(heading.childNodes).forEach(function (node) {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.indexOf('@') !== -1) {
+        var email = document.createElement('span');
+        email.className = 'people-card-email';
+        email.textContent = node.textContent;
+        heading.replaceChild(email, node);
+      }
+    });
+  });
+
   var footer = document.querySelector('[data-site-footer]');
   if (!footer) {
     footer = document.createElement('footer');

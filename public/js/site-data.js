@@ -12,7 +12,7 @@ window.BPC_CONTENT = {
           "about.html"
         ],
         [
-          "Our Staff",
+          "Our People",
           "team.html"
         ],
         [
