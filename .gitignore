@@ -41,6 +41,15 @@ next-env.d.ts
 /outputs/
 /output/
 /work/
+/.pnpm-store/
+/tmp/
+/sites-deploy-final/
+/sites-deploy-new/
+/.dev-server.log
+/.dev-server-error.log
+/teamac-audit.png
+/AGENTS.md
+/pnpm-workspace.yaml
 public/ebulletin/
 public/uploads/
 media-originals/
