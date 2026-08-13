@@ -1417,9 +1417,9 @@ input, select, textarea {
 .team .people-directory-hero + .team-cont .team-grid:hover { transform: none; box-shadow: 0 17px 42px rgba(62,38,23,.11); }
 .team .people-directory-hero + .team-cont .team-grid > img { width: 100%; aspect-ratio: 4/5; border-radius: 10px; object-fit: cover; object-position: center top; box-shadow: none; }
 .team .people-directory-hero + .team-cont .caption { padding: 18px 8px 0; }
-.team .people-directory-hero + .team-cont .team-text h1,.team .people-directory-hero + .team-cont .team-text h2,.team .people-directory-hero + .team-cont .team-text h4 { margin: 0; color: #4d2215 !important; font: 600 1rem/1.65 'Inter',Arial,sans-serif !important; overflow-wrap: anywhere; }
-.team .people-directory-hero + .team-cont .team-text h1::first-line,.team .people-directory-hero + .team-cont .team-text h2::first-line,.team .people-directory-hero + .team-cont .team-text h4::first-line { font-family: 'Cormorant Garamond',Georgia,serif; font-size: 1.4rem; font-weight: 700; line-height: 1.2; }
-.team .people-card-email { font-size: .78rem; line-height: 1.35; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.team .people-directory-hero + .team-cont .team-text h1,.team .people-directory-hero + .team-cont .team-text h2,.team .people-directory-hero + .team-cont .team-text h4 { margin: 0; color: #4d2215 !important; font: 600 .76rem/1.46 'Inter',Arial,sans-serif !important; overflow-wrap: anywhere; }
+.team .people-directory-hero + .team-cont .team-text h1::first-line,.team .people-directory-hero + .team-cont .team-text h2::first-line,.team .people-directory-hero + .team-cont .team-text h4::first-line { font-family: 'Cormorant Garamond',Georgia,serif; font-size: 1.02rem; font-weight: 700; line-height: 1.14; }
+.team .people-card-email { font-size: .66rem; line-height: 1.28; letter-spacing: -.02em; overflow-wrap: anywhere; }
 .team .people-directory-hero + .team-cont .caption ul { display: flex; gap: 8px; margin: 14px 0 0; padding: 0; }
 .team .people-directory-hero + .team-cont .caption ul li { list-style: none; }
 .team .people-directory-hero + .team-cont .caption ul a { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; background: #efe1ca; color: #6c2c1c; }
