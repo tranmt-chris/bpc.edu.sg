@@ -146,6 +146,16 @@
     if (galleryArchive) galleryArchive.innerHTML = renderGalleryEvents(archiveEvents);
   }
 
+  var homeLatestEvent = document.querySelector('[data-home-latest-event]');
+  if (homeLatestEvent && Array.isArray(content.gallery) && content.gallery.length) {
+    var latestEvent = content.gallery[0];
+    var latestAlt = latestEvent.title + (latestEvent.date ? ', ' + latestEvent.date : '');
+    homeLatestEvent.innerHTML = '<a class="home-modern-event" href="' + latestEvent.href + '" rel="noreferrer" target="_blank">' +
+      '<div class="home-modern-event-image"><img src="' + latestEvent.image + '" alt="' + latestAlt.replace(/"/g, '&quot;') + '" loading="lazy" decoding="async"></div>' +
+      '<div class="home-modern-event-copy"><p class="home-modern-kicker">Recent highlight</p><h3>' + latestEvent.title + '</h3>' +
+      (latestEvent.date ? '<time>' + latestEvent.date + '</time>' : '') + '<span>View event album <i class="fa fa-external-link" aria-hidden="true"></i></span></div></a>';
+  }
+
   var alumniGrid = document.querySelector('[data-alumni-grid]');
   var alumniFilters = document.querySelector('[data-alumni-filters]');
   if (alumniGrid) {

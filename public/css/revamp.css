@@ -271,7 +271,7 @@ ul#menu ul.revamp-nav-dropdown li a.active {
   width: 172px;
   height: 2px;
   margin-top: 30px;
-  background: linear-gradient(90deg, var(--bpc-gold) 0 44%, transparent 44% 55%, var(--bpc-gold) 55%);
+  background: var(--bpc-gold);
 }
 
 .banner-text h2 {
@@ -1444,4 +1444,129 @@ input, select, textarea {
 
 .team .team-bottom > .team-grid {
   margin-top: 0 !important;
+}
+
+/* Modern programme directory. */
+.courses-modern { min-height: 100vh; background: #f8f4eb; color: #302620; }
+.courses-modern-shell { width: min(1160px,calc(100% - 40px)); margin: 0 auto; }
+.courses-modern-kicker { margin: 0 0 10px; color: #a76513; font-size: .76rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+.courses-modern-hero { padding: 152px 0 78px; border-bottom: 1px solid rgba(92,54,25,.12); background: linear-gradient(135deg,#fffaf1,#efe1ca); }
+.courses-modern-hero h1 { max-width: 940px; margin: 0; color: #4d2215; font: 600 clamp(3rem,6vw,5.3rem)/1 'Cormorant Garamond',Georgia,serif; letter-spacing: -.025em; }
+.courses-modern-hero > div > p:last-child { max-width: 680px; margin: 24px 0 0; color: #655b53; font-size: 1.08rem; line-height: 1.75; }
+.courses-modern-start { padding: 72px 0 0; }
+.courses-modern-start-card { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: clamp(30px,5vw,54px); border: 1px solid #d8bd91; border-radius: 18px; background: #5a281a; box-shadow: 0 20px 50px rgba(62,38,23,.15); color: #fff8ed; }
+.courses-modern-start-card > div { max-width: 720px; }
+.courses-modern-start-card .courses-modern-kicker { color: #e6b66e; }
+.courses-modern-start-card h2 { margin: 0; color: #fff8ed; font: 600 clamp(2.2rem,4vw,3.6rem)/1.06 'Cormorant Garamond',Georgia,serif; }
+.courses-modern-start-card p:last-child { margin: 18px 0 0; color: rgba(255,248,237,.78); line-height: 1.75; }
+.courses-modern-start-card > a { flex: 0 0 auto; padding: 13px 19px; border: 1px solid rgba(255,248,237,.45); border-radius: 7px; color: #fff8ed; font-size: .84rem; font-weight: 800; text-decoration: none; }
+.courses-modern-directory { padding: 96px 0 110px; }
+.courses-modern-stage + .courses-modern-stage { margin-top: 92px; padding-top: 82px; border-top: 1px solid #dfd1bd; }
+.courses-modern-stage { scroll-margin-top: 110px; }
+.courses-modern-stage-intro { display: grid; align-items: center; grid-template-columns: minmax(0,.85fr) minmax(300px,.55fr); gap: clamp(30px,6vw,76px); margin-bottom: 30px; }
+.courses-modern-stage-heading { display: flex; align-items: center; gap: 22px; margin-bottom: 0; }
+.courses-modern-stage-intro figure { margin: 0; overflow: hidden; border: 1px solid #e2d4bf; border-radius: 16px; background: #fff8e9; box-shadow: 0 13px 38px rgba(62,38,23,.08); }
+.courses-modern-stage-intro img { display: block; width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; }
+.courses-modern-stage-heading > span { display: grid; width: 54px; height: 54px; place-items: center; border: 1px solid #d8c2a1; border-radius: 50%; color: #a76513; font-size: .78rem; font-weight: 800; }
+.courses-modern-stage-heading h2,.courses-modern-section-heading h2 { margin: 0; color: #4d2215; font: 600 clamp(2.25rem,4vw,3.45rem)/1.05 'Cormorant Garamond',Georgia,serif; }
+.courses-modern-stage-heading .courses-modern-kicker { margin-bottom: 5px; }
+.courses-modern-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+.courses-modern-card { display: flex; min-height: 300px; padding: 30px; border: 1px solid #dfd1bd; border-radius: 17px; background: #fffdf8; box-shadow: 0 14px 40px rgba(62,38,23,.07); color: inherit !important; flex-direction: column; text-decoration: none !important; transition: transform .2s ease,box-shadow .2s ease; }
+.courses-modern-card:hover { transform: translateY(-4px); box-shadow: 0 21px 50px rgba(62,38,23,.13); }
+.courses-modern-meta { display: flex; gap: 8px; }
+.courses-modern-meta span { padding: 6px 10px; border-radius: 999px; background: #f0e3cf; color: #75503a; font-size: .7rem; font-weight: 800; letter-spacing: .03em; }
+.courses-modern-card h3 { margin: 34px 0 14px; color: #4d2215; font: 600 clamp(1.8rem,3vw,2.55rem)/1.08 'Cormorant Garamond',Georgia,serif; }
+.courses-modern-card p { max-width: 540px; margin: 0; color: #685c54; font-size: .93rem; line-height: 1.72; }
+.courses-modern-card strong { margin-top: auto; padding-top: 28px; color: #a76513; font-size: .82rem; }
+.courses-modern-compare { padding: 104px 0; background: #efe3d1; }
+.courses-modern-section-heading { margin-bottom: 30px; }
+.courses-modern-table-wrap { overflow-x: auto; border: 1px solid #d8c5a8; border-radius: 15px; background: #fffdf8; box-shadow: 0 13px 38px rgba(62,38,23,.07); }
+.courses-modern-table-wrap table { width: 100%; min-width: 640px; border-collapse: collapse; }
+.courses-modern-table-wrap th,.courses-modern-table-wrap td { padding: 19px 24px; border-bottom: 1px solid #eadfce; text-align: left; }
+.courses-modern-table-wrap th { background: #5a281a; color: #fff8ed; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+.courses-modern-table-wrap td:first-child { color: #4d2215; font-weight: 800; }
+.courses-modern-table-wrap tbody tr:last-child td { border-bottom: 0; }
+.courses-modern-table-note { margin: 16px 2px 0; color: #725f52; font-size: .84rem; }
+.courses-modern-guidance { padding: 92px 0; background: #fffaf1; }
+.courses-modern-guidance .courses-modern-shell { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.courses-modern-guidance h2 { max-width: 720px; margin: 0; color: #4d2215; font: 600 clamp(2.2rem,4vw,3.5rem)/1.05 'Cormorant Garamond',Georgia,serif; }
+.courses-modern-guidance .courses-modern-shell > div:last-child { display: flex; flex: 0 0 auto; gap: 10px; }
+.courses-modern-guidance a { padding: 12px 17px; border: 1px solid #c9aa7c; border-radius: 7px; color: #6b3a27; font-size: .83rem; font-weight: 800; text-decoration: none; }
+.courses-modern-guidance a.courses-modern-primary { border-color: #a76513; background: #a76513; color: #fff; }
+@media (max-width: 760px) {
+  .courses-modern-shell { width: min(calc(100% - 28px),1160px); }
+  .courses-modern-hero { padding-top: 124px; }
+  .courses-modern-start-card,.courses-modern-guidance .courses-modern-shell { align-items: flex-start; flex-direction: column; }
+  .courses-modern-stage-intro { grid-template-columns: 1fr; gap: 26px; }
+  .courses-modern-stage-intro figure { max-width: 560px; }
+  .courses-modern-grid { grid-template-columns: 1fr; }
+  .courses-modern-directory { padding: 72px 0 82px; }
+  .courses-modern-stage + .courses-modern-stage { margin-top: 66px; padding-top: 58px; }
+  .courses-modern-compare,.courses-modern-guidance { padding: 72px 0; }
+}
+@media (max-width: 480px) {
+  .courses-modern-start { padding-top: 50px; }
+  .courses-modern-start-card { padding: 28px 22px; }
+  .courses-modern-card { min-height: 280px; padding: 25px 22px; }
+  .courses-modern-stage-heading { align-items: flex-start; }
+  .courses-modern-guidance .courses-modern-shell > div:last-child { align-items: stretch; width: 100%; flex-direction: column; }
+  .courses-modern-guidance a { text-align: center; }
+}
+
+/* Homepage sections beneath the existing hero. */
+.home-modern { background: #f8f4eb; color: #302620; }
+.home-modern-shell { width: min(1160px,calc(100% - 40px)); margin: 0 auto; }
+.home-modern-kicker { margin: 0 0 10px; color: #a76513; font-size: .76rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+.home-modern-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 34px; }
+.home-modern-heading h2,.home-modern-about h2 { margin: 0; color: #4d2215; font: 600 clamp(2.5rem,4.5vw,4rem)/1.04 'Cormorant Garamond',Georgia,serif; letter-spacing: -.02em; }
+.home-modern-heading > a { flex: 0 0 auto; color: #8f5912; font-size: .88rem; font-weight: 800; text-decoration: none; }
+.home-modern-pathways { padding: 94px 0 104px; }
+.home-modern-pathway-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.home-modern-pathway { display: flex; min-height: 310px; padding: 32px 28px; border: 1px solid #dfd1bd; border-radius: 17px; background: #fffdf8; box-shadow: 0 14px 40px rgba(62,38,23,.07); color: inherit !important; flex-direction: column; text-decoration: none !important; transition: transform .2s ease,box-shadow .2s ease; }
+.home-modern-pathway:hover { transform: translateY(-5px); box-shadow: 0 21px 50px rgba(62,38,23,.13); }
+.home-modern-pathway > span { color: #b78a51; font-size: .76rem; font-weight: 800; letter-spacing: .14em; }
+.home-modern-pathway > div { display: flex; flex: 1; flex-direction: column; }
+.home-modern-pathway h3 { margin: 35px 0 14px; color: #4d2215; font: 600 2.25rem/1.05 'Cormorant Garamond',Georgia,serif; }
+.home-modern-pathway p { margin: 0; color: #685c54; font-size: .93rem; line-height: 1.7; }
+.home-modern-pathway strong { margin-top: auto; padding-top: 24px; color: #a76513; font-size: .82rem; }
+.home-modern-about { padding: 104px 0; background: #efe3d1; }
+.home-modern-about-grid { display: grid; align-items: center; grid-template-columns: 1.04fr .96fr; gap: clamp(42px,7vw,86px); }
+.home-modern-about figure { margin: 0; overflow: hidden; border-radius: 18px; box-shadow: 0 22px 58px rgba(62,38,23,.16); }
+.home-modern-about img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.home-modern-about p:not(.home-modern-kicker) { margin: 24px 0 0; color: #63574f; font-size: 1rem; line-height: 1.8; }
+.home-modern-button { display: inline-block; margin-top: 30px; padding: 13px 20px; border-radius: 7px; background: #a76513; color: #fff !important; font-size: .85rem; font-weight: 800; text-decoration: none !important; }
+.home-modern-latest { padding: 104px 0; }
+.home-modern-event { display: grid; overflow: hidden; border: 1px solid #dfd1bd; border-radius: 18px; background: #fffdf8; box-shadow: 0 17px 46px rgba(62,38,23,.09); color: inherit !important; grid-template-columns: 1.35fr .65fr; text-decoration: none !important; }
+.home-modern-event-image { min-height: 390px; overflow: hidden; }
+.home-modern-event-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.home-modern-event:hover img { transform: scale(1.025); }
+.home-modern-event-copy { display: flex; padding: clamp(30px,5vw,58px); flex-direction: column; justify-content: center; }
+.home-modern-event-copy h3 { margin: 0; color: #4d2215; font: 600 clamp(2rem,3.5vw,3.2rem)/1.05 'Cormorant Garamond',Georgia,serif; }
+.home-modern-event-copy time { margin-top: 13px; color: #866c58; font-size: .86rem; font-weight: 700; }
+.home-modern-event-copy > span { margin-top: 34px; color: #a76513; font-size: .82rem; font-weight: 800; }
+.home-modern-contact { padding: 34px 0; background: #542417; color: #fff8ed; }
+.home-modern-contact-grid { display: grid; align-items: center; grid-template-columns: 1.5fr .75fr 1.2fr auto; gap: 30px; }
+.home-modern-contact-grid > div { display: flex; min-width: 0; flex-direction: column; }
+.home-modern-contact-grid span { color: #e0ad62; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.home-modern-contact-grid strong,.home-modern-contact-grid a { margin-top: 5px; color: #fff8ed; font-size: .88rem; font-weight: 600; overflow-wrap: anywhere; text-decoration: none; }
+.home-modern-contact-link { padding: 12px 17px; border: 1px solid rgba(255,248,237,.4); border-radius: 7px; white-space: nowrap; }
+.home-modern-contact-link span { margin-left: 6px; color: inherit; }
+@media (max-width: 900px) {
+  .home-modern-pathway-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .home-modern-pathway:last-child { grid-column: 1/-1; }
+  .home-modern-event { grid-template-columns: 1fr 1fr; }
+  .home-modern-contact-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 650px) {
+  .home-modern-shell { width: min(calc(100% - 28px),1160px); }
+  .home-modern-heading { align-items: flex-start; flex-direction: column; }
+  .home-modern-pathways,.home-modern-about,.home-modern-latest { padding: 72px 0; }
+  .home-modern-pathway-grid { grid-template-columns: 1fr; }
+  .home-modern-pathway,.home-modern-pathway:last-child { min-height: 270px; grid-column: auto; }
+  .home-modern-about-grid { grid-template-columns: 1fr; gap: 38px; }
+  .home-modern-event { grid-template-columns: 1fr; }
+  .home-modern-event-image { min-height: 0; aspect-ratio: 16/10; }
+  .home-modern-event-copy { padding: 28px 24px 32px; }
+  .home-modern-contact-grid { grid-template-columns: 1fr; gap: 22px; }
+  .home-modern-contact-link { justify-self: start; }
 }
