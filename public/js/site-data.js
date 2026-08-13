@@ -156,7 +156,7 @@ window.BPC_CONTENT = {
         "href": "https://docs.google.com/forms/d/e/1FAIpQLSeX5REr1E58533E5L4ZjDEeXmot4qMEln7CiCSPHQMDCIzY5A/viewform"
       },
       "secondary": {
-        "label": "Register directly",
+        "label": "Enroll Now",
         "href": "https://drive.google.com/file/d/1gL0ORYdOe-txBKi0eo1mKbBdI5od8Vi7/view"
       }
     },
@@ -181,10 +181,10 @@ window.BPC_CONTENT = {
       "lead": "A three-year degree programme progressing from general arts foundations to advanced Buddhist philosophy, culture, society and Pali studies.",
       "primary": {
         "label": "Enquire now",
-        "href": "contact.html"
+        "href": "https://wa.me/6591297763"
       },
       "secondary": {
-        "label": "View syllabus",
+        "label": "View Syllabus",
         "href": "uploads/BPC-BA-BuddhistStudies-Syllabi.pdf"
       }
     },
@@ -194,12 +194,12 @@ window.BPC_CONTENT = {
       "title": "MA in Buddhist Studies",
       "lead": "A one-year postgraduate programme exploring Buddhist philosophy, psychotherapy, social thought, management, art and architecture.",
       "primary": {
-        "label": "Contact Sandra",
+        "label": "Enquire now",
         "href": "https://wa.me/6591297763"
       },
       "secondary": {
-        "label": "View poster",
-        "href": "images/ma2026.jpg"
+        "label": "View Syllabus",
+        "href": "uploads/MA2022-Syllabus.pdf"
       }
     }
   },

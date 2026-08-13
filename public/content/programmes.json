@@ -36,15 +36,15 @@
     "kicker": "Undergraduate degree",
     "title": "BA in Buddhist Studies",
     "lead": "A three-year degree programme progressing from general arts foundations to advanced Buddhist philosophy, culture, society and Pali studies.",
-    "primary": { "label": "Enquire now", "href": "contact.html" },
-    "secondary": { "label": "View syllabus", "href": "uploads/BPC-BA-BuddhistStudies-Syllabi.pdf" }
+    "primary": { "label": "Enquire now", "href": "https://wa.me/6591297763" },
+    "secondary": { "label": "View Syllabus", "href": "uploads/BPC-BA-BuddhistStudies-Syllabi.pdf" }
   },
   "ma.html": {
     "language": "en",
     "kicker": "Postgraduate degree",
     "title": "MA in Buddhist Studies",
     "lead": "A one-year postgraduate programme exploring Buddhist philosophy, psychotherapy, social thought, management, art and architecture.",
-    "primary": { "label": "Contact Sandra", "href": "https://wa.me/6591297763" },
-    "secondary": { "label": "View poster", "href": "images/ma2026.jpg" }
+    "primary": { "label": "Enquire now", "href": "https://wa.me/6591297763" },
+    "secondary": { "label": "View Syllabus", "href": "uploads/MA2022-Syllabus.pdf" }
   }
 }
