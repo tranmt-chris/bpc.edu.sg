@@ -233,7 +233,4 @@
     footer.innerHTML = '<p>' + content.footer.copyright + '</p><div class="bpc-shared-social">' + social + '</div>';
   }
 
-  document.querySelectorAll('form[action="html_form_send.php"] input[name="FormStarted"]').forEach(function (field) {
-    field.value = String(Date.now());
-  });
 })();
