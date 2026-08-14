@@ -25,10 +25,10 @@
   },
   "dipc.html": {
     "language": "zh-Hans",
-    "kicker": "中文课程",
+    "kicker": "2027 – 第四期",
     "title": "中文佛学文凭",
-    "lead": "由新加坡佛学与巴利文学院开办的系统佛学课程，涵盖初期佛教教义、历史、社会维度与巴利文入门。",
-    "primary": { "label": "报名课程", "href": "https://qrcc.me/s1zgqwd93pp7" },
+    "lead": "由新加坡佛学与巴利文学院开办的佛学课程，内容涵盖早期佛教教义、历史、地理传播、社会维度与巴利文入门。",
+    "primary": { "label": "报名课程", "href": "uploads/BPC-Registration-Diploma Chinese (2024).pdf" },
     "secondary": { "label": "电邮查询", "href": "mailto:diplomabuddhismchinese@gmail.com" }
   },
   "ba.html": {

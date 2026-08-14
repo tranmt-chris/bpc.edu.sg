@@ -611,6 +611,7 @@ input, select, textarea {
 .programme-modern-hero-note p { margin: 0; color: rgba(255,253,249,.82); font-size: 15px; line-height: 1.6; }
 .programme-modern-facts { border-bottom: 1px solid var(--bpc-line); background: var(--bpc-paper); }
 .programme-modern-fact-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.programme-modern-fact-grid-two { grid-template-columns: repeat(2, 1fr); }
 .programme-modern-fact-grid > div { padding: 27px 20px; border-right: 1px solid var(--bpc-line); }
 .programme-modern-fact-grid > div:first-child { border-left: 1px solid var(--bpc-line); }
 .programme-modern-fact-grid span { display: block; margin-bottom: 7px; color: #8a7066; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
@@ -681,6 +682,7 @@ input, select, textarea {
   .programme-modern-content-grid { grid-template-columns: 1fr; }
   .programme-modern-hero-note { max-width: 460px; }
   .programme-modern-fact-grid { grid-template-columns: repeat(3, 1fr); }
+  .programme-modern-fact-grid-two { grid-template-columns: repeat(2, 1fr); }
   .programme-modern-enrol { position: static; }
 }
 
