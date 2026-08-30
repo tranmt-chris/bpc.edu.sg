@@ -506,6 +506,83 @@ window.BPC_CONTENT = {
         },
         "note": "Full payment is required to complete course registration."
       }
+    },
+    "index.html": {
+      "hero": {
+        "logo": "images/bpclogo2x2a.png",
+        "logoAlt": "Buddhist and Pali College of Singapore Logo",
+        "title": "Buddhist Education for Everyone",
+        "lead": "In the world of darkness, BPC illuminates the Dhamma since 1993",
+        "primary": {
+          "label": "Explore Programmes",
+          "href": "courses.html"
+        },
+        "secondary": {
+          "label": "Contact Us",
+          "href": "contact.html"
+        }
+      },
+      "pathways": {
+        "kicker": "Find your pathway",
+        "title": "Begin or deepen your study",
+        "allCourses": {
+          "label": "View all courses",
+          "href": "courses.html"
+        },
+        "items": [
+          {
+            "title": "Introduction",
+            "description": "A welcoming 10-week introduction to Buddhism and a foundation for further study.",
+            "linkLabel": "Explore the course",
+            "href": "intro.html"
+          },
+          {
+            "title": "Diploma",
+            "description": "A structured one-year foundation in Buddhist teachings, history, society and Pali studies.",
+            "linkLabel": "Explore the diploma",
+            "href": "dip.html"
+          },
+          {
+            "title": "Degree studies",
+            "description": "Progress to the three-year Bachelor of Arts in Buddhist Studies programme.",
+            "linkLabel": "Explore degree studies",
+            "href": "ba.html"
+          }
+        ]
+      },
+      "about": {
+        "image": "images/about-convocation-2024.webp",
+        "imageAlt": "Buddhist and Pali College graduates and monastics at the 2024 convocation",
+        "kicker": "About the College",
+        "title": "Buddhist education in Singapore since 1993",
+        "description": "The Buddhist and Pali College of Singapore provides Buddhist education programmes for monks, nuns and laity. Its internationally recognised degrees are affiliated with the Buddhist and Pali University of Sri Lanka.",
+        "button": {
+          "label": "Discover our story",
+          "href": "about.html"
+        }
+      },
+      "latest": {
+        "kicker": "Community",
+        "title": "Latest event",
+        "button": {
+          "label": "View the gallery",
+          "href": "gallery.html"
+        }
+      },
+      "contact": {
+        "addressLabel": "Visit us",
+        "address": "30 Jalan Eunos, Singapore 419495",
+        "phoneLabel": "Call",
+        "phone": "+65 6744 4285",
+        "phoneHref": "tel:+6567444285",
+        "emailLabel": "Email",
+        "email": "enquiry@bpc.edu.sg",
+        "emailHref": "mailto:enquiry@bpc.edu.sg",
+        "button": {
+          "label": "Contact the College",
+          "href": "contact.html"
+        }
+      }
     }
   },
   "gallery": [

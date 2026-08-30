@@ -271,6 +271,32 @@
       '<p class="programme-modern-location">' + lines(admissions.location) + '</p><p class="programme-modern-teacher">' + escapeHtml(admissions.note) + '</p>';
   }
 
+  var home = content.pages && content.pages['index.html'];
+  var homeHero = document.querySelector('[data-home-hero]');
+  var homePage = document.querySelector('[data-home-page]');
+  if (currentPage === 'index.html' && home) {
+    var hero = home.hero || {};
+    if (homeHero) homeHero.innerHTML = '<div class="container-fluid"><div class="banner-text pl-lg-5 pl-sm-4 ml-lg-3">' +
+      '<div class="logo-2"><a href="index.html"><img src="' + safeHref(hero.logo) + '" width="180" height="180" alt="' + escapeHtml(hero.logoAlt) + '"></a></div>' +
+      '<h1 class="my-md-4 my-3">' + escapeHtml(hero.title) + '</h1><h2>' + escapeHtml(hero.lead) + '</h2><br>' +
+      '<a href="' + safeHref(hero.primary && hero.primary.href) + '" class="btn button-style mt-5">' + escapeHtml(hero.primary && hero.primary.label) + '</a>' +
+      '<a href="' + safeHref(hero.secondary && hero.secondary.href) + '" class="btn button-style mt-5">' + escapeHtml(hero.secondary && hero.secondary.label) + '</a>' +
+      '</div></div>';
+    if (homePage) {
+      var pathways = home.pathways || {};
+      var aboutPreview = home.about || {};
+      var latest = home.latest || {};
+      var contactStrip = home.contact || {};
+      homePage.innerHTML = '<section class="home-modern-pathways"><div class="home-modern-shell">' +
+        '<div class="home-modern-heading"><div><p class="home-modern-kicker">' + escapeHtml(pathways.kicker) + '</p><h2>' + escapeHtml(pathways.title) + '</h2></div><a href="' + safeHref(pathways.allCourses && pathways.allCourses.href) + '">' + escapeHtml(pathways.allCourses && pathways.allCourses.label) + ' <span aria-hidden="true">&rarr;</span></a></div>' +
+        '<div class="home-modern-pathway-grid">' + (pathways.items || []).map(function (item, index) { return '<a class="home-modern-pathway" href="' + safeHref(item.href) + '"><span>' + escapeHtml(String(index + 1).padStart(2, '0')) + '</span><div><h3>' + escapeHtml(item.title) + '</h3><p>' + escapeHtml(item.description) + '</p><strong>' + escapeHtml(item.linkLabel) + ' <span aria-hidden="true">&rarr;</span></strong></div></a>'; }).join('') + '</div></div></section>' +
+        '<section class="home-modern-about"><div class="home-modern-shell home-modern-about-grid"><figure><img src="' + safeHref(aboutPreview.image) + '" alt="' + escapeHtml(aboutPreview.imageAlt) + '" loading="lazy" decoding="async"></figure><div><p class="home-modern-kicker">' + escapeHtml(aboutPreview.kicker) + '</p><h2>' + escapeHtml(aboutPreview.title) + '</h2><p>' + escapeHtml(aboutPreview.description) + '</p><a class="home-modern-button" href="' + safeHref(aboutPreview.button && aboutPreview.button.href) + '">' + escapeHtml(aboutPreview.button && aboutPreview.button.label) + '</a></div></div></section>' +
+        '<section class="home-modern-latest"><div class="home-modern-shell"><div class="home-modern-heading"><div><p class="home-modern-kicker">' + escapeHtml(latest.kicker) + '</p><h2>' + escapeHtml(latest.title) + '</h2></div><a href="' + safeHref(latest.button && latest.button.href) + '">' + escapeHtml(latest.button && latest.button.label) + ' <span aria-hidden="true">&rarr;</span></a></div><div data-home-latest-event></div></div></section>' +
+        '<section class="home-modern-contact" aria-label="College location and contact details"><div class="home-modern-shell home-modern-contact-grid">' +
+        '<div><span>' + escapeHtml(contactStrip.addressLabel) + '</span><strong>' + escapeHtml(contactStrip.address) + '</strong></div><div><span>' + escapeHtml(contactStrip.phoneLabel) + '</span><a href="' + safeHref(contactStrip.phoneHref) + '">' + escapeHtml(contactStrip.phone) + '</a></div><div><span>' + escapeHtml(contactStrip.emailLabel) + '</span><a href="' + safeHref(contactStrip.emailHref) + '">' + escapeHtml(contactStrip.email) + '</a></div><a class="home-modern-contact-link" href="' + safeHref(contactStrip.button && contactStrip.button.href) + '">' + escapeHtml(contactStrip.button && contactStrip.button.label) + ' <span aria-hidden="true">&rarr;</span></a></div></section>';
+    }
+  }
+
   var galleryLatest = document.querySelector('[data-gallery-latest]');
   var galleryArchive = document.querySelector('[data-gallery-archive]');
   if ((galleryLatest || galleryArchive) && Array.isArray(content.gallery)) {
@@ -374,6 +400,9 @@
         '<i class="fa fa-' + item.icon + '" aria-hidden="true"></i></a>';
     }).join('');
     footer.innerHTML = '<p>' + content.footer.copyright + '</p><div class="bpc-shared-social">' + social + '</div>';
+  }
+  if (footer.parentElement !== document.body || footer !== document.body.lastElementChild) {
+    document.body.appendChild(footer);
   }
 
 })();

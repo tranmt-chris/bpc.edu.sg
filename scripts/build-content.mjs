@@ -15,7 +15,8 @@ const content = {
   pages: {
     "about.html": await readJson("pages/about.json"),
     "ba.html": await readJson("pages/ba.json"),
-    "dip.html": await readJson("pages/dip.json")
+    "dip.html": await readJson("pages/dip.json"),
+    "index.html": await readJson("pages/index.json")
   },
   gallery: await readJson("gallery.json")
 };
