@@ -583,6 +583,86 @@ window.BPC_CONTENT = {
           "href": "contact.html"
         }
       }
+    },
+    "ma.html": {
+      "heroNote": {
+        "label": "Course length",
+        "value": "One year",
+        "description": [
+          "Weekend classes",
+          "Mangala Vihara Buddhist Temple"
+        ]
+      },
+      "facts": [
+        {
+          "label": "Commencement",
+          "value": "January 2026"
+        },
+        {
+          "label": "Schedule",
+          "value": "Weekend classes"
+        },
+        {
+          "label": "Total fees",
+          "value": "S$2,000"
+        }
+      ],
+      "eligibility": {
+        "kicker": "Eligibility",
+        "title": "Advance your Buddhist studies",
+        "prefix": "Applicants should hold a",
+        "link": {
+          "label": "Bachelor of Arts in Buddhist Studies",
+          "href": "ba.html"
+        },
+        "suffix": "from the Buddhist and Pali University of Sri Lanka, or a recognised BA degree in Buddhist Studies approved by BPU and BPC."
+      },
+      "curriculum": {
+        "kicker": "Course content",
+        "title": "Areas of study",
+        "items": [
+          "Philosophical Trends in Buddhism",
+          "Buddhism and Management",
+          "Buddhist Psychotherapy",
+          "Buddhist Social Philosophy and the Modern World",
+          "Buddhist Art and Architecture",
+          "Independent Dissertation (5,000–7,000 words)"
+        ]
+      },
+      "assessment": {
+        "kicker": "Assessment",
+        "title": "Examinations",
+        "description": "Examinations are conducted at the College in December by the Buddhist and Pali University of Sri Lanka."
+      },
+      "admissions": {
+        "kicker": "Admissions",
+        "title": "Apply for the MA",
+        "poster": {
+          "image": "images/ma2026.jpg",
+          "href": "images/ma2026.jpg",
+          "alt": "MA in Buddhist Studies course poster"
+        },
+        "button": {
+          "label": "Contact Sandra on WhatsApp",
+          "href": "https://wa.me/6591297763"
+        },
+        "contactLabel": "Enquiries",
+        "contacts": [
+          {
+            "label": "Sandra Koh · 9129 7763",
+            "href": "tel:+6591297763"
+          },
+          {
+            "label": "Contact the College",
+            "href": "contact.html"
+          }
+        ],
+        "location": [
+          "Mangala Vihara Buddhist Temple",
+          "Weekend classes"
+        ],
+        "note": "Fees include registration, examinations and maintenance."
+      }
     }
   },
   "gallery": [

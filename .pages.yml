@@ -681,6 +681,86 @@ content:
               - { name: location, label: Location and schedule lines, type: string, list: true }
               - { name: note, label: Note, type: text, required: true }
 
+      - name: ma-structured-page
+        label: MA in Buddhist Studies page
+        type: file
+        path: public/content/pages/ma.json
+        format: json
+        fields:
+          - name: heroNote
+            label: Course duration panel
+            type: object
+            fields:
+              - { name: label, label: Label, type: string, required: true }
+              - { name: value, label: Course duration, type: string, required: true }
+              - { name: description, label: Supporting lines, type: string, list: true }
+          - name: facts
+            label: Quick course facts
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{label}" }
+            fields:
+              - { name: label, label: Label, type: string, required: true }
+              - { name: value, label: Value, type: string, required: true }
+          - name: eligibility
+            label: Eligibility
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - { name: prefix, label: Text before BA link, type: text, required: true }
+              - name: link
+                label: BA link
+                type: object
+                fields:
+                  - { name: label, label: Link text, type: string, required: true }
+                  - { name: href, label: Link, type: string, required: true }
+              - { name: suffix, label: Text after BA link, type: text, required: true }
+          - name: curriculum
+            label: Course content
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - { name: items, label: Areas of study, type: string, list: true }
+          - name: assessment
+            label: Assessment
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - { name: description, label: Description, type: text, required: true }
+          - name: admissions
+            label: Admissions panel
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - name: poster
+                label: Course poster
+                type: object
+                fields:
+                  - { name: image, label: Poster image, type: image, required: true, options: { media: images } }
+                  - { name: href, label: Poster link, type: string, required: true }
+                  - { name: alt, label: Image description, type: string, required: true }
+              - name: button
+                label: Main button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+              - { name: contactLabel, label: Contact heading, type: string, required: true }
+              - name: contacts
+                label: Contacts
+                type: object
+                list:
+                  collapsible: { collapsed: true, summary: "{label}" }
+                fields:
+                  - { name: label, label: Display text, type: string, required: true }
+                  - { name: href, label: Link, type: string, required: true }
+              - { name: location, label: Location and schedule lines, type: string, list: true }
+              - { name: note, label: Fees note, type: text, required: true }
+
       - name: courses-page
         label: General — All Courses
         type: file
@@ -710,11 +790,6 @@ content:
         label: Programmes — Diploma in Buddhism (Chinese)
         type: file
         path: public/dipc.html
-        format: code
-      - name: ma-page
-        label: Programmes — MA in Buddhist Studies
-        type: file
-        path: public/ma.html
         format: code
       - name: counselling-page
         label: Programmes — Buddhist Counselling (archive)

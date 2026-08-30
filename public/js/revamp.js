@@ -147,22 +147,31 @@
   var lines = function (values) {
     return (values || []).map(escapeHtml).join('<br>');
   };
+  var renderProgrammeHeroNote = function (selector, note) {
+    var panel = document.querySelector(selector);
+    if (panel && note) panel.innerHTML = '<span>' + escapeHtml(note.label) + '</span><strong>' + escapeHtml(note.value) + '</strong><p>' + lines(note.description) + '</p>';
+  };
+  var renderProgrammeFacts = function (selector, facts) {
+    var grid = document.querySelector(selector);
+    if (grid) grid.innerHTML = (facts || []).map(function (fact) { return '<div><span>' + escapeHtml(fact.label) + '</span><strong>' + escapeHtml(fact.value) + '</strong></div>'; }).join('');
+  };
+  var renderProgrammeAdmissions = function (selector, admissions) {
+    var panel = document.querySelector(selector);
+    if (!panel || !admissions) return;
+    var poster = admissions.poster || {};
+    var posterHtml = poster.image ? '<a class="programme-modern-poster" href="' + safeHref(poster.href || poster.image) + '" target="_blank"><img src="' + safeHref(poster.image) + '" alt="' + escapeHtml(poster.alt) + '" loading="lazy" decoding="async"></a>' : '';
+    var buttonHref = admissions.button && admissions.button.href;
+    var buttonTarget = /^https?:\/\//i.test(buttonHref || '') ? ' rel="noreferrer" target="_blank"' : '';
+    panel.innerHTML = '<p class="programme-modern-kicker">' + escapeHtml(admissions.kicker) + '</p><h2>' + escapeHtml(admissions.title) + '</h2>' + posterHtml +
+      '<a class="programme-modern-primary" href="' + safeHref(buttonHref) + '"' + buttonTarget + '>' + escapeHtml(admissions.button && admissions.button.label) + '</a>' +
+      '<div class="programme-modern-enquiry"><span>' + escapeHtml(admissions.contactLabel) + '</span>' + (admissions.contacts || []).map(function (contact) { return '<a href="' + safeHref(contact.href) + '">' + escapeHtml(contact.label) + '</a>'; }).join('') + '</div>' +
+      '<p class="programme-modern-location">' + lines(admissions.location) + '</p><p class="programme-modern-teacher">' + escapeHtml(admissions.note) + '</p>';
+  };
 
   var diploma = content.pages && content.pages['dip.html'];
   if (currentPage === 'dip.html' && diploma) {
-    var heroNote = document.querySelector('[data-dip-hero-note]');
-    if (heroNote && diploma.heroNote) {
-      heroNote.innerHTML = '<span>' + escapeHtml(diploma.heroNote.label) + '</span>' +
-        '<strong>' + escapeHtml(diploma.heroNote.value) + '</strong>' +
-        '<p>' + lines(diploma.heroNote.description) + '</p>';
-    }
-
-    var facts = document.querySelector('[data-dip-facts] .programme-modern-fact-grid');
-    if (facts && Array.isArray(diploma.facts)) {
-      facts.innerHTML = diploma.facts.map(function (fact) {
-        return '<div><span>' + escapeHtml(fact.label) + '</span><strong>' + escapeHtml(fact.value) + '</strong></div>';
-      }).join('');
-    }
+    renderProgrammeHeroNote('[data-dip-hero-note]', diploma.heroNote);
+    renderProgrammeFacts('[data-dip-facts] .programme-modern-fact-grid', diploma.facts);
 
     var diplomaContent = document.querySelector('[data-dip-content]');
     if (diplomaContent) {
@@ -248,10 +257,8 @@
 
   var ba = content.pages && content.pages['ba.html'];
   if (currentPage === 'ba.html' && ba) {
-    var baHeroNote = document.querySelector('[data-ba-hero-note]');
-    if (baHeroNote && ba.heroNote) baHeroNote.innerHTML = '<span>' + escapeHtml(ba.heroNote.label) + '</span><strong>' + escapeHtml(ba.heroNote.value) + '</strong><p>' + lines(ba.heroNote.description) + '</p>';
-    var baFacts = document.querySelector('[data-ba-facts] .programme-modern-fact-grid');
-    if (baFacts) baFacts.innerHTML = (ba.facts || []).map(function (fact) { return '<div><span>' + escapeHtml(fact.label) + '</span><strong>' + escapeHtml(fact.value) + '</strong></div>'; }).join('');
+    renderProgrammeHeroNote('[data-ba-hero-note]', ba.heroNote);
+    renderProgrammeFacts('[data-ba-facts] .programme-modern-fact-grid', ba.facts);
     var baContent = document.querySelector('[data-ba-content]');
     if (baContent) {
       var eligibility = ba.eligibility || {};
@@ -263,12 +270,23 @@
         (structure.years || []).map(function (year) { return '<article><span>' + escapeHtml(year.label) + '</span><h3>' + escapeHtml(year.title) + '</h3><p>' + escapeHtml(year.description) + '</p></article>'; }).join('') + '</div>' +
         '<div class="programme-modern-next"><p class="programme-modern-kicker">' + escapeHtml(progression.kicker) + '</p><h2>' + escapeHtml(progression.title) + '</h2><p>' + escapeHtml(progression.prefix) + ' <a href="' + safeHref(progression.link && progression.link.href) + '">' + escapeHtml(progression.link && progression.link.label) + '</a>.</p></div>';
     }
-    var admissions = ba.admissions || {};
-    var baAdmissions = document.querySelector('[data-ba-admissions]');
-    if (baAdmissions) baAdmissions.innerHTML = '<p class="programme-modern-kicker">' + escapeHtml(admissions.kicker) + '</p><h2>' + escapeHtml(admissions.title) + '</h2>' +
-      '<a class="programme-modern-primary" href="' + safeHref(admissions.button && admissions.button.href) + '">' + escapeHtml(admissions.button && admissions.button.label) + '</a>' +
-      '<div class="programme-modern-enquiry"><span>' + escapeHtml(admissions.contactLabel) + '</span>' + (admissions.contacts || []).map(function (contact) { return '<a href="' + safeHref(contact.href) + '">' + escapeHtml(contact.label) + '</a>'; }).join('') + '</div>' +
-      '<p class="programme-modern-location">' + lines(admissions.location) + '</p><p class="programme-modern-teacher">' + escapeHtml(admissions.note) + '</p>';
+    renderProgrammeAdmissions('[data-ba-admissions]', ba.admissions);
+  }
+
+  var ma = content.pages && content.pages['ma.html'];
+  if (currentPage === 'ma.html' && ma) {
+    renderProgrammeHeroNote('[data-ma-hero-note]', ma.heroNote);
+    renderProgrammeFacts('[data-ma-facts] .programme-modern-fact-grid', ma.facts);
+    var maContent = document.querySelector('[data-ma-content]');
+    if (maContent) {
+      var maEligibility = ma.eligibility || {};
+      var maCurriculum = ma.curriculum || {};
+      var assessment = ma.assessment || {};
+      maContent.innerHTML = '<p class="programme-modern-kicker">' + escapeHtml(maEligibility.kicker) + '</p><h2>' + escapeHtml(maEligibility.title) + '</h2><p>' + escapeHtml(maEligibility.prefix) + ' <a href="' + safeHref(maEligibility.link && maEligibility.link.href) + '">' + escapeHtml(maEligibility.link && maEligibility.link.label) + '</a> ' + escapeHtml(maEligibility.suffix) + '</p>' +
+        '<p class="programme-modern-kicker">' + escapeHtml(maCurriculum.kicker) + '</p><h2>' + escapeHtml(maCurriculum.title) + '</h2><ol class="programme-modern-curriculum">' + (maCurriculum.items || []).map(function (item) { return '<li>' + escapeHtml(item) + '</li>'; }).join('') + '</ol>' +
+        '<div class="programme-modern-next"><p class="programme-modern-kicker">' + escapeHtml(assessment.kicker) + '</p><h2>' + escapeHtml(assessment.title) + '</h2><p>' + escapeHtml(assessment.description) + '</p></div>';
+    }
+    renderProgrammeAdmissions('[data-ma-admissions]', ma.admissions);
   }
 
   var home = content.pages && content.pages['index.html'];
