@@ -518,8 +518,15 @@ content:
               - { name: phone, label: Displayed phone number, type: string, required: true }
               - { name: phoneHref, label: Phone link, type: string, required: true }
               - { name: emailLabel, label: Email heading, type: string, required: true }
-              - { name: email, label: Displayed email, type: string, required: true }
-              - { name: emailHref, label: Email link, type: string, required: true }
+              - name: emails
+                label: Email addresses
+                type: object
+                list:
+                  collapsible: { collapsed: false, summary: "{label}" }
+                description: Add up to two email addresses for the homepage contact strip.
+                fields:
+                  - { name: label, label: Displayed email, type: string, required: true }
+                  - { name: href, label: Email link, type: string, required: true, description: "Use mailto: followed by the email address." }
               - name: button
                 label: Contact button
                 type: object

@@ -67,8 +67,10 @@
     "phone": "+65 6744 4285",
     "phoneHref": "tel:+6567444285",
     "emailLabel": "Email",
-    "email": "enquiry@bpc.edu.sg alumni@bpc.edu.sg",
-    "emailHref": "mailto:enquiry@bpc.edu.sg",
+    "emails": [
+      { "label": "enquiry@bpc.edu.sg", "href": "mailto:enquiry@bpc.edu.sg" },
+      { "label": "alumni@bpc.edu.sg", "href": "mailto:alumni@bpc.edu.sg" }
+    ],
     "button": {
       "label": "Contact the College",
       "href": "contact.html"

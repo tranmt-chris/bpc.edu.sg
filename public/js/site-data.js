@@ -345,8 +345,8 @@ window.BPC_CONTENT = {
         "contactLabel": "Course administration",
         "contacts": [
           {
-            "label": "Sandra Koh · 9129 7763",
-            "href": "tel:+6591297763"
+            "label": "Contact Sandra Koh on Whatsapp",
+            "href": "https://wa.me/6591297763"
           }
         ],
         "location": [
@@ -486,23 +486,18 @@ window.BPC_CONTENT = {
             "label": "Option 2",
             "title": "Register directly for the course",
             "description": "View the application form and contact Sis Sandra to complete your registration.",
-            "dates": [],
             "button": {
               "label": "View application form",
               "href": "https://drive.google.com/file/d/1gL0ORYdOe-txBKi0eo1mKbBdI5od8Vi7/view"
-            },
-            "contact": {
-              "label": "Contact Sis Sandra on WhatsApp",
-              "href": "https://wa.me/6591297763"
             }
           }
         ],
         "enquiry": {
           "label": "Enquiries",
           "email": "enquiry@bpc.edu.sg",
-          "contactName": "Sandra Koh",
-          "phoneDisplay": "9129 7763",
-          "phone": "+6591297763"
+          "contactName": "Contact Sandra on WhatsApp",
+          "phoneDisplay": "91297763",
+          "phone": "https://wa.me/6591297763"
         },
         "note": "Full payment is required to complete course registration."
       }
@@ -576,8 +571,16 @@ window.BPC_CONTENT = {
         "phone": "+65 6744 4285",
         "phoneHref": "tel:+6567444285",
         "emailLabel": "Email",
-        "email": "enquiry@bpc.edu.sg",
-        "emailHref": "mailto:enquiry@bpc.edu.sg",
+        "emails": [
+          {
+            "label": "enquiry@bpc.edu.sg",
+            "href": "mailto:enquiry@bpc.edu.sg"
+          },
+          {
+            "label": "alumni@bpc.edu.sg",
+            "href": "mailto:alumni@bpc.edu.sg"
+          }
+        ],
         "button": {
           "label": "Contact the College",
           "href": "contact.html"
