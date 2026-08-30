@@ -14,7 +14,7 @@ then publish a clean package to cPanel.
 | Page-specific text | Relevant file in `public/` |
 | Shared visual styles | `public/css/revamp.css` |
 | Website images | `public/images/` |
-| Contact form processing | `public/html_form_send.php` |
+| Contact form service | FormSubmit (`https://formsubmit.co`) |
 
 Do not edit `public/js/site-data.js` directly. After changing a file in
 `public/content/`, regenerate it with:
