@@ -248,10 +248,9 @@ window.BPC_CONTENT = {
           },
           {
             "role": "Current principal",
-            "name": "Venerable P. Seelananda",
-            "qualification": "",
+            "name": "Venerable P. Seelananda Thero",
             "image": "images/principal-p-seelananda.webp",
-            "imageAlt": "Venerable P. Seelananda"
+            "imageAlt": "Venerable P. Seelananda Thero"
           }
         ]
       },
@@ -345,10 +344,6 @@ window.BPC_CONTENT = {
         },
         "contactLabel": "Course administration",
         "contacts": [
-          {
-            "label": "Maureen Aw · 8401 6866",
-            "href": "tel:+6584016866"
-          },
           {
             "label": "Sandra Koh · 9129 7763",
             "href": "tel:+6591297763"
