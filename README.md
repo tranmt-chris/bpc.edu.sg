@@ -26,7 +26,7 @@ npm run build:content
 ## Edit shared content with Pages CMS
 
 The repository includes `.pages.yml` for editing navigation, footer details,
-programme summaries, the full About, Diploma in Buddhism and BA in Buddhist Studies pages, gallery events, images and documents through
+programme summaries, structured Homepage, About, Diploma and BA forms, the remaining individual HTML pages, gallery events, images and documents through
 [Pages CMS](https://app.pagescms.org/).
 
 1. Sign in to Pages CMS with GitHub.

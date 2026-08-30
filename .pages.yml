@@ -681,6 +681,97 @@ content:
               - { name: location, label: Location and schedule lines, type: string, list: true }
               - { name: note, label: Note, type: text, required: true }
 
+      - name: courses-page
+        label: General — All Courses
+        type: file
+        path: public/courses.html
+        format: code
+      - name: contact-page
+        label: General — Contact
+        type: file
+        path: public/contact.html
+        format: code
+      - name: thank-you-page
+        label: General — Thank You
+        type: file
+        path: public/thank-you.html
+        format: code
+      - name: intro-page
+        label: Programmes — Introduction to Buddhism
+        type: file
+        path: public/intro.html
+        format: code
+      - name: intro-chinese-page
+        label: Programmes — Introduction to Buddhism (Chinese)
+        type: file
+        path: public/introc.html
+        format: code
+      - name: diploma-chinese-page
+        label: Programmes — Diploma in Buddhism (Chinese)
+        type: file
+        path: public/dipc.html
+        format: code
+      - name: ma-page
+        label: Programmes — MA in Buddhist Studies
+        type: file
+        path: public/ma.html
+        format: code
+      - name: counselling-page
+        label: Programmes — Buddhist Counselling (archive)
+        type: file
+        path: public/bc.html
+        format: code
+      - name: key-dates-page
+        label: Resources — Key Dates
+        type: file
+        path: public/key.html
+        format: code
+      - name: recommended-texts-page
+        label: Resources — Recommended Texts
+        type: file
+        path: public/books.html
+        format: code
+      - name: elibrary-page
+        label: Resources — eLibrary
+        type: file
+        path: public/elibrary.html
+        format: code
+      - name: people-overview-page
+        label: People — Overview
+        type: file
+        path: public/team.html
+        format: code
+      - name: academic-staff-page
+        label: People — Academic Staff
+        type: file
+        path: public/teamac.html
+        format: code
+      - name: administrative-staff-page
+        label: People — Administrative Staff
+        type: file
+        path: public/teamnac.html
+        format: code
+      - name: visiting-lecturers-page
+        label: People — Visiting Lecturers
+        type: file
+        path: public/teamvisit.html
+        format: code
+      - name: alumni-page
+        label: Community — Alumni
+        type: file
+        path: public/alumni.html
+        format: code
+      - name: gallery-page
+        label: Community — Gallery Page Layout
+        type: file
+        path: public/gallery.html
+        format: code
+      - name: visit-page
+        label: Archive — Visit Us
+        type: file
+        path: public/visit.html
+        format: code
+
   - name: gallery-events-group
     label: Gallery and events
     type: group
