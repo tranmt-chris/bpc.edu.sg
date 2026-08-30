@@ -24,8 +24,8 @@
     "kicker": "Leadership",
     "title": "Past and present",
     "people": [
-      { "role": "Founding principal", "name": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero", "qualification": "Ph.D. D.Litt.(Hon)", "image": "images/founding-principal-p-gnanarama.webp?v=20260813", "imageAlt": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero" },
-      { "role": "Current principal", "name": "Venerable P. Seelananda", "qualification": "", "image": "images/principal-p-seelananda.webp?v=20260813", "imageAlt": "Venerable P. Seelananda" }
+      { "role": "Founding principal", "name": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero", "qualification": "Ph.D. D.Litt.(Hon)", "image": "images/founding-principal-p-gnanarama.webp", "imageAlt": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero" },
+      { "role": "Current principal", "name": "Venerable P. Seelananda", "qualification": "", "image": "images/principal-p-seelananda.webp", "imageAlt": "Venerable P. Seelananda" }
     ]
   },
   "gallery": { "image": "images/about-convocation-group-2024.webp", "imageAlt": "Buddhist and Pali College community at the 2024 convocation" },

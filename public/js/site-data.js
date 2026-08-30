@@ -157,7 +157,7 @@ window.BPC_CONTENT = {
       },
       "secondary": {
         "label": "Enroll Now",
-        "href": "https://drive.google.com/file/d/1gL0ORYdOe-txBKi0eo1mKbBdI5od8Vi7/view"
+        "href": "https://drive.google.com/file/d/1Fr2H3LeF41tgxNAfD-9XAnamcubiORrv/view"
       }
     },
     "dipc.html": {
@@ -243,14 +243,14 @@ window.BPC_CONTENT = {
             "role": "Founding principal",
             "name": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero",
             "qualification": "Ph.D. D.Litt.(Hon)",
-            "image": "images/founding-principal-p-gnanarama.webp?v=20260813",
+            "image": "images/founding-principal-p-gnanarama.webp",
             "imageAlt": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero"
           },
           {
             "role": "Current principal",
             "name": "Venerable P. Seelananda",
             "qualification": "",
-            "image": "images/principal-p-seelananda.webp?v=20260813",
+            "image": "images/principal-p-seelananda.webp",
             "imageAlt": "Venerable P. Seelananda"
           }
         ]
