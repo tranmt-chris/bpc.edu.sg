@@ -27,6 +27,14 @@ jobs:
       - name: Download website source
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build shared website content
+        run: npm run build:content
+
       - name: Prepare website
         run: |
           touch public/.nojekyll

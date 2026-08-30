@@ -23,6 +23,21 @@ Do not edit `public/js/site-data.js` directly. After changing a file in
 npm run build:content
 ```
 
+## Edit shared content with Pages CMS
+
+The repository includes `.pages.yml` for editing navigation, footer details,
+programme summaries, gallery events, images and documents through
+[Pages CMS](https://app.pagescms.org/).
+
+1. Sign in to Pages CMS with GitHub.
+2. Install the Pages CMS GitHub App for this repository only.
+3. Open the repository and select the `main` branch.
+4. Edit an item and save it. Pages CMS commits the changed content file to GitHub.
+5. The GitHub Pages workflow regenerates `public/js/site-data.js` and publishes
+   the updated preview automatically.
+
+After a Pages CMS update, run `git pull` before making further local edits.
+
 ## Preview locally
 
 From the repository folder, run:

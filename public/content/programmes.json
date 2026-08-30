@@ -1,5 +1,6 @@
-{
-  "intro.html": {
+[
+  {
+    "page": "intro.html",
     "language": "en",
     "kicker": "August 2026 · 31st Intake",
     "title": "Introduction to Buddhism",
@@ -7,23 +8,26 @@
     "primary": { "label": "Register now", "href": "https://docs.google.com/forms/d/e/1FAIpQLSdzzhSjmJEKe894PkPo3__azAuwn5QtOna4yPA_-skWIgduEw/viewform" },
     "secondary": { "label": "Download poster", "href": "images/31st-ibc-poster.webp" }
   },
-  "introc.html": {
+  {
+    "page": "introc.html",
     "language": "zh-Hans",
     "kicker": "佛教基础课程",
     "title": "佛教简介课程",
-    "lead": "本课程适合对佛教知识知之甚少、完全不了解，或有兴趣进一步认识佛教的人士。",
+    "lead": "本课程适合有兴趣进一步认识佛教的人士。",
     "primary": { "label": "立即报名", "href": "https://forms.gle/vYBPNBxkcQ3WRQwe7" },
     "secondary": { "label": "电邮查询", "href": "mailto:chinesebuddhismbpca@gmail.com" }
   },
-  "dip.html": {
+  {
+    "page": "dip.html",
     "language": "en",
     "kicker": "2027 · 34th Intake",
     "title": "Diploma in Buddhism",
     "lead": "A one-year programme offering a structured foundation in Buddhist teachings, society, history, psychology, counselling and Pali studies.",
     "primary": { "label": "Register for course preview", "href": "https://docs.google.com/forms/d/e/1FAIpQLSeX5REr1E58533E5L4ZjDEeXmot4qMEln7CiCSPHQMDCIzY5A/viewform" },
-    "secondary": { "label": "Register directly", "href": "https://drive.google.com/file/d/1gL0ORYdOe-txBKi0eo1mKbBdI5od8Vi7/view" }
+    "secondary": { "label": "Enroll Now", "href": "https://drive.google.com/file/d/1gL0ORYdOe-txBKi0eo1mKbBdI5od8Vi7/view" }
   },
-  "dipc.html": {
+  {
+    "page": "dipc.html",
     "language": "zh-Hans",
     "kicker": "2027 – 第四期",
     "title": "中文佛学文凭",
@@ -31,7 +35,8 @@
     "primary": { "label": "报名课程", "href": "uploads/BPC-Registration-Diploma Chinese (2024).pdf" },
     "secondary": { "label": "电邮查询", "href": "mailto:diplomabuddhismchinese@gmail.com" }
   },
-  "ba.html": {
+  {
+    "page": "ba.html",
     "language": "en",
     "kicker": "Undergraduate degree",
     "title": "BA in Buddhist Studies",
@@ -39,7 +44,8 @@
     "primary": { "label": "Enquire now", "href": "https://wa.me/6591297763" },
     "secondary": { "label": "View Syllabus", "href": "uploads/BPC-BA-BuddhistStudies-Syllabi.pdf" }
   },
-  "ma.html": {
+  {
+    "page": "ma.html",
     "language": "en",
     "kicker": "Postgraduate degree",
     "title": "MA in Buddhist Studies",
@@ -47,4 +53,4 @@
     "primary": { "label": "Enquire now", "href": "https://wa.me/6591297763" },
     "secondary": { "label": "View Syllabus", "href": "uploads/MA2022-Syllabus.pdf" }
   }
-}
+]

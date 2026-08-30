@@ -1,0 +1,163 @@
+media:
+  - name: images
+    label: Website images
+    input: public/images
+    output: images
+    extensions: [jpg, jpeg, png, webp, gif]
+    rename: safe
+  - name: documents
+    label: Documents and PDFs
+    input: public/uploads
+    output: uploads
+    categories: [document]
+    rename: safe
+
+content:
+  - name: shared-content
+    label: Shared website content
+    type: group
+    items:
+      - name: site-settings
+        label: Navigation, footer and social links
+        type: file
+        path: public/content/site.json
+        format: json
+        fields:
+          - name: navigation
+            label: Navigation
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+            fields:
+              - name: label
+                label: Menu label
+                type: string
+                required: true
+              - name: href
+                label: Page link
+                type: string
+                description: Leave blank when this menu contains dropdown items.
+              - name: items
+                label: Dropdown items
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
+                fields:
+                  - name: label
+                    label: Item label
+                    type: string
+                    required: true
+                  - name: href
+                    label: Item link
+                    type: string
+                    required: true
+          - name: footer
+            label: Footer
+            type: object
+            fields:
+              - name: copyright
+                label: Copyright text
+                type: string
+                required: true
+              - name: social
+                label: Social links
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
+                fields:
+                  - name: label
+                    label: Platform
+                    type: string
+                    required: true
+                  - name: href
+                    label: Link
+                    type: string
+                    required: true
+                  - name: icon
+                    label: Font Awesome icon name
+                    type: string
+                    required: true
+
+      - name: programmes
+        label: Programme page summaries
+        type: file
+        path: public/content/programmes.json
+        format: json
+        list: true
+        fields:
+          - name: page
+            label: Page filename
+            type: string
+            required: true
+          - name: language
+            label: Page language
+            type: string
+            required: true
+          - name: kicker
+            label: Short heading
+            type: string
+            required: true
+          - name: title
+            label: Programme title
+            type: string
+            required: true
+          - name: lead
+            label: Introduction
+            type: text
+            required: true
+          - name: primary
+            label: Primary button
+            type: object
+            fields:
+              - name: label
+                label: Button text
+                type: string
+                required: true
+              - name: href
+                label: Button link
+                type: string
+                required: true
+          - name: secondary
+            label: Secondary button
+            type: object
+            fields:
+              - name: label
+                label: Button text
+                type: string
+                required: true
+              - name: href
+                label: Button link
+                type: string
+                required: true
+
+      - name: gallery
+        label: Gallery events
+        type: file
+        path: public/content/gallery.json
+        format: json
+        list: true
+        fields:
+          - name: title
+            label: Event title
+            type: string
+            required: true
+          - name: date
+            label: Event date
+            type: string
+            description: Use a readable date such as 5 April 2026. Leave blank for archive entries without a date.
+          - name: image
+            label: Thumbnail
+            type: image
+            required: true
+            options:
+              media: images
+          - name: href
+            label: Album or event link
+            type: string
+            required: true

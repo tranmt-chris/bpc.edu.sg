@@ -4,38 +4,38 @@
     {
       "label": "About",
       "items": [
-        ["About the College", "about.html"],
-        ["Our People", "team.html"],
-        ["Academic Staff", "teamac.html"],
-        ["Administrative Staff", "teamnac.html"],
-        ["Visiting Lecturers", "teamvisit.html"]
+        { "label": "About the College", "href": "about.html" },
+        { "label": "Our People", "href": "team.html" },
+        { "label": "Academic Staff", "href": "teamac.html" },
+        { "label": "Administrative Staff", "href": "teamnac.html" },
+        { "label": "Visiting Lecturers", "href": "teamvisit.html" }
       ]
     },
     {
       "label": "Programmes",
       "items": [
-        ["All Courses", "courses.html"],
-        ["Introduction to Buddhism", "intro.html"],
-        ["Introduction to Buddhism — Chinese", "introc.html"],
-        ["Diploma in Buddhism", "dip.html"],
-        ["Diploma in Buddhism — Chinese", "dipc.html"],
-        ["BA in Buddhist Studies", "ba.html"],
-        ["MA in Buddhist Studies", "ma.html"]
+        { "label": "All Courses", "href": "courses.html" },
+        { "label": "Introduction to Buddhism", "href": "intro.html" },
+        { "label": "Introduction to Buddhism — Chinese", "href": "introc.html" },
+        { "label": "Diploma in Buddhism", "href": "dip.html" },
+        { "label": "Diploma in Buddhism — Chinese", "href": "dipc.html" },
+        { "label": "BA in Buddhist Studies", "href": "ba.html" },
+        { "label": "MA in Buddhist Studies", "href": "ma.html" }
       ]
     },
     {
       "label": "Resources",
       "items": [
-        ["Key Dates", "key.html"],
-        ["Recommended Texts", "books.html"],
-        ["eLibrary", "elibrary.html"]
+        { "label": "Key Dates", "href": "key.html" },
+        { "label": "Recommended Texts", "href": "books.html" },
+        { "label": "eLibrary", "href": "elibrary.html" }
       ]
     },
     {
       "label": "Community",
       "items": [
-        ["Alumni", "alumni.html"],
-        ["Gallery", "gallery.html"]
+        { "label": "Alumni", "href": "alumni.html" },
+        { "label": "Gallery", "href": "gallery.html" }
       ]
     },
     { "label": "Contact", "href": "contact.html" }

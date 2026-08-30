@@ -4,9 +4,14 @@ import { resolve } from "node:path";
 const root = resolve(import.meta.dirname, "..");
 const readJson = async (name) => JSON.parse(await readFile(resolve(root, "public/content", name), "utf8"));
 
+const programmeEntries = await readJson("programmes.json");
+const programmes = Array.isArray(programmeEntries)
+  ? Object.fromEntries(programmeEntries.map(({ page, ...programme }) => [page, programme]))
+  : programmeEntries;
+
 const content = {
   ...(await readJson("site.json")),
-  programmes: await readJson("programmes.json"),
+  programmes,
   gallery: await readJson("gallery.json")
 };
 

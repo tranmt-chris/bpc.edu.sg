@@ -15,10 +15,13 @@
       var active = currentPage === group.href.toLowerCase() ? ' active' : '';
       return '<li class="revamp-nav-item"><a class="revamp-nav-link' + active + '" href="' + group.href + '">' + group.label + '</a></li>';
     }
-    var groupActive = group.items.some(function (item) { return currentPage === item[1].split('#')[0].toLowerCase(); });
+    var itemLabel = function (item) { return Array.isArray(item) ? item[0] : item.label; };
+    var itemHref = function (item) { return Array.isArray(item) ? item[1] : item.href; };
+    var groupActive = group.items.some(function (item) { return currentPage === itemHref(item).split('#')[0].toLowerCase(); });
     var children = group.items.map(function (item) {
-      var active = currentPage === item[1].split('#')[0].toLowerCase() ? ' class="active"' : '';
-      return '<li><a' + active + ' href="' + item[1] + '">' + item[0] + '</a></li>';
+      var href = itemHref(item);
+      var active = currentPage === href.split('#')[0].toLowerCase() ? ' class="active"' : '';
+      return '<li><a' + active + ' href="' + href + '">' + itemLabel(item) + '</a></li>';
     }).join('');
     var dropdownId = 'revamp-nav-dropdown-' + index;
     return '<li class="revamp-nav-group' + (groupActive ? ' current' : '') + '">' +
