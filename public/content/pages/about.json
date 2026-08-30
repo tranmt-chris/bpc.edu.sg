@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "kicker": "About the College",
+    "title": "Our mission is to provide Buddhist education in Singapore",
+    "lead": "In the world of darkness, BPC illuminates the Dhamma for the past 33 years",
+    "image": "images/about-convocation-2024.webp",
+    "imageAlt": "Buddhist and Pali College graduates and monastics at the 2024 convocation"
+  },
+  "story": {
+    "kicker": "Our story",
+    "title": "Founded in Singapore in 1993",
+    "paragraphs": [
+      "The Buddhist and Pali College of Singapore was founded in Singapore in 1993 by the late Venerable M. M. Mahaweera Maha Nayaka Thero. It is affiliated to the Budddhist and Pali University of Sri Lanka which was founded in 1982, to provide Buddhist education programmes for monks, nuns and laity.",
+      "Its degrees are internationally recognized and it is also a member of the Association of Commonwealth Universities.",
+      "Our founding principal was the late Venerable Dr. P. Gnanarama Nayaka Maha Thero (Ph.D. D.Litt.(Hon)). Current principal is Venerable P. Seelananda."
+    ]
+  },
+  "facts": [
+    { "value": "1993", "label": "Founded in Singapore" },
+    { "value": "Internationally recognized", "label": "Degrees through the Buddhist and Pali University of Sri Lanka" },
+    { "value": "Commonwealth connection", "label": "Member of the Association of Commonwealth Universities" }
+  ],
+  "leadership": {
+    "kicker": "Leadership",
+    "title": "Past and present",
+    "people": [
+      { "role": "Founding principal", "name": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero", "qualification": "Ph.D. D.Litt.(Hon)", "image": "images/founding-principal-p-gnanarama.webp?v=20260813", "imageAlt": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero" },
+      { "role": "Current principal", "name": "Venerable P. Seelananda", "qualification": "", "image": "images/principal-p-seelananda.webp?v=20260813", "imageAlt": "Venerable P. Seelananda" }
+    ]
+  },
+  "gallery": { "image": "images/about-convocation-group-2024.webp", "imageAlt": "Buddhist and Pali College community at the 2024 convocation" },
+  "cta": { "kicker": "Continue your journey", "title": "Explore Buddhist education at BPC", "button": { "label": "Explore Courses", "href": "courses.html" } }
+}

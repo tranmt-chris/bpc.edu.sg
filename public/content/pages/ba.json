@@ -1,0 +1,34 @@
+{
+  "heroNote": { "label": "Course length", "value": "Three years", "description": ["Classes commence each January", "Examinations in December"] },
+  "facts": [
+    { "label": "Commencement", "value": "January each year" },
+    { "label": "Schedule", "value": "Tuesday, Thursday and Sunday" },
+    { "label": "Venue", "value": "Mangala Vihara Buddhist Temple" }
+  ],
+  "eligibility": {
+    "kicker": "Eligibility", "title": "Continue from the Diploma",
+    "prefix": "Applicants should have completed the", "link": { "label": "Diploma in Buddhism", "href": "dip.html" },
+    "suffix": "or another examination approved by the Buddhist and Pali University of Sri Lanka.",
+    "requirements": ["Above 18 years of age.", "Three years of progressive study.", "University examinations are held in December."]
+  },
+  "structure": {
+    "kicker": "Programme structure", "title": "Three stages of study",
+    "years": [
+      { "label": "Year 1", "title": "General Arts Qualifying", "description": "Indian thought and culture, the emergence of Buddhism, basic Buddhist teachings, Pali grammar and prescribed texts." },
+      { "label": "Year 2", "title": "BA Part I", "description": "Early and Mahayana Buddhist philosophy, South Asian culture, social institutions, Pali texts and commentarial literature." },
+      { "label": "Year 3", "title": "BA Part II", "description": "Buddhist social concepts, contemporary thought, East Asian culture, Buddhist art, canonical literature and analytical Pali study." }
+    ]
+  },
+  "progression": { "kicker": "Academic progression", "title": "Your next step", "prefix": "Successful candidates may proceed to the one-year", "link": { "label": "Master of Arts in Buddhist Studies", "href": "ma.html" } },
+  "admissions": {
+    "kicker": "Admissions", "title": "Plan your BA studies",
+    "button": { "label": "Contact the College", "href": "contact.html" },
+    "contactLabel": "Course administration",
+    "contacts": [
+      { "label": "Maureen Aw · 8401 6866", "href": "tel:+6584016866" },
+      { "label": "Sandra Koh · 9129 7763", "href": "tel:+6591297763" }
+    ],
+    "location": ["Mangala Vihara Buddhist Temple", "3rd Floor", "Sundays 2:00pm–5:15pm", "Tuesdays and Thursdays 7:30pm–9:30pm"],
+    "note": "Registration follows completion of the Diploma in Buddhism."
+  }
+}

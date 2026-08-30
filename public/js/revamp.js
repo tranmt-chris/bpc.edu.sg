@@ -131,25 +131,25 @@
     }
   }
 
+  var escapeHtml = function (value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  };
+  var safeHref = function (value) {
+    var href = String(value == null ? '' : value).trim();
+    if (/^[a-z][a-z0-9+.-]*:/i.test(href) && !/^(https?|mailto|tel):/i.test(href)) return '#';
+    return escapeHtml(href || '#');
+  };
+  var lines = function (values) {
+    return (values || []).map(escapeHtml).join('<br>');
+  };
+
   var diploma = content.pages && content.pages['dip.html'];
   if (currentPage === 'dip.html' && diploma) {
-    var escapeHtml = function (value) {
-      return String(value == null ? '' : value)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    };
-    var safeHref = function (value) {
-      var href = String(value == null ? '' : value).trim();
-      if (/^[a-z][a-z0-9+.-]*:/i.test(href) && !/^(https?|mailto|tel):/i.test(href)) return '#';
-      return escapeHtml(href || '#');
-    };
-    var lines = function (values) {
-      return (values || []).map(escapeHtml).join('<br>');
-    };
-
     var heroNote = document.querySelector('[data-dip-hero-note]');
     if (heroNote && diploma.heroNote) {
       heroNote.innerHTML = '<span>' + escapeHtml(diploma.heroNote.label) + '</span>' +
@@ -219,6 +219,56 @@
         '<a href="tel:' + escapeHtml(enquiry.phone) + '">' + escapeHtml(enquiry.contactName) + ' · ' + escapeHtml(enquiry.phoneDisplay) + '</a></div>' +
         '<p class="programme-modern-teacher">' + escapeHtml(registration.note) + '</p>';
     }
+  }
+
+  var about = content.pages && content.pages['about.html'];
+  var aboutPage = document.querySelector('[data-about-page]');
+  if (currentPage === 'about.html' && about && aboutPage) {
+    var aboutHero = about.hero || {};
+    var story = about.story || {};
+    var leadership = about.leadership || {};
+    var aboutGallery = about.gallery || {};
+    var aboutCta = about.cta || {};
+    aboutPage.innerHTML =
+      '<section class="about-modern-hero"><div class="about-modern-shell about-modern-hero-grid">' +
+        '<div class="about-modern-intro"><p class="about-modern-kicker">' + escapeHtml(aboutHero.kicker) + '</p><h1>' + escapeHtml(aboutHero.title) + '</h1><p class="about-modern-lead">' + escapeHtml(aboutHero.lead) + '</p></div>' +
+        '<figure class="about-modern-feature"><img src="' + safeHref(aboutHero.image) + '" alt="' + escapeHtml(aboutHero.imageAlt) + '" fetchpriority="high"></figure>' +
+      '</div></section>' +
+      '<section class="about-modern-story"><div class="about-modern-shell about-modern-story-grid"><div><p class="about-modern-kicker">' + escapeHtml(story.kicker) + '</p><h2>' + escapeHtml(story.title) + '</h2></div>' +
+        '<div class="about-modern-copy">' + (story.paragraphs || []).map(function (paragraph) { return '<p>' + escapeHtml(paragraph) + '</p>'; }).join('') + '</div></div></section>' +
+      '<section class="about-modern-facts" aria-label="College facts"><div class="about-modern-shell about-modern-fact-grid">' +
+        (about.facts || []).map(function (fact) { return '<article><strong>' + escapeHtml(fact.value) + '</strong><span>' + escapeHtml(fact.label) + '</span></article>'; }).join('') +
+      '</div></section>' +
+      '<section class="about-modern-leadership"><div class="about-modern-shell"><p class="about-modern-kicker">' + escapeHtml(leadership.kicker) + '</p><h2>' + escapeHtml(leadership.title) + '</h2><div class="about-modern-leader-grid">' +
+        (leadership.people || []).map(function (person) { return '<article><img src="' + safeHref(person.image) + '" alt="' + escapeHtml(person.imageAlt || person.name) + '" loading="lazy" decoding="async"><div><span>' + escapeHtml(person.role) + '</span><h3>' + escapeHtml(person.name) + '</h3>' + (person.qualification ? '<p>' + escapeHtml(person.qualification) + '</p>' : '') + '</div></article>'; }).join('') +
+      '</div></div></section>' +
+      '<section class="about-modern-gallery" aria-label="College gallery"><div class="about-modern-shell about-modern-gallery-grid"><img src="' + safeHref(aboutGallery.image) + '" alt="' + escapeHtml(aboutGallery.imageAlt) + '" loading="lazy" decoding="async"></div></section>' +
+      '<section class="about-modern-cta"><div class="about-modern-shell"><div><p class="about-modern-kicker">' + escapeHtml(aboutCta.kicker) + '</p><h2>' + escapeHtml(aboutCta.title) + '</h2></div><a href="' + safeHref(aboutCta.button && aboutCta.button.href) + '">' + escapeHtml(aboutCta.button && aboutCta.button.label) + '</a></div></section>';
+  }
+
+  var ba = content.pages && content.pages['ba.html'];
+  if (currentPage === 'ba.html' && ba) {
+    var baHeroNote = document.querySelector('[data-ba-hero-note]');
+    if (baHeroNote && ba.heroNote) baHeroNote.innerHTML = '<span>' + escapeHtml(ba.heroNote.label) + '</span><strong>' + escapeHtml(ba.heroNote.value) + '</strong><p>' + lines(ba.heroNote.description) + '</p>';
+    var baFacts = document.querySelector('[data-ba-facts] .programme-modern-fact-grid');
+    if (baFacts) baFacts.innerHTML = (ba.facts || []).map(function (fact) { return '<div><span>' + escapeHtml(fact.label) + '</span><strong>' + escapeHtml(fact.value) + '</strong></div>'; }).join('');
+    var baContent = document.querySelector('[data-ba-content]');
+    if (baContent) {
+      var eligibility = ba.eligibility || {};
+      var structure = ba.structure || {};
+      var progression = ba.progression || {};
+      baContent.innerHTML = '<p class="programme-modern-kicker">' + escapeHtml(eligibility.kicker) + '</p><h2>' + escapeHtml(eligibility.title) + '</h2><p>' + escapeHtml(eligibility.prefix) + ' <a href="' + safeHref(eligibility.link && eligibility.link.href) + '">' + escapeHtml(eligibility.link && eligibility.link.label) + '</a> ' + escapeHtml(eligibility.suffix) + '</p>' +
+        '<div class="programme-modern-questions programme-modern-requirements">' + (eligibility.requirements || []).map(function (item) { return '<p>' + escapeHtml(item) + '</p>'; }).join('') + '</div>' +
+        '<p class="programme-modern-kicker">' + escapeHtml(structure.kicker) + '</p><h2>' + escapeHtml(structure.title) + '</h2><div class="programme-modern-year-grid">' +
+        (structure.years || []).map(function (year) { return '<article><span>' + escapeHtml(year.label) + '</span><h3>' + escapeHtml(year.title) + '</h3><p>' + escapeHtml(year.description) + '</p></article>'; }).join('') + '</div>' +
+        '<div class="programme-modern-next"><p class="programme-modern-kicker">' + escapeHtml(progression.kicker) + '</p><h2>' + escapeHtml(progression.title) + '</h2><p>' + escapeHtml(progression.prefix) + ' <a href="' + safeHref(progression.link && progression.link.href) + '">' + escapeHtml(progression.link && progression.link.label) + '</a>.</p></div>';
+    }
+    var admissions = ba.admissions || {};
+    var baAdmissions = document.querySelector('[data-ba-admissions]');
+    if (baAdmissions) baAdmissions.innerHTML = '<p class="programme-modern-kicker">' + escapeHtml(admissions.kicker) + '</p><h2>' + escapeHtml(admissions.title) + '</h2>' +
+      '<a class="programme-modern-primary" href="' + safeHref(admissions.button && admissions.button.href) + '">' + escapeHtml(admissions.button && admissions.button.label) + '</a>' +
+      '<div class="programme-modern-enquiry"><span>' + escapeHtml(admissions.contactLabel) + '</span>' + (admissions.contacts || []).map(function (contact) { return '<a href="' + safeHref(contact.href) + '">' + escapeHtml(contact.label) + '</a>'; }).join('') + '</div>' +
+      '<p class="programme-modern-location">' + lines(admissions.location) + '</p><p class="programme-modern-teacher">' + escapeHtml(admissions.note) + '</p>';
   }
 
   var galleryLatest = document.querySelector('[data-gallery-latest]');

@@ -425,6 +425,160 @@ content:
                 type: text
                 required: true
 
+      - name: about-page
+        label: About the College page
+        type: file
+        path: public/content/pages/about.json
+        format: json
+        fields:
+          - name: hero
+            label: Introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: lead, label: Supporting text, type: text, required: true }
+              - { name: image, label: Main image, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+          - name: story
+            label: Our story
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - { name: paragraphs, label: Paragraphs, type: text, list: true }
+          - name: facts
+            label: College facts
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{value}" }
+            fields:
+              - { name: value, label: Main text, type: string, required: true }
+              - { name: label, label: Supporting text, type: string, required: true }
+          - name: leadership
+            label: Leadership
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - name: people
+                label: Principals
+                type: object
+                list:
+                  collapsible: { collapsed: true, summary: "{role}: {name}" }
+                fields:
+                  - { name: role, label: Role, type: string, required: true }
+                  - { name: name, label: Name, type: string, required: true }
+                  - { name: qualification, label: Qualifications, type: string }
+                  - { name: image, label: Portrait, type: image, required: true, options: { media: images } }
+                  - { name: imageAlt, label: Image description, type: string, required: true }
+          - name: gallery
+            label: Closing photograph
+            type: object
+            fields:
+              - { name: image, label: Photograph, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+          - name: cta
+            label: Closing call to action
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - name: button
+                label: Button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+
+      - name: ba-page
+        label: BA in Buddhist Studies page
+        type: file
+        path: public/content/pages/ba.json
+        format: json
+        fields:
+          - name: heroNote
+            label: Course duration panel
+            type: object
+            fields:
+              - { name: label, label: Label, type: string, required: true }
+              - { name: value, label: Course duration, type: string, required: true }
+              - { name: description, label: Supporting lines, type: string, list: true }
+          - name: facts
+            label: Quick course facts
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{label}" }
+            fields:
+              - { name: label, label: Label, type: string, required: true }
+              - { name: value, label: Value, type: string, required: true }
+          - name: eligibility
+            label: Eligibility
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - { name: prefix, label: Text before link, type: text, required: true }
+              - name: link
+                label: Diploma link
+                type: object
+                fields:
+                  - { name: label, label: Link text, type: string, required: true }
+                  - { name: href, label: Link, type: string, required: true }
+              - { name: suffix, label: Text after link, type: text, required: true }
+              - { name: requirements, label: Requirements, type: string, list: true }
+          - name: structure
+            label: Programme structure
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - name: years
+                label: Years of study
+                type: object
+                list:
+                  collapsible: { collapsed: true, summary: "{label}: {title}" }
+                fields:
+                  - { name: label, label: Year label, type: string, required: true }
+                  - { name: title, label: Year title, type: string, required: true }
+                  - { name: description, label: Description, type: text, required: true }
+          - name: progression
+            label: Academic progression
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - { name: prefix, label: Text before link, type: text, required: true }
+              - name: link
+                label: MA link
+                type: object
+                fields:
+                  - { name: label, label: Link text, type: string, required: true }
+                  - { name: href, label: Link, type: string, required: true }
+          - name: admissions
+            label: Admissions panel
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - name: button
+                label: Main button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+              - { name: contactLabel, label: Contact heading, type: string, required: true }
+              - name: contacts
+                label: Contacts
+                type: object
+                list:
+                  collapsible: { collapsed: true, summary: "{label}" }
+                fields:
+                  - { name: label, label: Display text, type: string, required: true }
+                  - { name: href, label: Link, type: string, required: true }
+              - { name: location, label: Location and schedule lines, type: string, list: true }
+              - { name: note, label: Note, type: text, required: true }
+
       - name: gallery
         label: Gallery events
         type: file

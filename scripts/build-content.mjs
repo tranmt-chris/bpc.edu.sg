@@ -13,6 +13,8 @@ const content = {
   ...(await readJson("site.json")),
   programmes,
   pages: {
+    "about.html": await readJson("pages/about.json"),
+    "ba.html": await readJson("pages/ba.json"),
     "dip.html": await readJson("pages/dip.json")
   },
   gallery: await readJson("gallery.json")

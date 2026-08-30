@@ -204,6 +204,165 @@ window.BPC_CONTENT = {
     }
   },
   "pages": {
+    "about.html": {
+      "hero": {
+        "kicker": "About the College",
+        "title": "Our mission is to provide Buddhist education in Singapore",
+        "lead": "In the world of darkness, BPC illuminates the Dhamma for the past 33 years",
+        "image": "images/about-convocation-2024.webp",
+        "imageAlt": "Buddhist and Pali College graduates and monastics at the 2024 convocation"
+      },
+      "story": {
+        "kicker": "Our story",
+        "title": "Founded in Singapore in 1993",
+        "paragraphs": [
+          "The Buddhist and Pali College of Singapore was founded in Singapore in 1993 by the late Venerable M. M. Mahaweera Maha Nayaka Thero. It is affiliated to the Budddhist and Pali University of Sri Lanka which was founded in 1982, to provide Buddhist education programmes for monks, nuns and laity.",
+          "Its degrees are internationally recognized and it is also a member of the Association of Commonwealth Universities.",
+          "Our founding principal was the late Venerable Dr. P. Gnanarama Nayaka Maha Thero (Ph.D. D.Litt.(Hon)). Current principal is Venerable P. Seelananda."
+        ]
+      },
+      "facts": [
+        {
+          "value": "1993",
+          "label": "Founded in Singapore"
+        },
+        {
+          "value": "Internationally recognized",
+          "label": "Degrees through the Buddhist and Pali University of Sri Lanka"
+        },
+        {
+          "value": "Commonwealth connection",
+          "label": "Member of the Association of Commonwealth Universities"
+        }
+      ],
+      "leadership": {
+        "kicker": "Leadership",
+        "title": "Past and present",
+        "people": [
+          {
+            "role": "Founding principal",
+            "name": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero",
+            "qualification": "Ph.D. D.Litt.(Hon)",
+            "image": "images/founding-principal-p-gnanarama.webp?v=20260813",
+            "imageAlt": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero"
+          },
+          {
+            "role": "Current principal",
+            "name": "Venerable P. Seelananda",
+            "qualification": "",
+            "image": "images/principal-p-seelananda.webp?v=20260813",
+            "imageAlt": "Venerable P. Seelananda"
+          }
+        ]
+      },
+      "gallery": {
+        "image": "images/about-convocation-group-2024.webp",
+        "imageAlt": "Buddhist and Pali College community at the 2024 convocation"
+      },
+      "cta": {
+        "kicker": "Continue your journey",
+        "title": "Explore Buddhist education at BPC",
+        "button": {
+          "label": "Explore Courses",
+          "href": "courses.html"
+        }
+      }
+    },
+    "ba.html": {
+      "heroNote": {
+        "label": "Course length",
+        "value": "Three years",
+        "description": [
+          "Classes commence each January",
+          "Examinations in December"
+        ]
+      },
+      "facts": [
+        {
+          "label": "Commencement",
+          "value": "January each year"
+        },
+        {
+          "label": "Schedule",
+          "value": "Tuesday, Thursday and Sunday"
+        },
+        {
+          "label": "Venue",
+          "value": "Mangala Vihara Buddhist Temple"
+        }
+      ],
+      "eligibility": {
+        "kicker": "Eligibility",
+        "title": "Continue from the Diploma",
+        "prefix": "Applicants should have completed the",
+        "link": {
+          "label": "Diploma in Buddhism",
+          "href": "dip.html"
+        },
+        "suffix": "or another examination approved by the Buddhist and Pali University of Sri Lanka.",
+        "requirements": [
+          "Above 18 years of age.",
+          "Three years of progressive study.",
+          "University examinations are held in December."
+        ]
+      },
+      "structure": {
+        "kicker": "Programme structure",
+        "title": "Three stages of study",
+        "years": [
+          {
+            "label": "Year 1",
+            "title": "General Arts Qualifying",
+            "description": "Indian thought and culture, the emergence of Buddhism, basic Buddhist teachings, Pali grammar and prescribed texts."
+          },
+          {
+            "label": "Year 2",
+            "title": "BA Part I",
+            "description": "Early and Mahayana Buddhist philosophy, South Asian culture, social institutions, Pali texts and commentarial literature."
+          },
+          {
+            "label": "Year 3",
+            "title": "BA Part II",
+            "description": "Buddhist social concepts, contemporary thought, East Asian culture, Buddhist art, canonical literature and analytical Pali study."
+          }
+        ]
+      },
+      "progression": {
+        "kicker": "Academic progression",
+        "title": "Your next step",
+        "prefix": "Successful candidates may proceed to the one-year",
+        "link": {
+          "label": "Master of Arts in Buddhist Studies",
+          "href": "ma.html"
+        }
+      },
+      "admissions": {
+        "kicker": "Admissions",
+        "title": "Plan your BA studies",
+        "button": {
+          "label": "Contact the College",
+          "href": "contact.html"
+        },
+        "contactLabel": "Course administration",
+        "contacts": [
+          {
+            "label": "Maureen Aw · 8401 6866",
+            "href": "tel:+6584016866"
+          },
+          {
+            "label": "Sandra Koh · 9129 7763",
+            "href": "tel:+6591297763"
+          }
+        ],
+        "location": [
+          "Mangala Vihara Buddhist Temple",
+          "3rd Floor",
+          "Sundays 2:00pm–5:15pm",
+          "Tuesdays and Thursdays 7:30pm–9:30pm"
+        ],
+        "note": "Registration follows completion of the Diploma in Buddhism."
+      }
+    },
     "dip.html": {
       "heroNote": {
         "label": "Course duration",
