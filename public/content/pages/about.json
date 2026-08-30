@@ -16,18 +16,48 @@
     ]
   },
   "facts": [
-    { "value": "1993", "label": "Founded in Singapore" },
-    { "value": "Internationally recognized", "label": "Degrees through the Buddhist and Pali University of Sri Lanka" },
-    { "value": "Commonwealth connection", "label": "Member of the Association of Commonwealth Universities" }
+    {
+      "value": "1993",
+      "label": "Founded in Singapore"
+    },
+    {
+      "value": "Internationally recognized",
+      "label": "Degrees through the Buddhist and Pali University of Sri Lanka"
+    },
+    {
+      "value": "Commonwealth connection",
+      "label": "Member of the Association of Commonwealth Universities"
+    }
   ],
   "leadership": {
     "kicker": "Leadership",
     "title": "Past and present",
     "people": [
-      { "role": "Founding principal", "name": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero", "qualification": "Ph.D. D.Litt.(Hon)", "image": "images/founding-principal-p-gnanarama.webp", "imageAlt": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero" },
-      { "role": "Current principal", "name": "Venerable P. Seelananda", "qualification": "", "image": "images/principal-p-seelananda.webp", "imageAlt": "Venerable P. Seelananda" }
+      {
+        "role": "Founding principal",
+        "name": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero",
+        "qualification": "Ph.D. D.Litt.(Hon)",
+        "image": "images/founding-principal-p-gnanarama.webp",
+        "imageAlt": "Late Venerable Dr. P. Gnanarama Nayaka Maha Thero"
+      },
+      {
+        "role": "Current principal",
+        "name": "Venerable P. Seelananda Thero",
+        "image": "images/principal-p-seelananda.webp",
+        "imageAlt": "Venerable P. Seelananda"
+      }
     ]
   },
-  "gallery": { "image": "images/about-convocation-group-2024.webp", "imageAlt": "Buddhist and Pali College community at the 2024 convocation" },
-  "cta": { "kicker": "Continue your journey", "title": "Explore Buddhist education at BPC", "button": { "label": "Explore Courses", "href": "courses.html" } }
+  "gallery": {
+    "image": "images/about-convocation-group-2024.webp",
+    "imageAlt": "Buddhist and Pali College community at the 2024 convocation"
+  },
+  "cta": {
+    "kicker": "Continue your journey",
+    "title": "Explore Buddhist education at BPC",
+    "button": {
+      "label": "Explore Courses",
+      "href": "courses.html"
+    }
+  }
 }
