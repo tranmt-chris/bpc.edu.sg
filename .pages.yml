@@ -13,8 +13,8 @@ media:
     rename: safe
 
 content:
-  - name: shared-content
-    label: Shared website content
+  - name: site-settings-group
+    label: Site settings
     type: group
     items:
       - name: site-settings
@@ -84,6 +84,10 @@ content:
                     type: string
                     required: true
 
+  - name: programme-headers-group
+    label: Programme headers
+    type: group
+    items:
       - name: programmes
         label: Programme page summaries
         type: file
@@ -136,6 +140,10 @@ content:
                 type: string
                 required: true
 
+  - name: website-pages-group
+    label: Website pages
+    type: group
+    items:
       - name: diploma-page
         label: Diploma in Buddhism page
         type: file
@@ -673,6 +681,10 @@ content:
               - { name: location, label: Location and schedule lines, type: string, list: true }
               - { name: note, label: Note, type: text, required: true }
 
+  - name: gallery-events-group
+    label: Gallery and events
+    type: group
+    items:
       - name: gallery
         label: Gallery events
         type: file
