@@ -5,8 +5,14 @@
     "kicker": "August 2026 · 31st Intake",
     "title": "Introduction to Buddhism",
     "lead": "A welcoming introduction for those with little or no knowledge of Buddhism, and a foundation for further study in the Diploma in Buddhism.",
-    "primary": { "label": "Register now", "href": "https://docs.google.com/forms/d/e/1FAIpQLSdzzhSjmJEKe894PkPo3__azAuwn5QtOna4yPA_-skWIgduEw/viewform" },
-    "secondary": { "label": "Download poster", "href": "images/31st-ibc-poster.webp" }
+    "primary": {
+      "label": "Register now",
+      "href": "https://docs.google.com/forms/d/e/1FAIpQLSdzzhSjmJEKe894PkPo3__azAuwn5QtOna4yPA_-skWIgduEw/viewform"
+    },
+    "secondary": {
+      "label": "Download poster",
+      "href": "images/31st-ibc-poster.webp"
+    }
   },
   {
     "page": "introc.html",
@@ -14,8 +20,14 @@
     "kicker": "佛教基础课程",
     "title": "佛教简介课程",
     "lead": "本课程适合有兴趣进一步认识佛教的人士。",
-    "primary": { "label": "立即报名", "href": "https://forms.gle/vYBPNBxkcQ3WRQwe7" },
-    "secondary": { "label": "电邮查询", "href": "mailto:chinesebuddhismbpca@gmail.com" }
+    "primary": {
+      "label": "立即报名",
+      "href": "https://forms.gle/vYBPNBxkcQ3WRQwe7"
+    },
+    "secondary": {
+      "label": "电邮查询",
+      "href": "mailto:chinesebuddhismbpca@gmail.com"
+    }
   },
   {
     "page": "dip.html",
@@ -23,8 +35,14 @@
     "kicker": "2027 · 34th Intake",
     "title": "Diploma in Buddhism",
     "lead": "A one-year programme offering a structured foundation in Buddhist teachings, society, history, psychology, counselling and Pali studies.",
-    "primary": { "label": "Register for course preview", "href": "https://docs.google.com/forms/d/e/1FAIpQLSeX5REr1E58533E5L4ZjDEeXmot4qMEln7CiCSPHQMDCIzY5A/viewform" },
-    "secondary": { "label": "Enroll Now", "href": "https://drive.google.com/file/d/1gL0ORYdOe-txBKi0eo1mKbBdI5od8Vi7/view" }
+    "primary": {
+      "label": "Register for course preview",
+      "href": "https://docs.google.com/forms/d/e/1FAIpQLSeX5REr1E58533E5L4ZjDEeXmot4qMEln7CiCSPHQMDCIzY5A/viewform"
+    },
+    "secondary": {
+      "label": "Apply Now",
+      "href": "https://drive.google.com/file/d/1Fr2H3LeF41tgxNAfD-9XAnamcubiORrv/view"
+    }
   },
   {
     "page": "dipc.html",
@@ -32,8 +50,14 @@
     "kicker": "2027 – 第四期",
     "title": "中文佛学文凭",
     "lead": "由新加坡佛学与巴利文学院开办的佛学课程，内容涵盖早期佛教教义、历史、地理传播、社会维度与巴利文入门。",
-    "primary": { "label": "报名课程", "href": "uploads/BPC-Registration-Diploma Chinese (2024).pdf" },
-    "secondary": { "label": "电邮查询", "href": "mailto:diplomabuddhismchinese@gmail.com" }
+    "primary": {
+      "label": "报名课程",
+      "href": "uploads/BPC-Registration-Diploma Chinese (2024).pdf"
+    },
+    "secondary": {
+      "label": "电邮查询",
+      "href": "mailto:diplomabuddhismchinese@gmail.com"
+    }
   },
   {
     "page": "ba.html",
@@ -41,8 +65,14 @@
     "kicker": "Undergraduate degree",
     "title": "BA in Buddhist Studies",
     "lead": "A three-year degree programme progressing from general arts foundations to advanced Buddhist philosophy, culture, society and Pali studies.",
-    "primary": { "label": "Enquire now", "href": "https://wa.me/6591297763" },
-    "secondary": { "label": "View Syllabus", "href": "uploads/BPC-BA-BuddhistStudies-Syllabi.pdf" }
+    "primary": {
+      "label": "Enquire now",
+      "href": "https://wa.me/6591297763"
+    },
+    "secondary": {
+      "label": "View Syllabus",
+      "href": "uploads/BPC-BA-BuddhistStudies-Syllabi.pdf"
+    }
   },
   {
     "page": "ma.html",
@@ -50,7 +80,13 @@
     "kicker": "Postgraduate degree",
     "title": "MA in Buddhist Studies",
     "lead": "A one-year postgraduate programme exploring Buddhist philosophy, psychotherapy, social thought, management, art and architecture.",
-    "primary": { "label": "Enquire now", "href": "https://wa.me/6591297763" },
-    "secondary": { "label": "View Syllabus", "href": "uploads/MA2022-Syllabus.pdf" }
+    "primary": {
+      "label": "Enquire now",
+      "href": "https://wa.me/6591297763"
+    },
+    "secondary": {
+      "label": "View Syllabus",
+      "href": "uploads/MA2022-Syllabus.pdf"
+    }
   }
 ]
