@@ -203,6 +203,157 @@ window.BPC_CONTENT = {
       }
     }
   },
+  "pages": {
+    "dip.html": {
+      "heroNote": {
+        "label": "Course duration",
+        "value": "January–December 2027",
+        "description": [
+          "Two venue and schedule options",
+          "Course previews in November 2026"
+        ]
+      },
+      "facts": [
+        {
+          "label": "Duration",
+          "value": "January–December 2027"
+        },
+        {
+          "label": "Intake",
+          "value": "34th Intake"
+        },
+        {
+          "label": "Study locations",
+          "value": "Mangala Vihara or Poh Ming Tse Temple"
+        }
+      ],
+      "overview": {
+        "kicker": "Programme overview",
+        "title": "Deepen your understanding of Buddhism",
+        "description": "The Diploma in Buddhism is conducted by the Buddhist and Pali College of Singapore, affiliated to the Buddhist and Pali University of Sri Lanka. The programme combines foundational teachings with their historical, social and practical dimensions.",
+        "eligibility": [
+          "Applicants should be above 18 years of age.",
+          "Applicants should be able to read and write English.",
+          "Basic knowledge of Buddhism is an advantage."
+        ]
+      },
+      "curriculum": {
+        "kicker": "What you will study",
+        "title": "Curriculum",
+        "items": [
+          "Early Buddhism: Fundamental Teachings",
+          "Buddhist Social Dimension",
+          "Geographical Expansion of Buddhism",
+          "Introduction to Buddhist Psychology and Counselling",
+          "Pali Language and Literature"
+        ]
+      },
+      "venues": {
+        "kicker": "Choose your location",
+        "title": "Venues and schedules",
+        "items": [
+          {
+            "label": "Venue option",
+            "name": "Mangala Vihara Buddhist Temple",
+            "image": "images/bpc-hero-mangala-v3.webp",
+            "imageAlt": "Mangala Vihara Buddhist Temple",
+            "address": [
+              "30 Jalan Eunos",
+              "Singapore 419495"
+            ],
+            "schedule": [
+              "Tuesdays: 7:30pm–9:30pm",
+              "Sundays: 2:00pm–5:15pm"
+            ],
+            "commences": "Commences 3 January 2027"
+          },
+          {
+            "label": "Venue option",
+            "name": "Poh Ming Tse Temple",
+            "image": "images/poh-ming-tse-temple.webp",
+            "imageAlt": "Poh Ming Tse Temple",
+            "address": [
+              "438 Dunearn Road",
+              "Singapore 289613"
+            ],
+            "schedule": [
+              "Tuesdays: 7:30pm–9:30pm",
+              "Thursdays: 7:00pm–10:00pm"
+            ],
+            "commences": "Commences 5 January 2027"
+          }
+        ]
+      },
+      "progression": {
+        "kicker": "Academic progression",
+        "title": "Your next step",
+        "prefix": "Successful candidates are eligible to proceed to the three-year",
+        "ba": {
+          "label": "Bachelor of Arts (BA) in Buddhist Studies",
+          "href": "ba.html"
+        },
+        "between": "followed by the",
+        "ma": {
+          "label": "Master of Arts (MA) in Buddhist Studies",
+          "href": "ma.html"
+        }
+      },
+      "registration": {
+        "kicker": "Registration options",
+        "title": "Choose how you would like to begin",
+        "poster": {
+          "image": "images/diploma-2027-poster.webp",
+          "href": "images/diploma-2027-poster.webp",
+          "alt": "Diploma in Buddhism 2027 34th intake course poster with preview registration QR code"
+        },
+        "options": [
+          {
+            "label": "Option 1",
+            "title": "Attend a course preview",
+            "description": "Meet the course team and learn more about the programme before enrolling.",
+            "dates": [
+              {
+                "venue": "Mangala Vihara",
+                "date": "7 November 2026",
+                "time": "2:00pm–4:00pm"
+              },
+              {
+                "venue": "Poh Ming Tse Temple",
+                "date": "14 November 2026",
+                "time": "2:00pm–4:00pm"
+              }
+            ],
+            "button": {
+              "label": "Register for course preview",
+              "href": "https://docs.google.com/forms/d/e/1FAIpQLSeX5REr1E58533E5L4ZjDEeXmot4qMEln7CiCSPHQMDCIzY5A/viewform"
+            }
+          },
+          {
+            "label": "Option 2",
+            "title": "Register directly for the course",
+            "description": "View the application form and contact Sis Sandra to complete your registration.",
+            "dates": [],
+            "button": {
+              "label": "View application form",
+              "href": "https://drive.google.com/file/d/1gL0ORYdOe-txBKi0eo1mKbBdI5od8Vi7/view"
+            },
+            "contact": {
+              "label": "Contact Sis Sandra on WhatsApp",
+              "href": "https://wa.me/6591297763"
+            }
+          }
+        ],
+        "enquiry": {
+          "label": "Enquiries",
+          "email": "enquiry@bpc.edu.sg",
+          "contactName": "Sandra Koh",
+          "phoneDisplay": "9129 7763",
+          "phone": "+6591297763"
+        },
+        "note": "Full payment is required to complete course registration."
+      }
+    }
+  },
   "gallery": [
     {
       "title": "Teachers' Workshop 2026 — Day 3",

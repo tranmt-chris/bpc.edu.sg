@@ -131,6 +131,96 @@
     }
   }
 
+  var diploma = content.pages && content.pages['dip.html'];
+  if (currentPage === 'dip.html' && diploma) {
+    var escapeHtml = function (value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    };
+    var safeHref = function (value) {
+      var href = String(value == null ? '' : value).trim();
+      if (/^[a-z][a-z0-9+.-]*:/i.test(href) && !/^(https?|mailto|tel):/i.test(href)) return '#';
+      return escapeHtml(href || '#');
+    };
+    var lines = function (values) {
+      return (values || []).map(escapeHtml).join('<br>');
+    };
+
+    var heroNote = document.querySelector('[data-dip-hero-note]');
+    if (heroNote && diploma.heroNote) {
+      heroNote.innerHTML = '<span>' + escapeHtml(diploma.heroNote.label) + '</span>' +
+        '<strong>' + escapeHtml(diploma.heroNote.value) + '</strong>' +
+        '<p>' + lines(diploma.heroNote.description) + '</p>';
+    }
+
+    var facts = document.querySelector('[data-dip-facts] .programme-modern-fact-grid');
+    if (facts && Array.isArray(diploma.facts)) {
+      facts.innerHTML = diploma.facts.map(function (fact) {
+        return '<div><span>' + escapeHtml(fact.label) + '</span><strong>' + escapeHtml(fact.value) + '</strong></div>';
+      }).join('');
+    }
+
+    var diplomaContent = document.querySelector('[data-dip-content]');
+    if (diplomaContent) {
+      var overview = diploma.overview || {};
+      var curriculum = diploma.curriculum || {};
+      var venues = diploma.venues || {};
+      var progression = diploma.progression || {};
+      var venueCards = (venues.items || []).map(function (venue, index) {
+        return '<article><span>' + escapeHtml(venue.label) + '</span>' +
+          '<img class="programme-modern-venue-image' + (index === 1 ? ' programme-modern-venue-image-pohming' : '') + '" src="' + safeHref(venue.image) + '" alt="' + escapeHtml(venue.imageAlt || venue.name) + '" loading="lazy" decoding="async">' +
+          '<h3>' + escapeHtml(venue.name) + '</h3><p>' + lines(venue.address) + '</p>' +
+          '<ul>' + (venue.schedule || []).map(function (item) { return '<li>' + escapeHtml(item) + '</li>'; }).join('') + '</ul>' +
+          '<strong>' + escapeHtml(venue.commences) + '</strong></article>';
+      }).join('');
+      diplomaContent.innerHTML =
+        '<p class="programme-modern-kicker">' + escapeHtml(overview.kicker) + '</p>' +
+        '<h2>' + escapeHtml(overview.title) + '</h2><p>' + escapeHtml(overview.description) + '</p>' +
+        '<div class="programme-modern-questions programme-modern-requirements">' +
+          (overview.eligibility || []).map(function (item) { return '<p>' + escapeHtml(item) + '</p>'; }).join('') + '</div>' +
+        '<p class="programme-modern-kicker">' + escapeHtml(curriculum.kicker) + '</p>' +
+        '<h2>' + escapeHtml(curriculum.title) + '</h2>' +
+        '<ol class="programme-modern-curriculum programme-modern-curriculum-five">' +
+          (curriculum.items || []).map(function (item) { return '<li>' + escapeHtml(item) + '</li>'; }).join('') + '</ol>' +
+        '<p class="programme-modern-kicker">' + escapeHtml(venues.kicker) + '</p>' +
+        '<h2>' + escapeHtml(venues.title) + '</h2><div class="programme-modern-venue-grid">' + venueCards + '</div>' +
+        '<div class="programme-modern-next"><p class="programme-modern-kicker">' + escapeHtml(progression.kicker) + '</p>' +
+        '<h2>' + escapeHtml(progression.title) + '</h2><p>' + escapeHtml(progression.prefix) + ' ' +
+        '<a href="' + safeHref(progression.ba && progression.ba.href) + '">' + escapeHtml(progression.ba && progression.ba.label) + '</a>, ' +
+        escapeHtml(progression.between) + ' <a href="' + safeHref(progression.ma && progression.ma.href) + '">' +
+        escapeHtml(progression.ma && progression.ma.label) + '</a>.</p></div>';
+    }
+
+    var registration = diploma.registration || {};
+    var registrationPanel = document.querySelector('[data-dip-registration]');
+    if (registrationPanel) {
+      var poster = registration.poster || {};
+      var optionCards = (registration.options || []).map(function (option) {
+        var dates = (option.dates || []).map(function (date) {
+          return '<div class="programme-modern-preview-date"><span>' + escapeHtml(date.venue) + '</span>' +
+            '<strong>' + escapeHtml(date.date) + '</strong><p>' + escapeHtml(date.time) + '</p></div>';
+        }).join('');
+        var button = option.button ? '<a class="programme-modern-primary" href="' + safeHref(option.button.href) + '" rel="noreferrer" target="_blank">' + escapeHtml(option.button.label) + '</a>' : '';
+        var contact = option.contact && option.contact.label && option.contact.href ? '<a class="programme-modern-registration-contact" href="' + safeHref(option.contact.href) + '" rel="noreferrer" target="_blank">' + escapeHtml(option.contact.label) + '</a>' : '';
+        return '<div class="programme-modern-registration-option"><span>' + escapeHtml(option.label) + '</span>' +
+          '<h3>' + escapeHtml(option.title) + '</h3><p>' + escapeHtml(option.description) + '</p>' + dates + button + contact + '</div>';
+      }).join('');
+      var enquiry = registration.enquiry || {};
+      registrationPanel.innerHTML =
+        '<p class="programme-modern-kicker">' + escapeHtml(registration.kicker) + '</p><h2>' + escapeHtml(registration.title) + '</h2>' +
+        '<a class="programme-modern-poster" href="' + safeHref(poster.href || poster.image) + '" target="_blank">' +
+          '<img src="' + safeHref(poster.image) + '" alt="' + escapeHtml(poster.alt) + '" loading="lazy" decoding="async"></a>' +
+        optionCards + '<div class="programme-modern-enquiry"><span>' + escapeHtml(enquiry.label) + '</span>' +
+        '<a href="mailto:' + escapeHtml(enquiry.email) + '">' + escapeHtml(enquiry.email) + '</a>' +
+        '<a href="tel:' + escapeHtml(enquiry.phone) + '">' + escapeHtml(enquiry.contactName) + ' · ' + escapeHtml(enquiry.phoneDisplay) + '</a></div>' +
+        '<p class="programme-modern-teacher">' + escapeHtml(registration.note) + '</p>';
+    }
+  }
+
   var galleryLatest = document.querySelector('[data-gallery-latest]');
   var galleryArchive = document.querySelector('[data-gallery-archive]');
   if ((galleryLatest || galleryArchive) && Array.isArray(content.gallery)) {

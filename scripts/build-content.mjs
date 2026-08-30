@@ -12,6 +12,9 @@ const programmes = Array.isArray(programmeEntries)
 const content = {
   ...(await readJson("site.json")),
   programmes,
+  pages: {
+    "dip.html": await readJson("pages/dip.json")
+  },
   gallery: await readJson("gallery.json")
 };
 
