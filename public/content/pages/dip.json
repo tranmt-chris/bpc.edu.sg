@@ -8,9 +8,18 @@
     ]
   },
   "facts": [
-    { "label": "Duration", "value": "January–December 2027" },
-    { "label": "Intake", "value": "34th Intake" },
-    { "label": "Study locations", "value": "Mangala Vihara or Poh Ming Tse Temple" }
+    {
+      "label": "Duration",
+      "value": "January–December 2027"
+    },
+    {
+      "label": "Intake",
+      "value": "34th Intake"
+    },
+    {
+      "label": "Study locations",
+      "value": "Mangala Vihara or Poh Ming Tse Temple"
+    }
   ],
   "overview": {
     "kicker": "Programme overview",
@@ -42,8 +51,14 @@
         "name": "Mangala Vihara Buddhist Temple",
         "image": "images/bpc-hero-mangala-v3.webp",
         "imageAlt": "Mangala Vihara Buddhist Temple",
-        "address": ["30 Jalan Eunos", "Singapore 419495"],
-        "schedule": ["Tuesdays: 7:30pm–9:30pm", "Sundays: 2:00pm–5:15pm"],
+        "address": [
+          "30 Jalan Eunos",
+          "Singapore 419495"
+        ],
+        "schedule": [
+          "Tuesdays: 7:30pm–9:30pm",
+          "Sundays: 2:00pm–5:15pm"
+        ],
         "commences": "Commences 3 January 2027"
       },
       {
@@ -51,8 +66,14 @@
         "name": "Poh Ming Tse Temple",
         "image": "images/poh-ming-tse-temple.webp",
         "imageAlt": "Poh Ming Tse Temple",
-        "address": ["438 Dunearn Road", "Singapore 289613"],
-        "schedule": ["Tuesdays: 7:30pm–9:30pm", "Thursdays: 7:00pm–10:00pm"],
+        "address": [
+          "438 Dunearn Road",
+          "Singapore 289613"
+        ],
+        "schedule": [
+          "Tuesdays: 7:30pm–9:30pm",
+          "Thursdays: 7:00pm–10:00pm"
+        ],
         "commences": "Commences 5 January 2027"
       }
     ]
@@ -61,9 +82,15 @@
     "kicker": "Academic progression",
     "title": "Your next step",
     "prefix": "Successful candidates are eligible to proceed to the three-year",
-    "ba": { "label": "Bachelor of Arts (BA) in Buddhist Studies", "href": "ba.html" },
+    "ba": {
+      "label": "Bachelor of Arts (BA) in Buddhist Studies",
+      "href": "ba.html"
+    },
     "between": "followed by the",
-    "ma": { "label": "Master of Arts (MA) in Buddhist Studies", "href": "ma.html" }
+    "ma": {
+      "label": "Master of Arts (MA) in Buddhist Studies",
+      "href": "ma.html"
+    }
   },
   "registration": {
     "kicker": "Registration options",
@@ -79,8 +106,16 @@
         "title": "Attend a course preview",
         "description": "Meet the course team and learn more about the programme before enrolling.",
         "dates": [
-          { "venue": "Mangala Vihara", "date": "7 November 2026", "time": "2:00pm–4:00pm" },
-          { "venue": "Poh Ming Tse Temple", "date": "14 November 2026", "time": "2:00pm–4:00pm" }
+          {
+            "venue": "Mangala Vihara",
+            "date": "7 November 2026",
+            "time": "2:00pm–4:00pm"
+          },
+          {
+            "venue": "Poh Ming Tse Temple",
+            "date": "14 November 2026",
+            "time": "2:00pm–4:00pm"
+          }
         ],
         "button": {
           "label": "Register for course preview",
@@ -91,7 +126,6 @@
         "label": "Option 2",
         "title": "Register directly for the course",
         "description": "View the application form and contact Sis Sandra to complete your registration.",
-        "dates": [],
         "button": {
           "label": "View application form",
           "href": "https://drive.google.com/file/d/1gL0ORYdOe-txBKi0eo1mKbBdI5od8Vi7/view"
@@ -105,9 +139,9 @@
     "enquiry": {
       "label": "Enquiries",
       "email": "enquiry@bpc.edu.sg",
-      "contactName": "Sandra Koh",
-      "phoneDisplay": "9129 7763",
-      "phone": "+6591297763"
+      "contactName": "Contact Sandra on WhatsApp",
+      "phoneDisplay": "91297763",
+      "phone": "https://wa.me/6591297763"
     },
     "note": "Full payment is required to complete course registration."
   }
