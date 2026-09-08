@@ -19,6 +19,7 @@ then publish a clean package to cPanel.
 | Contact form and details | `public/content/contact.json` |
 | Contact confirmation page | `public/content/thank-you.json` |
 | Homepage and About page | `public/content/pages/index.json`, `about.json` |
+| Diploma, BA and MA pages | `public/content/programmes.json`, plus `public/content/pages/dip.json`, `ba.json`, `ma.json` |
 | Gallery page and events | `public/content/gallery.json` |
 | Academic, administrative and visiting staff | `public/content/people.json` |
 | Alumni page and e-Bulletins | `public/content/bulletins.json` |
@@ -28,7 +29,8 @@ then publish a clean package to cPanel.
 | Contact form service | FormSubmit (`https://formsubmit.co`) |
 
 Do not edit `public/js/site-data.js`, `public/alumni.html`, the three staff HTML
-pages, `public/intro.html`, `public/introc.html`, `public/dipc.html`,
+pages, `public/intro.html`, `public/introc.html`, `public/dip.html`, `public/dipc.html`,
+`public/ba.html`, `public/ma.html`,
 `public/courses.html`, `public/key.html`, `public/books.html`,
 `public/elibrary.html`, `public/team.html`, `public/contact.html` or
 `public/thank-you.html`, `public/gallery.html`, `public/index.html` or

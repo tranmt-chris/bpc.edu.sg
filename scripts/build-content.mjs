@@ -5,6 +5,7 @@ import { renderAlumniPage } from "./templates/alumni-page.mjs";
 import { renderCoursesPage } from "./templates/courses-page.mjs";
 import { renderContactPage, renderThankYouPage } from "./templates/contact-pages.mjs";
 import { renderAboutPage, renderHomePage } from "./templates/core-pages.mjs";
+import { renderBaPage, renderDiplomaPage, renderMaPage } from "./templates/degree-programme-pages.mjs";
 import { renderGalleryPage } from "./templates/gallery-page.mjs";
 import { renderKeyDatesPage } from "./templates/key-dates-page.mjs";
 import { renderPeoplePages } from "./templates/people-pages.mjs";
@@ -21,16 +22,12 @@ const programmes = Array.isArray(programmeEntries)
 const gallery = await readJson("gallery.json");
 const homePage = await readJson("pages/index.json");
 const aboutPage = await readJson("pages/about.json");
+const baPage = await readJson("pages/ba.json");
+const diplomaPage = await readJson("pages/dip.json");
+const maPage = await readJson("pages/ma.json");
 
 const content = {
-  ...(await readJson("site.json")),
-  programmes,
-  pages: {
-    "ba.html": await readJson("pages/ba.json"),
-    "dip.html": await readJson("pages/dip.json"),
-    "ma.html": await readJson("pages/ma.json")
-  },
-  gallery: gallery.events
+  ...(await readJson("site.json"))
 };
 
 const publicDirectory = resolve(root, "public");
@@ -92,6 +89,9 @@ for (const [filename, html] of Object.entries(contactPages)) {
 await writeFile(resolve(publicDirectory, "gallery.html"), renderGalleryPage(gallery), "utf8");
 await writeFile(resolve(publicDirectory, "index.html"), renderHomePage(homePage, gallery.events[0]), "utf8");
 await writeFile(resolve(publicDirectory, "about.html"), renderAboutPage(aboutPage), "utf8");
+await writeFile(resolve(publicDirectory, "ba.html"), renderBaPage(programmes["ba.html"], baPage), "utf8");
+await writeFile(resolve(publicDirectory, "dip.html"), renderDiplomaPage(programmes["dip.html"], diplomaPage), "utf8");
+await writeFile(resolve(publicDirectory, "ma.html"), renderMaPage(programmes["ma.html"], maPage), "utf8");
 
 const publicFiles = await readdir(publicDirectory, { withFileTypes: true });
 let updatedHtmlFiles = 0;
@@ -113,5 +113,5 @@ for (const entry of publicFiles) {
 }
 
 console.log(
-  `Generated site data and ${Object.keys(peoplePages).length + 9 + Object.keys(resourcePages).length + Object.keys(contactPages).length} structured pages with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
+  `Generated site data and ${Object.keys(peoplePages).length + 12 + Object.keys(resourcePages).length + Object.keys(contactPages).length} structured pages with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
 );
