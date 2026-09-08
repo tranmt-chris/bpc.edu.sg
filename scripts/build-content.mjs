@@ -1,5 +1,4 @@
-import { createHash } from "node:crypto";
-import { readFile, readdir, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { renderAlumniPage } from "./templates/alumni-page.mjs";
 import { renderCoursesPage } from "./templates/courses-page.mjs";
@@ -11,6 +10,7 @@ import { renderKeyDatesPage } from "./templates/key-dates-page.mjs";
 import { renderPeoplePages } from "./templates/people-pages.mjs";
 import { renderProgrammePage } from "./templates/programme-page.mjs";
 import { renderBooksPage, renderElibraryPage, renderPeopleOverviewPage } from "./templates/resource-pages.mjs";
+import { renderSiteFooter, renderSiteHeader, setSiteShell } from "./templates/site-page.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const readJson = async (name) => JSON.parse(await readFile(resolve(root, "public/content", name), "utf8"));
@@ -26,15 +26,10 @@ const baPage = await readJson("pages/ba.json");
 const diplomaPage = await readJson("pages/dip.json");
 const maPage = await readJson("pages/ma.json");
 
-const content = {
-  ...(await readJson("site.json"))
-};
+const site = await readJson("site.json");
+setSiteShell(site);
 
 const publicDirectory = resolve(root, "public");
-const generatedSiteData = `window.BPC_CONTENT = ${JSON.stringify(content, null, 2)};\n`;
-const contentVersion = createHash("sha256").update(generatedSiteData).digest("hex").slice(0, 12);
-
-await writeFile(resolve(publicDirectory, "js/site-data.js"), generatedSiteData, "utf8");
 
 const peoplePages = renderPeoplePages(await readJson("people.json"));
 for (const [filename, html] of Object.entries(peoplePages)) {
@@ -93,25 +88,21 @@ await writeFile(resolve(publicDirectory, "ba.html"), renderBaPage(programmes["ba
 await writeFile(resolve(publicDirectory, "dip.html"), renderDiplomaPage(programmes["dip.html"], diplomaPage), "utf8");
 await writeFile(resolve(publicDirectory, "ma.html"), renderMaPage(programmes["ma.html"], maPage), "utf8");
 
-const publicFiles = await readdir(publicDirectory, { withFileTypes: true });
-let updatedHtmlFiles = 0;
-
-for (const entry of publicFiles) {
-  if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
-
-  const htmlPath = resolve(publicDirectory, entry.name);
+let updatedArchivedPages = 0;
+for (const filename of ["bc.html", "visit.html"]) {
+  const htmlPath = resolve(publicDirectory, filename);
   const html = await readFile(htmlPath, "utf8");
-  const updatedHtml = html.replace(
-    /js\/site-data\.js\?v=[^"']+/g,
-    `js/site-data.js?v=${contentVersion}`
-  );
+  const updatedHtml = html
+    .replace(/<header data-site-header>[\s\S]*?<\/header>/, renderSiteHeader())
+    .replace(/<footer data-site-footer(?: class="[^"]*")?>[\s\S]*?<\/footer>/, renderSiteFooter())
+    .replace(/\s*<script src="js\/site-data\.js\?v=[^"]+"><\/script>/, "");
 
   if (updatedHtml !== html) {
     await writeFile(htmlPath, updatedHtml, "utf8");
-    updatedHtmlFiles += 1;
+    updatedArchivedPages += 1;
   }
 }
 
 console.log(
-  `Generated site data and ${Object.keys(peoplePages).length + 12 + Object.keys(resourcePages).length + Object.keys(contactPages).length} structured pages with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
+  `Generated ${Object.keys(peoplePages).length + 12 + Object.keys(resourcePages).length + Object.keys(contactPages).length} structured pages with static shared layout; updated ${updatedArchivedPages} archived page(s).`
 );

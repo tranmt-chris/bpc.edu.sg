@@ -1,69 +1,20 @@
 (function () {
-  var content = window.BPC_CONTENT || {};
   var header = document.querySelector('header');
   if (!header) return;
 
-  var menu = document.createElement('ul');
-  menu.id = 'menu';
-  header.replaceChildren(menu);
-
+  var menu = header.querySelector('#menu');
+  var toggle = header.querySelector('.revamp-menu-toggle');
+  if (!menu || !toggle) return;
   var currentPage = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  var navigation = content.navigation || [];
-
-  function navItem(group, index) {
-    if (group.href) {
-      var active = currentPage === group.href.toLowerCase() ? ' active' : '';
-      return '<li class="revamp-nav-item"><a class="revamp-nav-link' + active + '" href="' + group.href + '">' + group.label + '</a></li>';
+  menu.querySelectorAll('a[href]').forEach(function (link) {
+    var hrefPage = link.getAttribute('href').split('#')[0].toLowerCase();
+    var active = currentPage === hrefPage;
+    link.classList.toggle('active', active);
+    if (active) {
+      var group = link.closest('.revamp-nav-group');
+      if (group) group.classList.add('current');
     }
-    var itemLabel = function (item) { return Array.isArray(item) ? item[0] : item.label; };
-    var itemHref = function (item) { return Array.isArray(item) ? item[1] : item.href; };
-    var groupActive = group.items.some(function (item) { return currentPage === itemHref(item).split('#')[0].toLowerCase(); });
-    var children = group.items.map(function (item) {
-      var href = itemHref(item);
-      var active = currentPage === href.split('#')[0].toLowerCase() ? ' class="active"' : '';
-      return '<li><a' + active + ' href="' + href + '">' + itemLabel(item) + '</a></li>';
-    }).join('');
-    var dropdownId = 'revamp-nav-dropdown-' + index;
-    return '<li class="revamp-nav-group' + (groupActive ? ' current' : '') + '">' +
-      '<button class="revamp-nav-trigger" type="button" aria-expanded="false" aria-controls="' + dropdownId + '">' + group.label + '<span aria-hidden="true">⌄</span></button>' +
-      '<ul class="revamp-nav-dropdown" id="' + dropdownId + '">' + children + '</ul></li>';
-  }
-
-  menu.innerHTML = '<li><ul class="submenu revamp-primary-nav">' + navigation.map(navItem).join('') + '</ul></li>';
-
-  var brandLink;
-  var legacyLogo = header.querySelector('.logo');
-
-  if (!legacyLogo) {
-    var logo = document.createElement('a');
-    logo.className = 'revamp-logo';
-    logo.href = 'index.html';
-    logo.setAttribute('aria-label', 'Buddhist and Pali College of Singapore home');
-    logo.innerHTML = '<img src="images/bpclogo3x3b.png" alt="Buddhist and Pali College of Singapore Logo">';
-    header.insertBefore(logo, menu);
-    brandLink = logo;
-  } else {
-    brandLink = legacyLogo.querySelector('a');
-  }
-
-  if (brandLink) {
-    brandLink.classList.add('revamp-brand-link');
-    brandLink.setAttribute('aria-label', 'Buddhist and Pali College of Singapore home');
-    if (!brandLink.querySelector('.revamp-brand-name')) {
-      var brandName = document.createElement('span');
-      brandName.className = 'revamp-brand-name';
-      brandName.innerHTML = '<span>Buddhist and Pali</span><span>College of Singapore</span>';
-      brandLink.appendChild(brandName);
-    }
-  }
-
-  var toggle = document.createElement('button');
-  toggle.className = 'revamp-menu-toggle';
-  toggle.type = 'button';
-  toggle.setAttribute('aria-label', 'Open navigation');
-  toggle.setAttribute('aria-expanded', 'false');
-  toggle.innerHTML = '&#9776;';
-  header.insertBefore(toggle, menu);
+  });
 
   function closeNavigation() {
     document.body.classList.remove('nav-open');
@@ -143,23 +94,5 @@
     var price = info.querySelector('li');
     if (price) price.textContent = price.textContent + ' donation';
   });
-
-  var footer = document.querySelector('[data-site-footer]');
-  if (!footer) {
-    footer = document.createElement('footer');
-    footer.setAttribute('data-site-footer', '');
-    document.body.appendChild(footer);
-  }
-  footer.className = 'bpc-shared-footer';
-  if (content.footer) {
-    var social = (content.footer.social || []).map(function (item) {
-      return '<a href="' + item.href + '" rel="noreferrer" target="_blank" aria-label="' + item.label + '">' +
-        '<i class="fa fa-' + item.icon + '" aria-hidden="true"></i></a>';
-    }).join('');
-    footer.innerHTML = '<p>' + content.footer.copyright + '</p><div class="bpc-shared-social">' + social + '</div>';
-  }
-  if (footer.parentElement !== document.body || footer !== document.body.lastElementChild) {
-    document.body.appendChild(footer);
-  }
 
 })();

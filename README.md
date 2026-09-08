@@ -28,8 +28,8 @@ then publish a clean package to cPanel.
 | Website images | `public/images/` |
 | Contact form service | FormSubmit (`https://formsubmit.co`) |
 
-Do not edit `public/js/site-data.js`, `public/alumni.html`, the three staff HTML
-pages, `public/intro.html`, `public/introc.html`, `public/dip.html`, `public/dipc.html`,
+Do not edit `public/alumni.html`, the three staff HTML pages,
+`public/intro.html`, `public/introc.html`, `public/dip.html`, `public/dipc.html`,
 `public/ba.html`, `public/ma.html`,
 `public/courses.html`, `public/key.html`, `public/books.html`,
 `public/elibrary.html`, `public/team.html`, `public/contact.html` or
@@ -53,8 +53,8 @@ e-Bulletins, the remaining individual HTML pages, gallery events, images and doc
 2. Install the Pages CMS GitHub App for this repository only.
 3. Open the repository and select the `main` branch.
 4. Edit an item and save it. Pages CMS commits the changed content file to GitHub.
-5. The GitHub Pages workflow regenerates `public/js/site-data.js` and publishes
-   the updated preview automatically.
+5. The GitHub Pages workflow regenerates the HTML pages, including their shared
+   header and footer, and publishes the updated preview automatically.
 
 After a Pages CMS update, run `git pull` before making further local edits.
 
