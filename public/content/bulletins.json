@@ -1,0 +1,269 @@
+{
+  "hero": {
+    "pageTitle": "Alumni",
+    "metaDescription": "Stay connected with the BPC alumni community and browse the College e-Bulletin archive.",
+    "kicker": "Alumni",
+    "title": "Alumni & e-Bulletins",
+    "description": "Stay connected with the BPC community and revisit College news, activities and milestones through our e-Bulletin archive."
+  },
+  "community": {
+    "kicker": "BPC Alumni Community",
+    "title": "Stay connected beyond the classroom",
+    "description": "Reconnect with fellow graduates, receive College updates and keep in touch with the wider BPC alumni community through our WhatsApp group.",
+    "note": "Email the Alumni team to request an invitation to join.",
+    "button": {
+      "label": "Email to join",
+      "detail": "alumni@bpc.edu.sg",
+      "href": "mailto:alumni@bpc.edu.sg?subject=Join%20BPC%20Alumni%20WhatsApp%20Community"
+    }
+  },
+  "archive": {
+    "kicker": "College publications",
+    "title": "e-Bulletin Archive"
+  },
+  "bulletins": [
+    {
+      "title": "Sep - Dec 2025 e-Bulletin",
+      "dateLabel": "December 31, 2025 - Sep to Dec 2025 e-Bulletin",
+      "description": "In this quarter issue, the articles include Yogyakarta Tour, Buddhist Pāli Name Presentation Ceremony and A Journey of Inner Transformation. The refreshed Diploma in Buddhism course will be launched in January 2026.",
+      "image": "images/Sep-Dec2025.jpg",
+      "imageAlt": "BPCA Sep-Dec 2025 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2025-sep-dec",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "May - Aug 2025 e-Bulletin",
+      "dateLabel": "September 12, 2025 - May to Aug 2025 e-Bulletin",
+      "description": "In this quarter issue, the articles include Memorial Day gatherings, special Scholarship Award Ceremony, Pindapata Ceremony, Global connectons and Waso Robe Offering Ceremony.",
+      "image": "images/May-Aug2025.jpg",
+      "imageAlt": "BPCA May-Aug 2025 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2025-may-aug",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "Jan - Apr 2025 e-Bulletin",
+      "dateLabel": "June 8, 2025 - Jan to Apr 2025 e-Bulletin",
+      "description": "In this quarter issue, the articles include Chinese New Year bonding activity, trip to Angkor, cultural tour of Buddhist temples and Singapore Jain Religious Society, Sri Lankan and Myanmar New Year celebration.",
+      "image": "images/Jan-Apr2025.jpg",
+      "imageAlt": "BPCA Jan-Apr 2025 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2025-jan-apr",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "Sep - Dec 2024 e-Bulletin",
+      "dateLabel": "January 25, 2025 - Sep to Dec 2024 e-Bulletin",
+      "description": "In this quarter issue, the articles include highlights of Diploma in Buddhism Course Previews, Introduction to Buddhism (Chinese), China Silk Road and Beijing travel log, temple tour for 2024/2025 Diploma in Buddhism classes and annual temple spring cleaning at MV.",
+      "image": "images/Sep-Dec2024.jpg",
+      "imageAlt": "BPCA Sep-Dec 2024 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2024-sep-dec",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "2nd Quarter 2024 e-Bulletin",
+      "dateLabel": "September 29, 2024 - 2Q 2024 e-Bulletin",
+      "description": "In this quarter issue, the articles include highlights of the Memorial Day in memory of Venerable M M Mahaweera Mahanayaka Mahāthera, Founder of MV and BPCS and Venerable P Gnanarama Anunayaka Mahāthera, Founding Principal of BPCS, Sri Lanka Convocation Tour travel log, the first temple tour organised for the first batch of the Chinese Diploma in Buddhism students and Bi-monthly Mindfulness walk.",
+      "image": "images/2Q2024.jpg",
+      "imageAlt": "BPCA 2nd Quarter 2024 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2024-q2",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "1st Quarter 2024 e-Bulletin",
+      "dateLabel": "April 7, 2024 - 1Q 2024 e-Bulletin",
+      "description": "In this quarter issue, the articles include highlights of the Lunar New Year gathering, commencement of Diploma in Buddhism in Chinese course, Dhammma talk on Patience and Bi-monthly Mindfulness walk.",
+      "image": "images/1Q2024.jpg",
+      "imageAlt": "BPCA 1st Quarter 2024 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2024-q1",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "4th Quarter 2023 e-Bulletin",
+      "dateLabel": "January 28, 2024 - 4Q 2023 e-Bulletin",
+      "description": "In this quarter issue, the articles include temple tour for 2023/2024 diploma classes students and the incredible India pilgrimage part I of three.",
+      "image": "images/4Q2023.jpg",
+      "imageAlt": "BPCA 4th Quarter 2023 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2023-q4",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "3rd Quarter 2023 e-Bulletin",
+      "dateLabel": "October 14, 2023 - 3Q 2023 e-Bulletin",
+      "description": "In this quarter issue, the articles include BPC 30th Anniversary celebration /symposium, Introduction to Buddhism Course in Chinese, Buddhist Counselling Course and Diploma in Buddhism (English) Course Previews.",
+      "image": "images/3Q2023.jpg",
+      "imageAlt": "BPCA 3rd Quarter 2023 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2023-q3",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "2nd Quarter 2023 e-Bulletin",
+      "dateLabel": "July 7, 2023 - 2Q 2023 e-Bulletin",
+      "description": "In this quarter issue, the articles include the snapshots of the morning and evening Vesak Day celebrations at Mangala Vihara (MV), and the Memorial Service in memory of Bhante M M Mahaweera Mahanayaka Mahāthera, Founder of MV and BPCS and Bhante P Gnanarama Anunayaka Mahāthera, Founding Principal of BPCS.",
+      "image": "images/2Q2023.jpg",
+      "imageAlt": "BPCA 2nd Quarter 2023 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2023-q2",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "1st Quarter 2023 e-Bulletin",
+      "dateLabel": "April 9, 2023 - 1Q 2023 e-Bulletin",
+      "description": "In this quarter issue, the articles include the Chinese New Year bonding activity, history of Mangala Vihara (Buddhist Temple) and Poh Ming Tse Temple.",
+      "image": "images/1Q2023.jpg",
+      "imageAlt": "BPCA 1st Quarter 2023 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2023-q1",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "4th Quarter 2022 e-Bulletin",
+      "dateLabel": "January 23, 2022 - 4Q 2022 e-Bulletin",
+      "description": "In this quarter issue, the articles include the temple tour for BPC diploma students and the bonding trip to Laos.",
+      "image": "images/4Q2022.jpg",
+      "imageAlt": "BPCA 4th Quarter 2022 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2022-q4",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "3rd Quarter 2022 e-Bulletin",
+      "dateLabel": "October 2, 2022 - 3Q 2022 e-Bulletin",
+      "description": "In this quarter issue, the articles include the memorial day in memory of late Bhante M M Mahaweera and late Bhante P Gnanarama, lecturers' appreciation cum graduation ceremony 2022.",
+      "image": "images/3Q2022.jpg",
+      "imageAlt": "BPCA 3rd Quarter 2022 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2022-q3",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "2nd Quarter 2022 e-Bulletin",
+      "dateLabel": "July 10, 2022 - 2Q 2022 e-Bulletin",
+      "description": "In this quarter issue, the articles include the reflection from two participants of the Certificate Course in Buddhist Counselling and a lively account of the Temple Visit for the 2022 Diploma Course students.",
+      "image": "images/2Q2022.jpg",
+      "imageAlt": "BPCA 2nd Quarter 2022 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2022-q2",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "1st Quarter 2022 e-Bulletin",
+      "dateLabel": "April 4, 2022 - 1Q 2022 e-Bulletin",
+      "description": "In this quarter issue, the articles include the arts at Pagan, Stupas and Buddha images.",
+      "image": "images/1Q2022.jpg",
+      "imageAlt": "BPCA 1st Quarter 2022 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2022-q1",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "4th Quarter 2021 e-Bulletin",
+      "dateLabel": "January 11, 2022 - 4Q 2021 e-Bulletin",
+      "description": "In this quarter issue, the articles include Arts of Borobudur, Atjanta caves and themes of Buddhist painting.",
+      "image": "images/4Q2021.jpg",
+      "imageAlt": "BPCA 4Q 2021 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2021-q4",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "3rd Quarter 2021 e-Bulletin",
+      "dateLabel": "October 4, 2021 - 3Q 2021 e-Bulletin",
+      "description": "In this quarter issue, the articles include Buddhist Arts, The Arts of King Asoka and The Arts of Dunhuang.",
+      "image": "images/3Q2021.jpg",
+      "imageAlt": "BPCA 3Q 2021 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2021-q3",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "2nd Quarter 2021 e-Bulletin",
+      "dateLabel": "July 30, 2021 - 2Q 2021 e-Bulletin",
+      "description": "In this quarter issue includes articles on all BPC classes were moved to online Zoom platform. Focus on the topic of gratitude and appreciation.",
+      "image": "images/2Q2021.jpg",
+      "imageAlt": "BPCA 2Q 2021 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2021-q2",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "1st Quarter 2021 e-Bulletin",
+      "dateLabel": "April 10, 2021 - 1Q 2021 e-Bulletin",
+      "description": "In this quarter issue includes articles on Emerging stronger with the wonders of \"nimitta\" and Travel memories of Golden Rock, one of the sacred religious sites in Myanmar.",
+      "image": "images/1Q2021.jpg",
+      "imageAlt": "BPCA 1Q 2021 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2021-q1",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "2nd Quarter 2020 e-Bulletin",
+      "dateLabel": "August 4, 2020 - 2Q 2020 e-Bulletin",
+      "description": "In this quarter issue includes articles on 1st year anniversary of our founding principal late Ven. Dr. Pategama Gnanarama, Zoom online lessons and buddhist comic strip.",
+      "image": "images/2Q2020.jpg",
+      "imageAlt": "BPCA 2Q 2020 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2020-q2",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "1st Quarter 2020 e-Bulletin",
+      "dateLabel": "April 28, 2020 - 1Q 2020 e-Bulletin",
+      "description": "In this quarter issue includes articles on BPC alumni and students bonding trip to Sukhothai, Thailand .",
+      "image": "images/1Q2020.jpg",
+      "imageAlt": "BPCA 1Q 2020 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2020-q1",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "4th Quarter 2019 e-Bulletin",
+      "dateLabel": "January 31, 2020 - 4Q 2019 e-Bulletin",
+      "description": "In this quarter issue includes articles on BPC graduation ceremony, BPC Diploma students' temple tour, October and December examinations.",
+      "image": "images/4Q2019.jpg",
+      "imageAlt": "BPCA 4Q 2019 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2019-q4",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "3rd Quarter 2019 e-Bulletin",
+      "dateLabel": "Oct 1, 2019 - 3Q 2019 e-Bulletin",
+      "description": "In this quarter issue includes articles on Borobudur trip, Vesak Day celebration, 3 month memorial service and Diploma recruitment drive.",
+      "image": "images/3Q2019.jpg",
+      "imageAlt": "BPCA 3Q 2019 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2019-q3",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "2nd Quarter 2019 e-Bulletin",
+      "dateLabel": "Jul 03,2019 - 2Q 2019 e-Bulletin",
+      "description": "This quarter e-bulletin is dedicated to our founding principal late Venerable Dr. Pategama Gnanarama who passed away on 4th June 2019.",
+      "image": "images/2Q2019.jpg",
+      "imageAlt": "BPCA 2nd Quarter 2019 eBulletin cover",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2019-q2",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "1st Quarter 2019 e-Bulletin",
+      "dateLabel": "Apr 1, 2019 - 1Q 2019 e-Bulletin",
+      "description": "In this issue includes the visit of top graduates of BPU, Diploma students visit to various temples and Chinese New Year Celebration.",
+      "image": "images/1Q2019.jpg",
+      "imageAlt": "BPCA 1st Quarter 2019 ebulletin",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2019-q1",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "4th Quarter 2018 e-Bulletin",
+      "dateLabel": "Dec 29, 2018 - 4Q 2018 e-Bulletin",
+      "description": "In this issue includes the birthday celebration of our principal Ven. Dr. Gnanarama, the Tipitaka and 17th intake of Introduction to Buddhism.",
+      "image": "images/4Q2018.jpg",
+      "imageAlt": "BPCA 4thuarter 2018 ebulletin",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2018-q4",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "3rd Quarter 2018 e-Bulletin",
+      "dateLabel": "Oct 1, 2018 - 3Q 2018 e-Bulletin",
+      "description": "In this quarter ebulletin, topics include BPC Silver Jubilee Symposium and Diploma course preview.",
+      "image": "images/3Q2018.jpg",
+      "imageAlt": "BPCA 3rd Quarter 2018 ebulletin",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2018-q3",
+      "buttonLabel": "Read e-Bulletin"
+    },
+    {
+      "title": "2nd Quarter 2018 e-Bulletin",
+      "dateLabel": "June 1, 2018 - 2Q 2018 e-Bulletin",
+      "description": "In this issue includes article on the Vesak Day and the Vassa",
+      "image": "images/2Q2018.jpg",
+      "imageAlt": "BPCA 2nd Quarter 2018 ebulletin",
+      "href": "https://archive.org/details/bpc-singapore-ebulletin-2018-q2",
+      "buttonLabel": "Read e-Bulletin"
+    }
+  ]
+}

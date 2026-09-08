@@ -1,6 +1,8 @@
 import { createHash } from "node:crypto";
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import { renderAlumniPage } from "./templates/alumni-page.mjs";
+import { renderPeoplePages } from "./templates/people-pages.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const readJson = async (name) => JSON.parse(await readFile(resolve(root, "public/content", name), "utf8"));
@@ -29,6 +31,16 @@ const contentVersion = createHash("sha256").update(generatedSiteData).digest("he
 
 await writeFile(resolve(publicDirectory, "js/site-data.js"), generatedSiteData, "utf8");
 
+const peoplePages = renderPeoplePages(await readJson("people.json"));
+for (const [filename, html] of Object.entries(peoplePages)) {
+  await writeFile(resolve(publicDirectory, filename), html, "utf8");
+}
+await writeFile(
+  resolve(publicDirectory, "alumni.html"),
+  renderAlumniPage(await readJson("bulletins.json")),
+  "utf8"
+);
+
 const publicFiles = await readdir(publicDirectory, { withFileTypes: true });
 let updatedHtmlFiles = 0;
 
@@ -49,5 +61,5 @@ for (const entry of publicFiles) {
 }
 
 console.log(
-  `Generated public/js/site-data.js with version ${contentVersion} and updated ${updatedHtmlFiles} HTML file(s).`
+  `Generated site data, ${Object.keys(peoplePages).length} people pages and the alumni page with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
 );

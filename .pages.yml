@@ -823,26 +823,6 @@ content:
         type: file
         path: public/team.html
         format: code
-      - name: academic-staff-page
-        label: People — Academic Staff
-        type: file
-        path: public/teamac.html
-        format: code
-      - name: administrative-staff-page
-        label: People — Administrative Staff
-        type: file
-        path: public/teamnac.html
-        format: code
-      - name: visiting-lecturers-page
-        label: People — Visiting Lecturers
-        type: file
-        path: public/teamvisit.html
-        format: code
-      - name: alumni-page
-        label: Community — Alumni
-        type: file
-        path: public/alumni.html
-        format: code
       - name: gallery-page
         label: Community — Gallery Page Layout
         type: file
@@ -853,6 +833,103 @@ content:
         type: file
         path: public/visit.html
         format: code
+
+  - name: people-group
+    label: Our People
+    type: group
+    items:
+      - name: people
+        label: Staff directories
+        type: file
+        path: public/content/people.json
+        format: json
+        fields:
+          - name: categories
+            label: Staff categories
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{title}" }
+            fields:
+              - { name: id, label: Category ID, type: string, required: true, description: "Do not change unless the page structure changes." }
+              - { name: page, label: Page filename, type: string, required: true, description: "For example teamac.html." }
+              - { name: title, label: Category title, type: string, required: true }
+              - { name: description, label: Page description, type: text, required: true }
+              - name: people
+                label: People
+                type: object
+                list:
+                  collapsible: { collapsed: true, summary: "{name}" }
+                fields:
+                  - { name: name, label: Name, type: string, required: true }
+                  - { name: role, label: Role, type: string, required: true }
+                  - { name: qualifications, label: Qualifications, type: string }
+                  - { name: details, label: Teaching details, type: text }
+                  - { name: email, label: Email, type: string }
+                  - { name: image, label: Portrait, type: image, required: true, options: { media: images } }
+                  - { name: imageAlt, label: Image description, type: string, required: true }
+                  - name: social
+                    label: Social links
+                    type: object
+                    list:
+                      collapsible: { collapsed: true, summary: "{label}" }
+                    fields:
+                      - { name: label, label: Platform, type: string, required: true }
+                      - { name: icon, label: Font Awesome icon, type: string, required: true }
+                      - { name: href, label: Link, type: string, required: true }
+
+  - name: alumni-group
+    label: Alumni and e-Bulletins
+    type: group
+    items:
+      - name: bulletins
+        label: Alumni page and e-Bulletins
+        type: file
+        path: public/content/bulletins.json
+        format: json
+        fields:
+          - name: hero
+            label: Page introduction
+            type: object
+            fields:
+              - { name: pageTitle, label: Browser page title, type: string, required: true }
+              - { name: metaDescription, label: Search description, type: text, required: true }
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: description, label: Introduction, type: text, required: true }
+          - name: community
+            label: WhatsApp community invitation
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: description, label: Description, type: text, required: true }
+              - { name: note, label: Joining instruction, type: text, required: true }
+              - name: button
+                label: Email button
+                type: object
+                fields:
+                  - { name: label, label: Button label, type: string, required: true }
+                  - { name: detail, label: Displayed email, type: string, required: true }
+                  - { name: href, label: Email link, type: string, required: true }
+          - name: archive
+            label: Archive heading
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+          - name: bulletins
+            label: e-Bulletins
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{title}" }
+            fields:
+              - { name: title, label: Bulletin title, type: string, required: true }
+              - { name: dateLabel, label: Publication date and label, type: string, required: true }
+              - { name: description, label: Summary, type: text, required: true }
+              - { name: image, label: Cover image, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+              - { name: href, label: Archive.org link, type: string, required: true }
+              - { name: buttonLabel, label: Button text, type: string, required: true }
 
   - name: gallery-events-group
     label: Gallery and events

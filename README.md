@@ -11,13 +11,17 @@ then publish a clean package to cPanel.
 | Navigation, footer and social links | `public/content/site.json` |
 | Programme summaries | `public/content/programmes.json` |
 | Gallery events | `public/content/gallery.json` |
+| Academic, administrative and visiting staff | `public/content/people.json` |
+| Alumni page and e-Bulletins | `public/content/bulletins.json` |
 | Page-specific text | Relevant file in `public/` |
 | Shared visual styles | `public/css/revamp.css` |
 | Website images | `public/images/` |
 | Contact form service | FormSubmit (`https://formsubmit.co`) |
 
-Do not edit `public/js/site-data.js` directly. After changing a file in
-`public/content/`, regenerate it with:
+Do not edit `public/js/site-data.js`, `public/alumni.html`, `public/teamac.html`,
+`public/teamnac.html` or `public/teamvisit.html` directly. They are generated
+from structured content. After changing a file in `public/content/`, regenerate
+the website with:
 
 ```powershell
 npm run build:content
@@ -26,7 +30,9 @@ npm run build:content
 ## Edit shared content with Pages CMS
 
 The repository includes `.pages.yml` for editing navigation, footer details,
-programme summaries, structured Homepage, About, Diploma, BA and MA forms, the remaining individual HTML pages, gallery events, images and documents through
+programme summaries, structured Homepage, About, Diploma, BA and MA forms,
+staff directories, the Alumni page, e-Bulletins, the remaining individual HTML
+pages, gallery events, images and documents through
 [Pages CMS](https://app.pagescms.org/).
 
 1. Sign in to Pages CMS with GitHub.
@@ -55,10 +61,18 @@ form layout.
 ## Add an eBulletin
 
 1. Upload the PDF to Archive.org.
-2. In `public/alumni.html`, update both the cover-image link and the
-   **Read e-Bulletin** button.
-3. Confirm the Archive.org page opens.
-4. Do not add the PDF to `public/ebulletin/`.
+2. Open **Alumni and e-Bulletins** in Pages CMS.
+3. Add an item to **e-Bulletins**, including its title, date, summary, cover
+   image and Archive.org link.
+4. Save the entry and allow the GitHub workflow to regenerate `alumni.html`.
+5. Confirm the Archive.org page opens. Do not add the PDF to
+   `public/ebulletin/`.
+
+## Update staff directories
+
+Open **Our People → Staff directories** in Pages CMS. Add, remove or reorder a
+person inside Academic Staff, Administrative Staff or Visiting Lecturers. The
+three staff HTML pages are regenerated automatically after saving.
 
 ## Add a gallery event
 

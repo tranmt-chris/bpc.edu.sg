@@ -348,22 +348,6 @@
   var alumniFilters = document.querySelector('[data-alumni-filters]');
   if (alumniGrid) {
     var alumniCards = Array.from(alumniGrid.children);
-    alumniCards.forEach(function (item, index) {
-      var card = item.querySelector('.med-blog');
-      var text = item.textContent || '';
-      var yearMatch = text.match(/20\d{2}/);
-      item.className = 'alumni-modern-item' + (index === 0 ? ' alumni-modern-featured' : '');
-      item.dataset.year = yearMatch ? yearMatch[0] : 'Older';
-      if (card) card.classList.add('alumni-modern-card');
-      item.querySelectorAll('.blog-title a[href="#"]').forEach(function (titleLink) {
-        var destination = item.querySelector('.blog-btn');
-        if (destination) {
-          titleLink.href = destination.href;
-          titleLink.target = '_blank';
-          titleLink.rel = 'noreferrer';
-        }
-      });
-    });
     if (alumniFilters) {
       var recentYears = ['All'].concat(Array.from(new Set(alumniCards.map(function (item) { return item.dataset.year; }))).slice(0, 3));
       recentYears.push('Older');
@@ -382,17 +366,6 @@
       });
     }
   }
-
-  document.querySelectorAll('.team .team-text h1, .team .team-text h2, .team .team-text h4').forEach(function (heading) {
-    Array.from(heading.childNodes).forEach(function (node) {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent.indexOf('@') !== -1) {
-        var email = document.createElement('span');
-        email.className = 'people-card-email';
-        email.textContent = node.textContent;
-        heading.replaceChild(email, node);
-      }
-    });
-  });
 
   document.querySelectorAll('.texts-modern .cart-grid').forEach(function (card) {
     var image = card.querySelector('img');
