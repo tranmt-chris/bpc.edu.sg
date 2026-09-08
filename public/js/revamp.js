@@ -230,31 +230,6 @@
     }
   }
 
-  var about = content.pages && content.pages['about.html'];
-  var aboutPage = document.querySelector('[data-about-page]');
-  if (currentPage === 'about.html' && about && aboutPage) {
-    var aboutHero = about.hero || {};
-    var story = about.story || {};
-    var leadership = about.leadership || {};
-    var aboutGallery = about.gallery || {};
-    var aboutCta = about.cta || {};
-    aboutPage.innerHTML =
-      '<section class="about-modern-hero"><div class="about-modern-shell about-modern-hero-grid">' +
-        '<div class="about-modern-intro"><p class="about-modern-kicker">' + escapeHtml(aboutHero.kicker) + '</p><h1>' + escapeHtml(aboutHero.title) + '</h1><p class="about-modern-lead">' + escapeHtml(aboutHero.lead) + '</p></div>' +
-        '<figure class="about-modern-feature"><img src="' + safeHref(aboutHero.image) + '" alt="' + escapeHtml(aboutHero.imageAlt) + '" fetchpriority="high"></figure>' +
-      '</div></section>' +
-      '<section class="about-modern-story"><div class="about-modern-shell about-modern-story-grid"><div><p class="about-modern-kicker">' + escapeHtml(story.kicker) + '</p><h2>' + escapeHtml(story.title) + '</h2></div>' +
-        '<div class="about-modern-copy">' + (story.paragraphs || []).map(function (paragraph) { return '<p>' + escapeHtml(paragraph) + '</p>'; }).join('') + '</div></div></section>' +
-      '<section class="about-modern-facts" aria-label="College facts"><div class="about-modern-shell about-modern-fact-grid">' +
-        (about.facts || []).map(function (fact) { return '<article><strong>' + escapeHtml(fact.value) + '</strong><span>' + escapeHtml(fact.label) + '</span></article>'; }).join('') +
-      '</div></section>' +
-      '<section class="about-modern-leadership"><div class="about-modern-shell"><p class="about-modern-kicker">' + escapeHtml(leadership.kicker) + '</p><h2>' + escapeHtml(leadership.title) + '</h2><div class="about-modern-leader-grid">' +
-        (leadership.people || []).map(function (person) { return '<article><img src="' + safeHref(person.image) + '" alt="' + escapeHtml(person.imageAlt || person.name) + '" loading="lazy" decoding="async"><div><span>' + escapeHtml(person.role) + '</span><h3>' + escapeHtml(person.name) + '</h3>' + (person.qualification ? '<p>' + escapeHtml(person.qualification) + '</p>' : '') + '</div></article>'; }).join('') +
-      '</div></div></section>' +
-      '<section class="about-modern-gallery" aria-label="College gallery"><div class="about-modern-shell about-modern-gallery-grid"><img src="' + safeHref(aboutGallery.image) + '" alt="' + escapeHtml(aboutGallery.imageAlt) + '" loading="lazy" decoding="async"></div></section>' +
-      '<section class="about-modern-cta"><div class="about-modern-shell"><div><p class="about-modern-kicker">' + escapeHtml(aboutCta.kicker) + '</p><h2>' + escapeHtml(aboutCta.title) + '</h2></div><a href="' + safeHref(aboutCta.button && aboutCta.button.href) + '">' + escapeHtml(aboutCta.button && aboutCta.button.label) + '</a></div></section>';
-  }
-
   var ba = content.pages && content.pages['ba.html'];
   if (currentPage === 'ba.html' && ba) {
     renderProgrammeHeroNote('[data-ba-hero-note]', ba.heroNote);
@@ -287,43 +262,6 @@
         '<div class="programme-modern-next"><p class="programme-modern-kicker">' + escapeHtml(assessment.kicker) + '</p><h2>' + escapeHtml(assessment.title) + '</h2><p>' + escapeHtml(assessment.description) + '</p></div>';
     }
     renderProgrammeAdmissions('[data-ma-admissions]', ma.admissions);
-  }
-
-  var home = content.pages && content.pages['index.html'];
-  var homeHero = document.querySelector('[data-home-hero]');
-  var homePage = document.querySelector('[data-home-page]');
-  if (currentPage === 'index.html' && home) {
-    var hero = home.hero || {};
-    if (homeHero) homeHero.innerHTML = '<div class="container-fluid"><div class="banner-text pl-lg-5 pl-sm-4 ml-lg-3">' +
-      '<div class="logo-2"><a href="index.html"><img src="' + safeHref(hero.logo) + '" width="180" height="180" alt="' + escapeHtml(hero.logoAlt) + '"></a></div>' +
-      '<h1 class="my-md-4 my-3">' + escapeHtml(hero.title) + '</h1><h2>' + escapeHtml(hero.lead) + '</h2><br>' +
-      '<a href="' + safeHref(hero.primary && hero.primary.href) + '" class="btn button-style mt-5">' + escapeHtml(hero.primary && hero.primary.label) + '</a>' +
-      '<a href="' + safeHref(hero.secondary && hero.secondary.href) + '" class="btn button-style mt-5">' + escapeHtml(hero.secondary && hero.secondary.label) + '</a>' +
-      '</div></div>';
-    if (homePage) {
-      var pathways = home.pathways || {};
-      var aboutPreview = home.about || {};
-      var latest = home.latest || {};
-      var contactStrip = home.contact || {};
-      var contactEmails = (contactStrip.emails || []).slice(0, 2).map(function (email) { return '<a href="' + safeHref(email.href) + '">' + escapeHtml(email.label) + '</a>'; }).join('');
-      homePage.innerHTML = '<section class="home-modern-pathways"><div class="home-modern-shell">' +
-        '<div class="home-modern-heading"><div><p class="home-modern-kicker">' + escapeHtml(pathways.kicker) + '</p><h2>' + escapeHtml(pathways.title) + '</h2></div><a href="' + safeHref(pathways.allCourses && pathways.allCourses.href) + '">' + escapeHtml(pathways.allCourses && pathways.allCourses.label) + ' <span aria-hidden="true">&rarr;</span></a></div>' +
-        '<div class="home-modern-pathway-grid">' + (pathways.items || []).map(function (item, index) { return '<a class="home-modern-pathway" href="' + safeHref(item.href) + '"><span>' + escapeHtml(String(index + 1).padStart(2, '0')) + '</span><div><h3>' + escapeHtml(item.title) + '</h3><p>' + escapeHtml(item.description) + '</p><strong>' + escapeHtml(item.linkLabel) + ' <span aria-hidden="true">&rarr;</span></strong></div></a>'; }).join('') + '</div></div></section>' +
-        '<section class="home-modern-about"><div class="home-modern-shell home-modern-about-grid"><figure><img src="' + safeHref(aboutPreview.image) + '" alt="' + escapeHtml(aboutPreview.imageAlt) + '" loading="lazy" decoding="async"></figure><div><p class="home-modern-kicker">' + escapeHtml(aboutPreview.kicker) + '</p><h2>' + escapeHtml(aboutPreview.title) + '</h2><p>' + escapeHtml(aboutPreview.description) + '</p><a class="home-modern-button" href="' + safeHref(aboutPreview.button && aboutPreview.button.href) + '">' + escapeHtml(aboutPreview.button && aboutPreview.button.label) + '</a></div></div></section>' +
-        '<section class="home-modern-latest"><div class="home-modern-shell"><div class="home-modern-heading"><div><p class="home-modern-kicker">' + escapeHtml(latest.kicker) + '</p><h2>' + escapeHtml(latest.title) + '</h2></div><a href="' + safeHref(latest.button && latest.button.href) + '">' + escapeHtml(latest.button && latest.button.label) + ' <span aria-hidden="true">&rarr;</span></a></div><div data-home-latest-event></div></div></section>' +
-        '<section class="home-modern-contact" aria-label="College location and contact details"><div class="home-modern-shell home-modern-contact-grid">' +
-        '<div><span>' + escapeHtml(contactStrip.addressLabel) + '</span><strong>' + escapeHtml(contactStrip.address) + '</strong></div><div><span>' + escapeHtml(contactStrip.phoneLabel) + '</span><a href="' + safeHref(contactStrip.phoneHref) + '">' + escapeHtml(contactStrip.phone) + '</a></div><div><span>' + escapeHtml(contactStrip.emailLabel) + '</span>' + contactEmails + '</div><a class="home-modern-contact-link" href="' + safeHref(contactStrip.button && contactStrip.button.href) + '">' + escapeHtml(contactStrip.button && contactStrip.button.label) + ' <span aria-hidden="true">&rarr;</span></a></div></section>';
-    }
-  }
-
-  var homeLatestEvent = document.querySelector('[data-home-latest-event]');
-  if (homeLatestEvent && Array.isArray(content.gallery) && content.gallery.length) {
-    var latestEvent = content.gallery[0];
-    var latestAlt = latestEvent.title + (latestEvent.date ? ', ' + latestEvent.date : '');
-    homeLatestEvent.innerHTML = '<a class="home-modern-event" href="' + latestEvent.href + '" rel="noreferrer" target="_blank">' +
-      '<div class="home-modern-event-image"><img src="' + latestEvent.image + '" alt="' + latestAlt.replace(/"/g, '&quot;') + '" loading="lazy" decoding="async"></div>' +
-      '<div class="home-modern-event-copy"><p class="home-modern-kicker">Recent highlight</p><h3>' + latestEvent.title + '</h3>' +
-      (latestEvent.date ? '<time>' + latestEvent.date + '</time>' : '') + '<span>View event album <i class="fa fa-external-link" aria-hidden="true"></i></span></div></a>';
   }
 
   var alumniGrid = document.querySelector('[data-alumni-grid]');

@@ -511,6 +511,7 @@ content:
         path: public/content/pages/index.json
         format: json
         fields:
+          - { name: meta, component: programme-meta }
           - name: hero
             label: Main banner
             type: object
@@ -612,6 +613,7 @@ content:
         path: public/content/pages/about.json
         format: json
         fields:
+          - { name: meta, component: programme-meta }
           - name: hero
             label: Introduction
             type: object
