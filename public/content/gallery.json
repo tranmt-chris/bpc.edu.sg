@@ -1,4 +1,10 @@
-[
+{
+  "meta": { "pageTitle": "Gallery", "description": "Explore moments of learning, fellowship and celebration from the Buddhist and Pali College of Singapore community." },
+  "hero": { "kicker": "Gallery", "title": "College Life in Pictures", "description": "Explore moments of learning, fellowship and celebration from the BPC community." },
+  "latest": { "kicker": "Recent highlights", "title": "Latest Events", "year": "2026" },
+  "archive": { "kicker": "Through the years", "title": "From the Archive", "emptyDateLabel": "View photographs" },
+  "albumLabel": "View album",
+  "events": [
   { "title": "Teachers' Workshop 2026 — Day 3", "date": "5 April 2026", "image": "images/teachers-workshop-2026-day3.webp", "href": "https://www.facebook.com/share/p/19K5FjScdU/" },
   { "title": "Teachers' Workshop 2026 — Day 2", "date": "4 April 2026", "image": "images/teachers-workshop-2026-day2.webp", "href": "https://www.facebook.com/share/p/19EKjzyGLb/" },
   { "title": "Teachers' Workshop 2026 — Day 1", "date": "3 April 2026", "image": "images/teachers-workshop-2026-day1.webp", "href": "https://www.facebook.com/share/p/19BnWnMkJs/" },
@@ -13,4 +19,5 @@
   { "title": "Diploma 2017–18 Lunch Dana", "image": "images/dana2018.jpg", "href": "https://photos.app.goo.gl/nU5nowSmjKnM9CUU7" },
   { "title": "Post Symposium 2019", "image": "images/postsym.jpg", "href": "https://photos.app.goo.gl/PyugkWzqqj3mfNiX8" },
   { "title": "BPC Symposium 2018", "image": "images/sym2018.jpg", "href": "https://photos.app.goo.gl/89Qcd7VSXM6tR3TR6" }
-]
+  ]
+}

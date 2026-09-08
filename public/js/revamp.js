@@ -316,24 +316,6 @@
     }
   }
 
-  var galleryLatest = document.querySelector('[data-gallery-latest]');
-  var galleryArchive = document.querySelector('[data-gallery-archive]');
-  if ((galleryLatest || galleryArchive) && Array.isArray(content.gallery)) {
-    var renderGalleryEvents = function (events) {
-      return events.map(function (event) {
-      var alt = event.title + (event.date ? ', ' + event.date : '');
-        return '<article class="gallery-modern-card"><a href="' + event.href + '" rel="noreferrer" target="_blank" aria-label="View ' + alt.replace(/"/g, '&quot;') + '">' +
-          '<div class="gallery-modern-image"><img src="' + event.image + '" alt="' + alt.replace(/"/g, '&quot;') + '" loading="lazy" decoding="async"><span class="gallery-modern-view">View album <i class="fa fa-external-link" aria-hidden="true"></i></span></div>' +
-          '<div class="gallery-modern-card-copy"><h3>' + event.title + '</h3>' +
-          (event.date ? '<time>' + event.date + '</time>' : '<span>View photographs</span>') + '</div></a></article>';
-      }).join('');
-    };
-    var latestEvents = content.gallery.filter(function (event) { return event.date && /2026/.test(event.date); });
-    var archiveEvents = content.gallery.filter(function (event) { return !event.date || !/2026/.test(event.date); });
-    if (galleryLatest) galleryLatest.innerHTML = renderGalleryEvents(latestEvents);
-    if (galleryArchive) galleryArchive.innerHTML = renderGalleryEvents(archiveEvents);
-  }
-
   var homeLatestEvent = document.querySelector('[data-home-latest-event]');
   if (homeLatestEvent && Array.isArray(content.gallery) && content.gallery.length) {
     var latestEvent = content.gallery[0];

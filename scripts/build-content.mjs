@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 import { renderAlumniPage } from "./templates/alumni-page.mjs";
 import { renderCoursesPage } from "./templates/courses-page.mjs";
 import { renderContactPage, renderThankYouPage } from "./templates/contact-pages.mjs";
+import { renderGalleryPage } from "./templates/gallery-page.mjs";
 import { renderKeyDatesPage } from "./templates/key-dates-page.mjs";
 import { renderPeoplePages } from "./templates/people-pages.mjs";
 import { renderProgrammePage } from "./templates/programme-page.mjs";
@@ -16,6 +17,7 @@ const programmeEntries = await readJson("programmes.json");
 const programmes = Array.isArray(programmeEntries)
   ? Object.fromEntries(programmeEntries.map(({ page, ...programme }) => [page, programme]))
   : programmeEntries;
+const gallery = await readJson("gallery.json");
 
 const content = {
   ...(await readJson("site.json")),
@@ -27,7 +29,7 @@ const content = {
     "index.html": await readJson("pages/index.json"),
     "ma.html": await readJson("pages/ma.json")
   },
-  gallery: await readJson("gallery.json")
+  gallery: gallery.events
 };
 
 const publicDirectory = resolve(root, "public");
@@ -86,6 +88,8 @@ for (const [filename, html] of Object.entries(contactPages)) {
   await writeFile(resolve(publicDirectory, filename), html, "utf8");
 }
 
+await writeFile(resolve(publicDirectory, "gallery.html"), renderGalleryPage(gallery), "utf8");
+
 const publicFiles = await readdir(publicDirectory, { withFileTypes: true });
 let updatedHtmlFiles = 0;
 
@@ -106,5 +110,5 @@ for (const entry of publicFiles) {
 }
 
 console.log(
-  `Generated site data and ${Object.keys(peoplePages).length + 6 + Object.keys(resourcePages).length + Object.keys(contactPages).length} structured pages with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
+  `Generated site data and ${Object.keys(peoplePages).length + 7 + Object.keys(resourcePages).length + Object.keys(contactPages).length} structured pages with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
 );

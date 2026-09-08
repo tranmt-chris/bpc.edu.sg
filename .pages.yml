@@ -1201,11 +1201,6 @@ content:
               - { name: dateTime, label: Machine-readable date, type: string, required: true, description: "Use YYYY-MM-DD." }
               - { name: image, label: Image, type: image, required: true, options: { media: images } }
               - { name: imageAlt, label: Image description, type: string, required: true }
-      - name: gallery-page
-        label: Community — Gallery Page Layout
-        type: file
-        path: public/gallery.html
-        format: code
       - name: visit-page
         label: Archive — Visit Us
         type: file
@@ -1314,27 +1309,40 @@ content:
     type: group
     items:
       - name: gallery
-        label: Gallery events
+        label: Gallery page and events
         type: file
         path: public/content/gallery.json
         format: json
-        list: true
         fields:
-          - name: title
-            label: Event title
-            type: string
-            required: true
-          - name: date
-            label: Event date
-            type: string
-            description: Use a readable date such as 5 April 2026. Leave blank for archive entries without a date.
-          - name: image
-            label: Thumbnail
-            type: image
-            required: true
-            options:
-              media: images
-          - name: href
-            label: Album or event link
-            type: string
-            required: true
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Page introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: description, label: Introduction, type: text, required: true }
+          - name: latest
+            label: Latest events section
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: year, label: Current event year, type: string, required: true, description: "Events whose date contains this year appear under Latest Events." }
+          - name: archive
+            label: Archive section
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: emptyDateLabel, label: Label when no date is supplied, type: string, required: true }
+          - { name: albumLabel, label: Album button text, type: string, required: true }
+          - name: events
+            label: Events
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{title}" } }
+            fields:
+              - { name: title, label: Event title, type: string, required: true }
+              - { name: date, label: Event date, type: string, description: "Use a readable date such as 5 April 2026. Leave blank for archive entries." }
+              - { name: image, label: Thumbnail, type: image, required: true, options: { media: images } }
+              - { name: href, label: Album or event link, type: string, required: true }
