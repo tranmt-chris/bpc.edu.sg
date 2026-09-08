@@ -12,6 +12,78 @@ media:
     categories: [document]
     rename: safe
 
+components:
+  programme-meta:
+    type: object
+    fields:
+      - { name: pageTitle, label: Browser page title, type: string, required: true }
+      - { name: description, label: Search description, type: text, required: true }
+  programme-hero-note:
+    type: object
+    fields:
+      - { name: label, label: Label, type: string, required: true }
+      - { name: value, label: Main value, type: string, required: true }
+      - { name: lines, label: Supporting lines, type: string, list: true }
+  programme-facts:
+    type: object
+    list: { collapsible: { collapsed: true, summary: "{label}" } }
+    fields:
+      - { name: label, label: Label, type: string, required: true }
+      - { name: value, label: Value, type: string, required: true }
+  programme-overview:
+    type: object
+    fields:
+      - { name: kicker, label: Short heading, type: string, required: true }
+      - { name: title, label: Heading, type: string, required: true }
+      - { name: paragraphs, label: Introductory paragraphs, type: text, list: true }
+      - { name: requirements, label: Show as requirements, type: boolean }
+      - { name: questions, label: Questions or requirements, type: string, list: true }
+  programme-curriculum:
+    type: object
+    fields:
+      - { name: kicker, label: Short heading, type: string, required: true }
+      - { name: title, label: Heading, type: string, required: true }
+      - { name: items, label: Topics, type: string, list: true }
+  programme-progression:
+    type: object
+    fields:
+      - { name: kicker, label: Short heading, type: string, required: true }
+      - { name: title, label: Heading, type: string, required: true }
+      - name: segments
+        label: Text and links
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{text}" } }
+        fields:
+          - { name: text, label: Text, type: text, required: true }
+          - { name: href, label: Optional link, type: string }
+  programme-enrol:
+    type: object
+    fields:
+      - { name: kicker, label: Short heading, type: string, required: true }
+      - { name: title, label: Heading, type: string, required: true }
+      - name: poster
+        label: Poster
+        type: object
+        fields:
+          - { name: image, label: Image, type: image, required: true, options: { media: images } }
+          - { name: href, label: Poster or document link, type: string, required: true }
+          - { name: alt, label: Image description, type: string, required: true }
+      - name: button
+        label: Main button
+        type: object
+        fields:
+          - { name: label, label: Button text, type: string, required: true }
+          - { name: href, label: Button link, type: string, required: true }
+      - { name: contactLabel, label: Contact heading, type: string, required: true }
+      - name: contacts
+        label: Contact links
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{label}" } }
+        fields:
+          - { name: label, label: Display text, type: string, required: true }
+          - { name: href, label: Link, type: string, required: true }
+      - { name: location, label: Location and schedule lines, type: string, list: true }
+      - { name: note, label: Note, type: text }
 content:
   - name: site-settings-group
     label: Site settings
@@ -771,8 +843,76 @@ content:
       - name: courses-page
         label: General — All Courses
         type: file
-        path: public/courses.html
-        format: code
+        path: public/content/pages/courses.json
+        format: json
+        fields:
+          - name: meta
+            component: programme-meta
+          - name: hero
+            label: Page introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: lead, label: Introduction, type: text, required: true }
+          - name: start
+            label: Starting recommendation
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: description, label: Description, type: text, required: true }
+              - { name: label, label: Button text, type: string, required: true }
+              - { name: href, label: Button link, type: string, required: true }
+          - name: stages
+            label: Study stages
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{number} — {title}" } }
+            fields:
+              - { name: id, label: Section ID, type: string, required: true }
+              - { name: number, label: Stage number, type: string, required: true }
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: image, label: Illustration, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+              - name: programmes
+                label: Programme cards
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{page}" } }
+                fields:
+                  - { name: page, label: Programme page, type: string, required: true }
+                  - { name: level, label: Language or level, type: string, required: true }
+                  - { name: duration, label: Duration, type: string, required: true }
+                  - { name: linkLabel, label: Link text, type: string, required: true }
+          - name: comparison
+            label: Comparison table
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: columns, label: Column headings, type: string, list: true }
+              - name: rows
+                label: Table rows
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{programme}" } }
+                fields:
+                  - { name: programme, label: Programme, type: string, required: true }
+                  - { name: duration, label: Duration, type: string, required: true }
+                  - { name: suitableFor, label: Suitable for, type: string, required: true }
+          - name: banner
+            label: Programme banner
+            type: object
+            fields:
+              - { name: image, label: Image, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+          - name: guidance
+            label: Contact prompt
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: label, label: Button text, type: string, required: true }
+              - { name: href, label: Button link, type: string, required: true }
       - name: contact-page
         label: General — Contact
         type: file
@@ -786,18 +926,33 @@ content:
       - name: intro-page
         label: Programmes — Introduction to Buddhism
         type: file
-        path: public/intro.html
-        format: code
+        path: public/content/pages/intro.json
+        format: json
+        fields: &programme-page-fields
+          - { name: meta, component: programme-meta }
+          - { name: chinese, label: Chinese page, type: boolean }
+          - { name: pageClass, label: Optional style class, type: string }
+          - { name: backLabel, label: Back link text, type: string, required: true }
+          - { name: secondaryDownload, label: Secondary button downloads file, type: boolean }
+          - { name: factsLabel, label: Facts heading, type: string, required: true }
+          - { name: heroNote, component: programme-hero-note }
+          - { name: facts, component: programme-facts }
+          - { name: overview, component: programme-overview }
+          - { name: curriculum, component: programme-curriculum }
+          - { name: progression, component: programme-progression }
+          - { name: enrol, component: programme-enrol }
       - name: intro-chinese-page
         label: Programmes — Introduction to Buddhism (Chinese)
         type: file
-        path: public/introc.html
-        format: code
+        path: public/content/pages/introc.json
+        format: json
+        fields: *programme-page-fields
       - name: diploma-chinese-page
         label: Programmes — Diploma in Buddhism (Chinese)
         type: file
-        path: public/dipc.html
-        format: code
+        path: public/content/pages/dipc.json
+        format: json
+        fields: *programme-page-fields
       - name: counselling-page
         label: Programmes — Buddhist Counselling (archive)
         type: file
@@ -806,8 +961,81 @@ content:
       - name: key-dates-page
         label: Resources — Key Dates
         type: file
-        path: public/key.html
-        format: code
+        path: public/content/key-dates.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Page introduction
+            type: object
+            fields:
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: lead, label: Introduction, type: text, required: true }
+          - name: calendar
+            label: Academic calendar
+            type: object
+            fields:
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: columns, label: Column headings, type: string, list: true }
+              - name: sections
+                label: Calendar sections
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{title}" } }
+                fields:
+                  - { name: title, label: Section heading, type: string, required: true }
+                  - name: rows
+                    label: Activity and date rows
+                    type: object
+                    list: { collapsible: { collapsed: true, summary: "{activity}" } }
+                    fields:
+                      - { name: activity, label: Activity, type: string, required: true }
+                      - { name: date, label: Date, type: string, required: true }
+              - { name: note, label: Calendar note, type: text, required: true }
+          - name: timetable
+            label: Class timetable
+            type: object
+            fields:
+              - { name: title, label: Heading, type: string, required: true }
+              - name: classes
+                label: Classes
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{title}" } }
+                fields:
+                  - { name: title, label: Class name, type: string, required: true }
+                  - name: columns
+                    label: Meeting days
+                    type: object
+                    list: { collapsible: { collapsed: true, summary: "{heading}" } }
+                    fields:
+                      - { name: heading, label: Day and time, type: string, required: true }
+                      - { name: items, label: Subjects and lecturers, type: string, list: true }
+          - name: lecturers
+            label: Lecturer abbreviations
+            type: object
+            fields:
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: columns, label: Column headings, type: string, list: true }
+              - name: items
+                label: Lecturers
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{initial} — {lecturer}" } }
+                fields:
+                  - { name: initial, label: Initial, type: string, required: true }
+                  - { name: lecturer, label: Lecturer, type: string, required: true }
+          - name: administration
+            label: Administration contacts
+            type: object
+            fields:
+              - { name: title, label: Heading, type: string, required: true }
+              - name: items
+                label: Contacts
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{name}" } }
+                fields:
+                  - { name: name, label: Name, type: string, required: true }
+                  - { name: role, label: Role, type: string, required: true }
+                  - { name: email, label: Email, type: string, required: true }
+                  - { name: phone, label: Phone, type: string, required: true }
       - name: recommended-texts-page
         label: Resources — Recommended Texts
         type: file

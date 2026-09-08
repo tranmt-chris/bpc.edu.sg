@@ -2,7 +2,10 @@ import { createHash } from "node:crypto";
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { renderAlumniPage } from "./templates/alumni-page.mjs";
+import { renderCoursesPage } from "./templates/courses-page.mjs";
+import { renderKeyDatesPage } from "./templates/key-dates-page.mjs";
 import { renderPeoplePages } from "./templates/people-pages.mjs";
+import { renderProgrammePage } from "./templates/programme-page.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const readJson = async (name) => JSON.parse(await readFile(resolve(root, "public/content", name), "utf8"));
@@ -41,6 +44,29 @@ await writeFile(
   "utf8"
 );
 
+for (const filename of ["intro.html", "introc.html", "dipc.html"]) {
+  await writeFile(
+    resolve(publicDirectory, filename),
+    renderProgrammePage(
+      { page: filename, ...programmes[filename] },
+      await readJson(`pages/${filename.replace(".html", ".json")}`)
+    ),
+    "utf8"
+  );
+}
+
+await writeFile(
+  resolve(publicDirectory, "courses.html"),
+  renderCoursesPage(programmeEntries, await readJson("pages/courses.json")),
+  "utf8"
+);
+
+await writeFile(
+  resolve(publicDirectory, "key.html"),
+  renderKeyDatesPage(await readJson("key-dates.json")),
+  "utf8"
+);
+
 const publicFiles = await readdir(publicDirectory, { withFileTypes: true });
 let updatedHtmlFiles = 0;
 
@@ -61,5 +87,5 @@ for (const entry of publicFiles) {
 }
 
 console.log(
-  `Generated site data, ${Object.keys(peoplePages).length} people pages and the alumni page with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
+  `Generated site data and ${Object.keys(peoplePages).length + 6} structured pages with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
 );

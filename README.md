@@ -10,6 +10,9 @@ then publish a clean package to cPanel.
 | --- | --- |
 | Navigation, footer and social links | `public/content/site.json` |
 | Programme summaries | `public/content/programmes.json` |
+| Introduction and Chinese Diploma page details | `public/content/pages/intro.json`, `introc.json`, `dipc.json` |
+| All Courses page | `public/content/pages/courses.json` |
+| Key dates, timetables and contacts | `public/content/key-dates.json` |
 | Gallery events | `public/content/gallery.json` |
 | Academic, administrative and visiting staff | `public/content/people.json` |
 | Alumni page and e-Bulletins | `public/content/bulletins.json` |
@@ -18,10 +21,11 @@ then publish a clean package to cPanel.
 | Website images | `public/images/` |
 | Contact form service | FormSubmit (`https://formsubmit.co`) |
 
-Do not edit `public/js/site-data.js`, `public/alumni.html`, `public/teamac.html`,
-`public/teamnac.html` or `public/teamvisit.html` directly. They are generated
-from structured content. After changing a file in `public/content/`, regenerate
-the website with:
+Do not edit `public/js/site-data.js`, `public/alumni.html`, the three staff HTML
+pages, `public/intro.html`, `public/introc.html`, `public/dipc.html`,
+`public/courses.html` or `public/key.html` directly. They are generated from
+structured content. After changing a file in `public/content/`, regenerate the
+website with:
 
 ```powershell
 npm run build:content
@@ -30,9 +34,9 @@ npm run build:content
 ## Edit shared content with Pages CMS
 
 The repository includes `.pages.yml` for editing navigation, footer details,
-programme summaries, structured Homepage, About, Diploma, BA and MA forms,
-staff directories, the Alumni page, e-Bulletins, the remaining individual HTML
-pages, gallery events, images and documents through
+programme summaries, structured programme and course pages, Key Dates,
+Homepage, About, Diploma, BA and MA forms, staff directories, the Alumni page,
+e-Bulletins, the remaining individual HTML pages, gallery events, images and documents through
 [Pages CMS](https://app.pagescms.org/).
 
 1. Sign in to Pages CMS with GitHub.

@@ -1,0 +1,41 @@
+{
+  "meta": { "pageTitle": "佛教简介课程", "description": "新加坡佛学与巴利文学院佛教简介课程。" },
+  "chinese": true,
+  "pageClass": "programme-modern-introc",
+  "backLabel": "所有课程",
+  "factsLabel": "课程详情",
+  "heroNote": { "label": "课程日期", "value": "2026年8月5日至9月23日", "lines": ["每逢星期三", "晚上7:30至9:30"] },
+  "facts": [
+    { "label": "课程时间", "value": "八堂课" },
+    { "label": "上课时间", "value": "星期三 · 晚上7:30–9:30" },
+    { "label": "学费", "value": "随喜乐捐" }
+  ],
+  "overview": {
+    "kicker": "课程简介", "title": "认识佛教的核心智慧", "paragraphs": [],
+    "questions": ["佛教的本质是什么？", "如何在日常生活中实践佛法？", "佛陀的教导如何帮助我们理解人生？"]
+  },
+  "curriculum": {
+    "kicker": "课程内容", "title": "学习主题",
+    "items": ["佛学中的自由探讨精神，古印度社会", "佛陀生平", "四圣谛，三法印", "轮回与业力", "十二因缘", "在家人如何实践佛学", "常见的佛教仪式与诵经", "《法句经》分享", "佛学禅修"]
+  },
+  "progression": {
+    "kicker": "继续深造", "title": "下一阶段",
+    "segments": [
+      { "text": "完成课程后，学员可继续报读一年制的" },
+      { "text": "中文佛学文凭", "href": "dipc.html" },
+      { "text": "课程。" }
+    ]
+  },
+  "enrol": {
+    "kicker": "报名与查询", "title": "欢迎参加课程",
+    "poster": { "image": "images/intro-chinese-2026.webp", "href": "images/intro-chinese-2026.webp", "alt": "2026年佛教入门课程简介海报" },
+    "button": { "label": "网上报名", "href": "https://forms.gle/vYBPNBxkcQ3WRQwe7" },
+    "contactLabel": "联络方式",
+    "contacts": [
+      { "label": "chinesebuddhismbpca@gmail.com", "href": "mailto:chinesebuddhismbpca@gmail.com" },
+      { "label": "Lynn Choy 师姐 · 8956 0936", "href": "tel:+6589560936" }
+    ],
+    "location": ["祝福寺 Mangala Vihara", "30 Jalan Eunos", "Singapore 419495"],
+    "note": "讲师：佛学与巴利文学院讲师"
+  }
+}

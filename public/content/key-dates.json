@@ -1,0 +1,90 @@
+{
+  "meta": { "title": "Key Dates", "description": "Key academic dates, class timetables, lecturer abbreviations and administrative contacts for BPC students." },
+  "hero": { "title": "Key Dates", "lead": "Academic calendar, class schedules and useful contacts in one place." },
+  "calendar": {
+    "title": "Tentative Calendar 2025/2026",
+    "columns": ["Activity", "Date"],
+    "sections": [
+      { "title": "Class Commencement Date", "rows": [
+        { "activity": "New Diploma Class @ Mangala Vihara (MV)", "date": "04 January 2026 @ 2.00pm" },
+        { "activity": "New Diploma Class @ Poh Ming Tse (PMT)", "date": "06 January 2026 @ 7.30pm" },
+        { "activity": "New Diploma Class in Chinese", "date": "04 January 2026" },
+        { "activity": "Degree Classes", "date": "04 January 2026" },
+        { "activity": "MA Class", "date": "04 January 2026 @ 4.00pm" }
+      ]},
+      { "title": "Holidays", "rows": [
+        { "activity": "Chinese New Year (17 to 18 Feb 2026)", "date": "12 to 25 February 2026" },
+        { "activity": "Vesak Day (31 May 2026)", "date": "26 May to 6 June 2026" },
+        { "activity": "National Day", "date": "9 August 2026" }
+      ]},
+      { "title": "Study Leave / Combined Revision", "rows": [
+        { "activity": "Diploma Combined Revision (English)", "date": "1 November 2026 (tbc)" },
+        { "activity": "Diploma Study Leave (English & Chinese)", "date": "3 November 2026" },
+        { "activity": "Degree Study Leave", "date": "18 October 2026" }
+      ]},
+      { "title": "Examination (to be confirmed)", "rows": [
+        { "activity": "Diploma (English & Chinese)", "date": "5 to 7 December 2026 (tbc)" },
+        { "activity": "Degree", "date": "1st two weeks of December 2026" }
+      ]},
+      { "title": "Events", "rows": [
+        { "activity": "Chinese New Year Tea Party", "date": "1 March 2026" },
+        { "activity": "Diploma Class Temple Visit", "date": "xx xxx 2026 (tbc)*" },
+        { "activity": "Chinese Diploma Class Temple Visit", "date": "xx xxx 2026 (tbc)*" },
+        { "activity": "Teachers' Workshop", "date": "3 to 5 April 2026" },
+        { "activity": "Founders' Memorial Day", "date": "7 June 2025 (tbc)" },
+        { "activity": "Graduation Day (for 2024, 2025 graduates)", "date": "13 September 2026 (tbc)" },
+        { "activity": "Spring Cleaning Day", "date": "27 December 2026 (tbc)" }
+      ]}
+    ],
+    "note": "Dates are subject to change. *Depending on Class Activities Schedule."
+  },
+  "timetable": {
+    "title": "Timetable 2025–2026",
+    "classes": [
+      { "title": "Diploma (Mangala Vihara)", "columns": [
+        { "heading": "Tuesday (7.30pm to 9.30pm)", "items": ["GEB — QTY", "HB — JT / MG"] },
+        { "heading": "Thursday (7.30pm to 9.30pm)", "items": [] },
+        { "heading": "Sunday (2.00pm to 5.15pm)", "items": ["SDB — LMY", "EB — AS", "P — LAS"] }
+      ]},
+      { "title": "Diploma in Chinese (Mangala Vihara)", "columns": [
+        { "heading": "Tuesday (7.30pm to 9.30pm)", "items": ["P — CL", "SDB — LCK"] },
+        { "heading": "Thursday (7.30pm to 9.30pm)", "items": [] },
+        { "heading": "Sunday (2.00pm to 5.15pm)", "items": ["HB — LHS", "GEB — CLH", "EB — HP / KGH"] }
+      ]},
+      { "title": "General Art Qualifying (GAQ)", "columns": [
+        { "heading": "Tuesday (7.30pm to 9.30pm)", "items": ["BC 101 — HXV", "P 101 — GNR"] },
+        { "heading": "Thursday (7.30pm to 9.30pm)", "items": ["BP 101 — LNS", "P 102 — YAL"] },
+        { "heading": "Sunday (2.00pm to 5.15pm)", "items": ["P 102 — GU", "BP 102 — LTH", "BC 102 — MS"] }
+      ]},
+      { "title": "Bachelor of Arts — Part I", "columns": [
+        { "heading": "Tuesday (7.30pm to 9.30pm)", "items": ["BC 201 — OSK", "P 201 — KA"] },
+        { "heading": "Thursday (7.30pm to 9.30pm)", "items": ["P 201 — CL", "P 202 — LKK"] },
+        { "heading": "Sunday (2.00pm to 5.15pm)", "items": ["BP 202 — TCL / OKB", "BC 202 — LHM", "BP 201 — VY / TSH"] }
+      ]},
+      { "title": "Bachelor of Arts — Part II", "columns": [
+        { "heading": "Tuesday (7.30pm to 9.30pm)", "items": ["BP 301 — AF", "BC 302 — JLSL"] },
+        { "heading": "Thursday (7.30pm to 9.30pm)", "items": ["P 301 — LKK", "BP 302 — LS"] },
+        { "heading": "Sunday (2.00pm to 5.15pm)", "items": ["BC 301 — NLK", "BC 301 — NLK", "P 302 — NM"] }
+      ]},
+      { "title": "Diploma (Poh Ming Tse Temple)", "columns": [
+        { "heading": "Tuesday (7.30pm to 9.30pm)", "items": ["HB — WLP", "SDB — JC"] },
+        { "heading": "Friday (7.30pm to 9.30pm)", "items": ["EB — KGH", "GEB — GA", "P — WY"] }
+      ]}
+    ]
+  },
+  "lecturers": {
+    "title": "Lecturer Abbreviations",
+    "columns": ["Initial", "Lecturer"],
+    "items": [
+      { "initial": "GU", "lecturer": "Ven G. Udita - BA Hons, MA" }, { "initial": "HP", "lecturer": "Ven H. Puññāji - PhD" }, { "initial": "PS", "lecturer": "Ven P. Seelananda - BA Hons, MA" }, { "initial": "GNR", "lecturer": "Ven D. Gnanarathana - BA Hons, MA" }, { "initial": "KA", "lecturer": "Ven K. Anoma - BA, MA" }, { "initial": "AS", "lecturer": "Ven A. Sirisumana - BA, MA" }, { "initial": "MS", "lecturer": "Ven M. Suneetha - BA, MA" }, { "initial": "HXV", "lecturer": "Bhikkhuni Hao Xiang Vajira - BA Hons, MA" }, { "initial": "AF", "lecturer": "Dr Atula Foo - BSc, BA, MA, PhD" }, { "initial": "LAS", "lecturer": "Dr Lim Ah Swan - BA Hons, MA, PhD" }, { "initial": "WY", "lecturer": "Dr Wahyu P Yudistiawam - BA, MA" }, { "initial": "OKB", "lecturer": "Mr Ong Keng Boon - BSc, BA, MA" }, { "initial": "LKK", "lecturer": "Mr Lau Kim Koon - BACC, BA, MA" }, { "initial": "LNS", "lecturer": "Mr Lau Ng Siong - BA, MA" }, { "initial": "TSH", "lecturer": "Mr Tan Sing Hoon - BA, MA" }, { "initial": "JC", "lecturer": "Mr Jebsons Chia - BA, MA" }, { "initial": "LCK", "lecturer": "Mr Low Chee Kang - BA, MA" }, { "initial": "NLK", "lecturer": "Ms Ng Lay Kieng - DCF(R), DMU, BA, MA" }, { "initial": "KGH", "lecturer": "Ms Ko Guat Hua Angela- BA" }, { "initial": "CL", "lecturer": "Ms Chan Lily - BA, MA" }, { "initial": "JLSL", "lecturer": "Ms Jean S L Lau - BA(Eco & Soc), BA, MA" }, { "initial": "NM", "lecturer": "Ms Narmada Makawita - BA, MA" }, { "initial": "OSK", "lecturer": "Ms Ong Siew Kim - MSc, MBA, Ed-D, ba" }, { "initial": "JT", "lecturer": "Ms Jasmine Tan - BA, MA" }, { "initial": "LMY", "lecturer": "Ms Lee Mee Yin - BA, MA" }, { "initial": "LHM", "lecturer": "Ms Leong Huey Miin - MA (Architecture), MA" }, { "initial": "WLP", "lecturer": "Ms Wong Lai Peng - BA, MA, MA" }, { "initial": "LS", "lecturer": "Ms Linda Sim - LLB, BA, MA" }, { "initial": "LTH", "lecturer": "Ms Lam Thiam Har Joan - BA, MA" }, { "initial": "VY", "lecturer": "Ms Vera Yap - MA (Appl Ling), BA" }, { "initial": "GA", "lecturer": "Ms Gillian Ang - BA, MA" }, { "initial": "TCL", "lecturer": "Ms Tan Chew Ling - BA, MA" }, { "initial": "YAL", "lecturer": "Ms Yee Ai Leng Airene - BA" }, { "initial": "CLH", "lecturer": "Ms Chan Lee Hoon - BA, MA" }, { "initial": "LHS", "lecturer": "Ms Lam Hoi Shan - BA" }, { "initial": "QTY", "lecturer": "Ms Quek Tyy Tn - BA, MA" }, { "initial": "MG", "lecturer": "Ms May Goh Chee Hoon - BA, MA" }
+    ]
+  },
+  "administration": {
+    "title": "Administration",
+    "items": [
+      { "name": "Ven P. Seelananda", "role": "Principal", "email": "banteseela@gmail.com", "phone": "81808639" },
+      { "name": "Sis Maureen Hui", "role": "Administrator", "email": "maw69xyz@gmail.com", "phone": "84016866" },
+      { "name": "Sis Sandra Koh", "role": "Assistant Administrator", "email": "chaturikoh@yahoo.com.sg", "phone": "91297763" }
+    ]
+  }
+}

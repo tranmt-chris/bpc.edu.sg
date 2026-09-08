@@ -1604,3 +1604,36 @@ input, select, textarea {
   .home-modern-contact-grid { grid-template-columns: 1fr; gap: 22px; }
   .home-modern-contact-link { justify-self: start; }
 }
+/* Structured Key Dates page */
+.key-modern { background: #fbf8f1; color: #31130e; }
+.key-modern-shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+.key-modern-hero { padding: 72px 0 52px; background: linear-gradient(135deg, #fffaf0, #f4e7d4); }
+.key-modern-hero h1 { margin: 8px 0 12px; font-family: Georgia, serif; font-size: clamp(2.7rem, 6vw, 5rem); color: #4b1710; }
+.key-modern-hero > div > p:last-child { max-width: 680px; margin: 0; font-size: 1.12rem; color: #6f625b; }
+.key-modern-section { padding: 64px 0; }
+.key-modern-section-tint { background: #f4ecdf; }
+.key-modern-section h2 { margin: 0 0 28px; font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3.25rem); color: #4b1710; }
+.key-table-scroll { overflow-x: auto; border: 1px solid #dfcfbb; border-radius: 18px; background: #fffdf9; box-shadow: 0 12px 35px rgba(67, 34, 20, .07); }
+.key-modern table { width: 100%; min-width: 620px; margin: 0; border-collapse: collapse; font-family: Arial, sans-serif; }
+.key-modern th, .key-modern td { padding: 14px 18px; border: 0; border-bottom: 1px solid #eadfce; vertical-align: top; text-align: left; }
+.key-modern thead th, .key-modern .key-group-row th { background: #5a1b12; color: #fff; font-weight: 700; }
+.key-modern .key-group-row th { background: #eee0ca; color: #5a1b12; }
+.key-modern tbody tr:last-child td { border-bottom: 0; }
+.key-note { margin: 16px 2px 0; color: #756860; font-size: .95rem; }
+.key-class-grid { display: grid; gap: 24px; }
+.key-class-card { padding: 25px; border: 1px solid #ddccb6; border-radius: 20px; background: #fffdf9; }
+.key-class-card h3 { margin: 0 0 18px; font: 700 1.25rem Arial, sans-serif; color: #5a1b12; }
+.key-class-card ol { margin: 0; padding-left: 20px; }
+.key-class-card li + li { margin-top: 7px; }
+.key-contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.key-contact-card { padding: 25px; border: 1px solid #ddccb6; border-radius: 18px; background: #fffdf9; }
+.key-contact-card h3 { margin: 0 0 6px; font: 700 1.16rem Arial, sans-serif; color: #5a1b12; }
+.key-contact-card p { margin: 0 0 15px; color: #76665d; }
+.key-contact-card a { display: block; overflow-wrap: anywhere; color: #9a4c00; }
+.key-contact-card a + a { margin-top: 7px; }
+@media (max-width: 760px) {
+  .key-modern-shell { width: min(100% - 28px, 1120px); }
+  .key-modern-hero, .key-modern-section { padding: 46px 0; }
+  .key-contact-grid { grid-template-columns: 1fr; }
+  .key-class-card { padding: 18px; }
+}

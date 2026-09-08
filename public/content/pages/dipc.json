@@ -1,0 +1,44 @@
+{
+  "meta": { "pageTitle": "中文佛学文凭", "description": "新加坡佛学与巴利文学院中文佛学文凭课程。" },
+  "chinese": true,
+  "pageClass": "programme-modern-dipc",
+  "backLabel": "所有课程",
+  "factsLabel": "课程详情",
+  "heroNote": { "label": "上课日期", "value": "2027年1月至12月", "lines": [] },
+  "facts": [
+    { "label": "招生", "value": "每年10月开始" },
+    { "label": "上课地点", "value": "祝福寺 Mangala Vihara" }
+  ],
+  "overview": {
+    "kicker": "学习资格", "title": "通过理论、实践和评估相结合，旨在更好地掌握佛学知识。", "paragraphs": [], "requirements": true,
+    "questions": ["年满18岁。", "中文听力、口语、阅读与书写能力。", "有佛学基础知识者优先。"]
+  },
+  "curriculum": {
+    "kicker": "课程大纲", "title": "五个核心科目",
+    "items": ["早期佛教基本教义", "佛教社会维度", "佛教的地理传播", "佛教早期历史（至公元前三世纪）", "巴利文入门"]
+  },
+  "progression": {
+    "kicker": "学术进阶", "title": "继续深造",
+    "segments": [
+      { "text": "考获中文佛学文凭者，可以继续深造由 " },
+      { "text": "Buddhist and Pali University of Sri Lanka", "href": "http://www.bpu.ac.lk/" },
+      { "text": " 开办的三年英文佛学文科学士学位 " },
+      { "text": "Bachelor of Arts (BA) in Buddhist Studies", "href": "ba.html" },
+      { "text": "，以及再研读一年的英文佛学硕士学位 " },
+      { "text": "Master of Arts (MA) in Buddhist Studies。", "href": "ma.html" }
+    ]
+  },
+  "enrol": {
+    "kicker": "查询与报名", "title": "联络课程负责人",
+    "poster": { "image": "images/chinese-diploma-course-poster.webp", "href": "uploads/4th-BPC-Chinese-Diploma-Published.pdf", "alt": "第四期中文佛学文凭课程海报" },
+    "button": { "label": "WhatsApp 查询", "href": "https://qrcc.me/s1y135xdnq4a" },
+    "contactLabel": "WhatsApp",
+    "contacts": [
+      { "label": "Lee Hoon · 9878 8734", "href": "https://wa.me/6598788734" },
+      { "label": "Ai Leng · 9635 7468", "href": "https://wa.me/6596357468" },
+      { "label": "diplomabuddhismchinese@gmail.com", "href": "mailto:diplomabuddhismchinese@gmail.com" }
+    ],
+    "location": ["祝福寺 Mangala Vihara Buddhist Temple", "30 Jalan Eunos, Singapore 419495", "星期二 7:30pm–9:30pm", "星期日 2:00pm–5:15pm"],
+    "note": ""
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Courses",
+    "description": "Explore Buddhist education programmes at the Buddhist and Pali College of Singapore, from introductory courses to postgraduate study."
+  },
+  "hero": {
+    "kicker": "Programmes",
+    "title": "Find the Right Path for Your Buddhist Studies",
+    "lead": "From introductory learning to postgraduate study, BPC offers structured pathways for learners at different stages."
+  },
+  "start": {
+    "kicker": "New to Buddhism?",
+    "title": "Start with Introduction to Buddhism",
+    "description": "A welcoming course for learners with little or no knowledge of Buddhism, and a foundation for further study.",
+    "label": "Explore Introduction",
+    "href": "#begin"
+  },
+  "stages": [
+    {
+      "id": "begin",
+      "number": "01",
+      "kicker": "Begin",
+      "title": "Discover the foundations",
+      "image": "images/course-pathway-begin.webp",
+      "imageAlt": "An opening book, golden lotus and Bodhi leaf symbolising the beginning of Buddhist study",
+      "programmes": [
+        { "page": "intro.html", "level": "English", "duration": "10 weeks", "linkLabel": "View programme" },
+        { "page": "introc.html", "level": "中文", "duration": "8 lessons", "linkLabel": "查看课程" }
+      ]
+    },
+    {
+      "id": "foundation",
+      "number": "02",
+      "kicker": "Build a foundation",
+      "title": "Develop structured understanding",
+      "image": "images/course-pathway-foundation.webp",
+      "imageAlt": "Books supporting a golden Dhamma wheel, symbolising structured Buddhist study",
+      "programmes": [
+        { "page": "dip.html", "level": "English", "duration": "1 year", "linkLabel": "View programme" },
+        { "page": "dipc.html", "level": "中文", "duration": "10 months", "linkLabel": "查看课程" }
+      ]
+    },
+    {
+      "id": "degree",
+      "number": "03",
+      "kicker": "Advance your studies",
+      "title": "Progress through degree study",
+      "image": "images/course-pathway-degree.webp",
+      "imageAlt": "A golden Bodhi tree growing from an open book, symbolising advanced study and research",
+      "programmes": [
+        { "page": "ba.html", "level": "Undergraduate", "duration": "3 years", "linkLabel": "View programme" },
+        { "page": "ma.html", "level": "Postgraduate", "duration": "1 year", "linkLabel": "View programme" }
+      ]
+    }
+  ],
+  "comparison": {
+    "kicker": "At a glance",
+    "title": "Compare study pathways",
+    "columns": ["Programme", "Duration", "Suitable for"],
+    "rows": [
+      { "programme": "Introduction (English or Chinese)", "duration": "10 weeks", "suitableFor": "New learners" },
+      { "programme": "Diploma (English or Chinese)", "duration": "1 year", "suitableFor": "Foundation study" },
+      { "programme": "BA in Buddhist Studies", "duration": "3 years", "suitableFor": "Degree-level study" },
+      { "programme": "MA in Buddhist Studies", "duration": "1 year", "suitableFor": "Postgraduate study" }
+    ]
+  },
+  "banner": {
+    "image": "images/courses-banner.webp",
+    "imageAlt": "Buddhist and Pali College of Singapore — The College for Buddhist Education"
+  },
+  "guidance": {
+    "kicker": "Need guidance?",
+    "title": "Not sure which programme is right for you?",
+    "label": "Contact the College",
+    "href": "contact.html"
+  }
+}
