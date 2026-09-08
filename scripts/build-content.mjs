@@ -1,4 +1,5 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { readFile, readdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
@@ -22,10 +23,31 @@ const content = {
   gallery: await readJson("gallery.json")
 };
 
-await writeFile(
-  resolve(root, "public/js/site-data.js"),
-  `window.BPC_CONTENT = ${JSON.stringify(content, null, 2)};\n`,
-  "utf8"
-);
+const publicDirectory = resolve(root, "public");
+const generatedSiteData = `window.BPC_CONTENT = ${JSON.stringify(content, null, 2)};\n`;
+const contentVersion = createHash("sha256").update(generatedSiteData).digest("hex").slice(0, 12);
 
-console.log("Generated public/js/site-data.js from structured content.");
+await writeFile(resolve(publicDirectory, "js/site-data.js"), generatedSiteData, "utf8");
+
+const publicFiles = await readdir(publicDirectory, { withFileTypes: true });
+let updatedHtmlFiles = 0;
+
+for (const entry of publicFiles) {
+  if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
+
+  const htmlPath = resolve(publicDirectory, entry.name);
+  const html = await readFile(htmlPath, "utf8");
+  const updatedHtml = html.replace(
+    /js\/site-data\.js\?v=[^"']+/g,
+    `js/site-data.js?v=${contentVersion}`
+  );
+
+  if (updatedHtml !== html) {
+    await writeFile(htmlPath, updatedHtml, "utf8");
+    updatedHtmlFiles += 1;
+  }
+}
+
+console.log(
+  `Generated public/js/site-data.js with version ${contentVersion} and updated ${updatedHtmlFiles} HTML file(s).`
+);

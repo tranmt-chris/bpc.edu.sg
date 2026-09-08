@@ -39,15 +39,15 @@ jobs:
 
       - name: Save generated website content
         run: |
-          if git diff --quiet -- public/js/site-data.js; then
-            echo "site-data.js is already current."
+          if git diff --quiet -- public/js/site-data.js public/*.html; then
+            echo "Generated website content is already current."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/js/site-data.js
-          git commit -m "Update generated website content"
+          git add public/js/site-data.js public/*.html
+          git commit -m "Update generated website content and cache version"
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Prepare website
