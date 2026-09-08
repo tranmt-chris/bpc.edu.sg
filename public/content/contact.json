@@ -1,12 +1,27 @@
 {
-  "meta": { "pageTitle": "Contact", "description": "Contact the Buddhist and Pali College of Singapore about programmes, admissions and visiting the College." },
-  "hero": { "kicker": "Get in touch", "title": "Contact Us", "description": "Whether you have a question about our programmes or would like to visit the College, we are here to help." },
+  "meta": {
+    "pageTitle": "Contact",
+    "description": "Contact the Buddhist and Pali College of Singapore about programmes, admissions and visiting the College."
+  },
+  "hero": {
+    "kicker": "Get in touch",
+    "title": "Contact Us",
+    "description": "Whether you have a question about our programmes or would like to visit the College, we are here to help."
+  },
   "form": {
     "kicker": "Send an enquiry",
     "title": "How can we help?",
-    "action": "https://formsubmit.co/enquiry@bpc.edu.sg",
+    "action": "https://formsubmit.co/7b118880f1f7075583766456fb6d0189",
     "redirect": "https://bpc.edu.sg/thank-you.html",
-    "subjects": ["General Enquiry", "Introduction to Buddhism", "Diploma in Buddhism", "Bachelor of Arts in Buddhist Studies", "Master of Arts in Buddhist Studies", "Introduction to Buddhism (Chinese)", "Diploma in Buddhism (Chinese)"],
+    "subjects": [
+      "General Enquiry",
+      "Introduction to Buddhism",
+      "Diploma in Buddhism",
+      "Bachelor of Arts in Buddhist Studies",
+      "Master of Arts in Buddhist Studies",
+      "Introduction to Buddhism (Chinese)",
+      "Diploma in Buddhism (Chinese)"
+    ],
     "subjectLabel": "Subject",
     "nameLabel": "Name",
     "emailLabel": "Email",
@@ -19,9 +34,15 @@
     "image": "images/bpc-hero-mangala-v3.webp",
     "imageAlt": "Mangala Vihara Buddhist Temple, home of the Buddhist and Pali College of Singapore",
     "addressLabel": "Address",
-    "address": ["30 Jalan Eunos", "Singapore 419495"],
+    "address": [
+      "30 Jalan Eunos",
+      "Singapore 419495"
+    ],
     "emailLabel": "Email",
-    "emails": ["enquiry@bpc.edu.sg", "alumni@bpc.edu.sg"],
+    "emails": [
+      "enquiry@bpc.edu.sg",
+      "alumni@bpc.edu.sg"
+    ],
     "phoneLabel": "Telephone",
     "phone": "+65 6744 4285",
     "visitLabel": "Plan your visit"
@@ -29,7 +50,10 @@
   "visit": {
     "kicker": "Find your way",
     "title": "Visit Us",
-    "address": ["Buddhist and Pali College of Singapore", "30 Jalan Eunos, Singapore 419495"],
+    "address": [
+      "Buddhist and Pali College of Singapore",
+      "30 Jalan Eunos, Singapore 419495"
+    ],
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.760000917046!2d103.90327725089752!3d1.3197116620330387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1804fa868bff%3A0x3b1365dcc910bd8a!2sBuddhist+and+Pali+College+of+Singapore!5e0!3m2!1sen!2ssg!4v1552040082983",
     "mapTitle": "Map showing Buddhist and Pali College of Singapore"
   }
