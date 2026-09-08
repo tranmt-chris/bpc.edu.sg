@@ -156,12 +156,342 @@ content:
                     type: string
                     required: true
 
-  - name: programme-headers-group
-    label: Programme headers
+  - name: main-pages-group
+    label: Main pages
+    type: group
+    items:
+      - name: homepage
+        label: Homepage
+        type: file
+        path: public/content/pages/index.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Main banner
+            type: object
+            fields:
+              - { name: logo, label: Logo, type: image, required: true, options: { media: images } }
+              - { name: logoAlt, label: Logo description, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: lead, label: Supporting text, type: text, required: true }
+              - name: primary
+                label: Primary button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+              - name: secondary
+                label: Secondary button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+          - name: pathways
+            label: Featured study pathways
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - name: allCourses
+                label: All courses link
+                type: object
+                fields:
+                  - { name: label, label: Link text, type: string, required: true }
+                  - { name: href, label: Link, type: string, required: true }
+              - name: items
+                label: Pathways
+                type: object
+                list:
+                  collapsible: { collapsed: true, summary: "{title}" }
+                fields:
+                  - { name: title, label: Title, type: string, required: true }
+                  - { name: description, label: Description, type: text, required: true }
+                  - { name: linkLabel, label: Link text, type: string, required: true }
+                  - { name: href, label: Link, type: string, required: true }
+          - name: about
+            label: About preview
+            type: object
+            fields:
+              - { name: image, label: Image, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - { name: description, label: Description, type: text, required: true }
+              - name: button
+                label: Button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+          - name: latest
+            label: Latest event section
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - name: button
+                label: Gallery button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+          - name: contact
+            label: Contact strip
+            type: object
+            fields:
+              - { name: addressLabel, label: Address heading, type: string, required: true }
+              - { name: address, label: Address, type: string, required: true }
+              - { name: phoneLabel, label: Phone heading, type: string, required: true }
+              - { name: phone, label: Displayed phone number, type: string, required: true }
+              - { name: phoneHref, label: Phone link, type: string, required: true }
+              - { name: emailLabel, label: Email heading, type: string, required: true }
+              - name: emails
+                label: Email addresses
+                type: object
+                list:
+                  collapsible: { collapsed: false, summary: "{label}" }
+                description: Add up to two email addresses for the homepage contact strip.
+                fields:
+                  - { name: label, label: Displayed email, type: string, required: true }
+                  - { name: href, label: Email link, type: string, required: true, description: "Use mailto: followed by the email address." }
+              - name: button
+                label: Contact button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+
+      - name: about-page
+        label: About the College
+        type: file
+        path: public/content/pages/about.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: lead, label: Supporting text, type: text, required: true }
+              - { name: image, label: Main image, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+          - name: story
+            label: Our story
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - { name: paragraphs, label: Paragraphs, type: text, list: true }
+          - name: facts
+            label: College facts
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{value}" }
+            fields:
+              - { name: value, label: Main text, type: string, required: true }
+              - { name: label, label: Supporting text, type: string, required: true }
+          - name: leadership
+            label: Leadership
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - name: people
+                label: Principals
+                type: object
+                list:
+                  collapsible: { collapsed: true, summary: "{role}: {name}" }
+                fields:
+                  - { name: role, label: Role, type: string, required: true }
+                  - { name: name, label: Name, type: string, required: true }
+                  - { name: qualification, label: Qualifications, type: string }
+                  - { name: image, label: Portrait, type: image, required: true, options: { media: images } }
+                  - { name: imageAlt, label: Image description, type: string, required: true }
+          - name: gallery
+            label: Closing photograph
+            type: object
+            fields:
+              - { name: image, label: Photograph, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+          - name: cta
+            label: Closing call to action
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Section title, type: string, required: true }
+              - name: button
+                label: Button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+
+      - name: courses-page
+        label: All Courses
+        type: file
+        path: public/content/pages/courses.json
+        format: json
+        fields:
+          - name: meta
+            component: programme-meta
+          - name: hero
+            label: Page introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: lead, label: Introduction, type: text, required: true }
+          - name: start
+            label: Starting recommendation
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: description, label: Description, type: text, required: true }
+              - { name: label, label: Button text, type: string, required: true }
+              - { name: href, label: Button link, type: string, required: true }
+          - name: stages
+            label: Study stages
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{number} — {title}" } }
+            fields:
+              - { name: id, label: Section ID, type: string, required: true }
+              - { name: number, label: Stage number, type: string, required: true }
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: image, label: Illustration, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+              - name: programmes
+                label: Programme cards
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{page}" } }
+                fields:
+                  - { name: page, label: Programme page, type: string, required: true }
+                  - { name: level, label: Language or level, type: string, required: true }
+                  - { name: duration, label: Duration, type: string, required: true }
+                  - { name: linkLabel, label: Link text, type: string, required: true }
+          - name: comparison
+            label: Comparison table
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: columns, label: Column headings, type: string, list: true }
+              - name: rows
+                label: Table rows
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{programme}" } }
+                fields:
+                  - { name: programme, label: Programme, type: string, required: true }
+                  - { name: duration, label: Duration, type: string, required: true }
+                  - { name: suitableFor, label: Suitable for, type: string, required: true }
+          - name: banner
+            label: Programme banner
+            type: object
+            fields:
+              - { name: image, label: Image, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+          - name: guidance
+            label: Contact prompt
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: label, label: Button text, type: string, required: true }
+              - { name: href, label: Button link, type: string, required: true }
+
+      - name: contact-page
+        label: Contact
+        type: file
+        path: public/content/contact.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Page introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: description, label: Introduction, type: text, required: true }
+          - name: form
+            label: Contact form
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: action, label: FormSubmit address, type: string, required: true }
+              - { name: redirect, label: Thank-you page URL, type: string, required: true }
+              - { name: subjects, label: Subject choices, type: string, list: true }
+              - { name: subjectLabel, label: Subject field label, type: string, required: true }
+              - { name: nameLabel, label: Name field label, type: string, required: true }
+              - { name: emailLabel, label: Email field label, type: string, required: true }
+              - { name: messageLabel, label: Message field label, type: string, required: true }
+              - { name: buttonLabel, label: Submit button text, type: string, required: true }
+          - name: details
+            label: College contact details
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: image, label: Temple image, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+              - { name: addressLabel, label: Address heading, type: string, required: true }
+              - { name: address, label: Address lines, type: string, list: true }
+              - { name: emailLabel, label: Email heading, type: string, required: true }
+              - { name: emails, label: Email addresses, type: string, list: true }
+              - { name: phoneLabel, label: Telephone heading, type: string, required: true }
+              - { name: phone, label: Telephone number, type: string, required: true }
+              - { name: visitLabel, label: Visit link text, type: string, required: true }
+          - name: visit
+            label: Visit and map
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: address, label: Displayed address, type: string, list: true }
+              - { name: mapUrl, label: Google Maps embed URL, type: text, required: true }
+              - { name: mapTitle, label: Map description, type: string, required: true }
+
+      - name: thank-you-page
+        label: Thank You
+        type: file
+        path: public/content/thank-you.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Confirmation introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: description, label: Introduction, type: text, required: true }
+          - name: confirmation
+            label: Confirmation card
+            type: object
+            fields:
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: description, label: Description, type: text, required: true }
+              - name: buttons
+                label: Buttons
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{label}" } }
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+                  - { name: primary, label: Primary button, type: boolean }
+
+
+  - name: programmes-group
+    label: Programmes
     type: group
     items:
       - name: programmes
-        label: Programme page summaries
+        label: Titles and buttons for all programmes
         type: file
         path: public/content/programmes.json
         format: json
@@ -212,12 +542,34 @@ content:
                 type: string
                 required: true
 
-  - name: website-pages-group
-    label: Website pages
-    type: group
-    items:
+      - name: intro-page
+        label: Introduction to Buddhism
+        type: file
+        path: public/content/pages/intro.json
+        format: json
+        fields: &programme-page-fields
+          - { name: meta, component: programme-meta }
+          - { name: chinese, label: Chinese page, type: boolean }
+          - { name: pageClass, label: Optional style class, type: string }
+          - { name: backLabel, label: Back link text, type: string, required: true }
+          - { name: secondaryDownload, label: Secondary button downloads file, type: boolean }
+          - { name: factsLabel, label: Facts heading, type: string, required: true }
+          - { name: heroNote, component: programme-hero-note }
+          - { name: facts, component: programme-facts }
+          - { name: overview, component: programme-overview }
+          - { name: curriculum, component: programme-curriculum }
+          - { name: progression, component: programme-progression }
+          - { name: enrol, component: programme-enrol }
+
+      - name: intro-chinese-page
+        label: Introduction to Buddhism (Chinese)
+        type: file
+        path: public/content/pages/introc.json
+        format: json
+        fields: *programme-page-fields
+
       - name: diploma-page
-        label: Diploma in Buddhism page
+        label: Diploma in Buddhism (English)
         type: file
         path: public/content/pages/dip.json
         format: json
@@ -505,177 +857,15 @@ content:
                 type: text
                 required: true
 
-      - name: homepage
-        label: Homepage
+      - name: diploma-chinese-page
+        label: Diploma in Buddhism (Chinese)
         type: file
-        path: public/content/pages/index.json
+        path: public/content/pages/dipc.json
         format: json
-        fields:
-          - { name: meta, component: programme-meta }
-          - name: hero
-            label: Main banner
-            type: object
-            fields:
-              - { name: logo, label: Logo, type: image, required: true, options: { media: images } }
-              - { name: logoAlt, label: Logo description, type: string, required: true }
-              - { name: title, label: Main heading, type: string, required: true }
-              - { name: lead, label: Supporting text, type: text, required: true }
-              - name: primary
-                label: Primary button
-                type: object
-                fields:
-                  - { name: label, label: Button text, type: string, required: true }
-                  - { name: href, label: Button link, type: string, required: true }
-              - name: secondary
-                label: Secondary button
-                type: object
-                fields:
-                  - { name: label, label: Button text, type: string, required: true }
-                  - { name: href, label: Button link, type: string, required: true }
-          - name: pathways
-            label: Featured study pathways
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - name: allCourses
-                label: All courses link
-                type: object
-                fields:
-                  - { name: label, label: Link text, type: string, required: true }
-                  - { name: href, label: Link, type: string, required: true }
-              - name: items
-                label: Pathways
-                type: object
-                list:
-                  collapsible: { collapsed: true, summary: "{title}" }
-                fields:
-                  - { name: title, label: Title, type: string, required: true }
-                  - { name: description, label: Description, type: text, required: true }
-                  - { name: linkLabel, label: Link text, type: string, required: true }
-                  - { name: href, label: Link, type: string, required: true }
-          - name: about
-            label: About preview
-            type: object
-            fields:
-              - { name: image, label: Image, type: image, required: true, options: { media: images } }
-              - { name: imageAlt, label: Image description, type: string, required: true }
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - { name: description, label: Description, type: text, required: true }
-              - name: button
-                label: Button
-                type: object
-                fields:
-                  - { name: label, label: Button text, type: string, required: true }
-                  - { name: href, label: Button link, type: string, required: true }
-          - name: latest
-            label: Latest event section
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - name: button
-                label: Gallery button
-                type: object
-                fields:
-                  - { name: label, label: Button text, type: string, required: true }
-                  - { name: href, label: Button link, type: string, required: true }
-          - name: contact
-            label: Contact strip
-            type: object
-            fields:
-              - { name: addressLabel, label: Address heading, type: string, required: true }
-              - { name: address, label: Address, type: string, required: true }
-              - { name: phoneLabel, label: Phone heading, type: string, required: true }
-              - { name: phone, label: Displayed phone number, type: string, required: true }
-              - { name: phoneHref, label: Phone link, type: string, required: true }
-              - { name: emailLabel, label: Email heading, type: string, required: true }
-              - name: emails
-                label: Email addresses
-                type: object
-                list:
-                  collapsible: { collapsed: false, summary: "{label}" }
-                description: Add up to two email addresses for the homepage contact strip.
-                fields:
-                  - { name: label, label: Displayed email, type: string, required: true }
-                  - { name: href, label: Email link, type: string, required: true, description: "Use mailto: followed by the email address." }
-              - name: button
-                label: Contact button
-                type: object
-                fields:
-                  - { name: label, label: Button text, type: string, required: true }
-                  - { name: href, label: Button link, type: string, required: true }
-
-      - name: about-page
-        label: About the College page
-        type: file
-        path: public/content/pages/about.json
-        format: json
-        fields:
-          - { name: meta, component: programme-meta }
-          - name: hero
-            label: Introduction
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Main heading, type: string, required: true }
-              - { name: lead, label: Supporting text, type: text, required: true }
-              - { name: image, label: Main image, type: image, required: true, options: { media: images } }
-              - { name: imageAlt, label: Image description, type: string, required: true }
-          - name: story
-            label: Our story
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - { name: paragraphs, label: Paragraphs, type: text, list: true }
-          - name: facts
-            label: College facts
-            type: object
-            list:
-              collapsible: { collapsed: true, summary: "{value}" }
-            fields:
-              - { name: value, label: Main text, type: string, required: true }
-              - { name: label, label: Supporting text, type: string, required: true }
-          - name: leadership
-            label: Leadership
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - name: people
-                label: Principals
-                type: object
-                list:
-                  collapsible: { collapsed: true, summary: "{role}: {name}" }
-                fields:
-                  - { name: role, label: Role, type: string, required: true }
-                  - { name: name, label: Name, type: string, required: true }
-                  - { name: qualification, label: Qualifications, type: string }
-                  - { name: image, label: Portrait, type: image, required: true, options: { media: images } }
-                  - { name: imageAlt, label: Image description, type: string, required: true }
-          - name: gallery
-            label: Closing photograph
-            type: object
-            fields:
-              - { name: image, label: Photograph, type: image, required: true, options: { media: images } }
-              - { name: imageAlt, label: Image description, type: string, required: true }
-          - name: cta
-            label: Closing call to action
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - name: button
-                label: Button
-                type: object
-                fields:
-                  - { name: label, label: Button text, type: string, required: true }
-                  - { name: href, label: Button link, type: string, required: true }
+        fields: *programme-page-fields
 
       - name: ba-page
-        label: BA in Buddhist Studies page
+        label: BA in Buddhist Studies
         type: file
         path: public/content/pages/ba.json
         format: json
@@ -763,7 +953,7 @@ content:
               - { name: note, label: Note, type: text, required: true }
 
       - name: ma-structured-page
-        label: MA in Buddhist Studies page
+        label: MA in Buddhist Studies
         type: file
         path: public/content/pages/ma.json
         format: json
@@ -842,196 +1032,90 @@ content:
               - { name: location, label: Location and schedule lines, type: string, list: true }
               - { name: note, label: Fees note, type: text, required: true }
 
-      - name: courses-page
-        label: General — All Courses
+
+  - name: people-group
+    label: Our People
+    type: group
+    items:
+      - name: people
+        label: Staff directory details
         type: file
-        path: public/content/pages/courses.json
+        path: public/content/people.json
         format: json
         fields:
-          - name: meta
-            component: programme-meta
+          - name: categories
+            label: Staff categories
+            type: object
+            list:
+              collapsible: { collapsed: true, summary: "{title}" }
+            fields:
+              - { name: id, label: Category ID, type: string, required: true, description: "Do not change unless the page structure changes." }
+              - { name: page, label: Page filename, type: string, required: true, description: "For example teamac.html." }
+              - { name: title, label: Category title, type: string, required: true }
+              - { name: description, label: Page description, type: text, required: true }
+              - name: people
+                label: People
+                type: object
+                list:
+                  collapsible: { collapsed: true, summary: "{name}" }
+                fields:
+                  - { name: name, label: Name, type: string, required: true }
+                  - { name: role, label: Role, type: string, required: true }
+                  - { name: qualifications, label: Qualifications, type: string }
+                  - { name: details, label: Teaching details, type: text }
+                  - { name: email, label: Email, type: string }
+                  - { name: image, label: Portrait, type: image, required: true, options: { media: images } }
+                  - { name: imageAlt, label: Image description, type: string, required: true }
+                  - name: social
+                    label: Social links
+                    type: object
+                    list:
+                      collapsible: { collapsed: true, summary: "{label}" }
+                    fields:
+                      - { name: label, label: Platform, type: string, required: true }
+                      - { name: icon, label: Font Awesome icon, type: string, required: true }
+                      - { name: href, label: Link, type: string, required: true }
+
+      - name: people-overview-page
+        label: Our People overview
+        type: file
+        path: public/content/people-overview.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
           - name: hero
             label: Page introduction
             type: object
             fields:
               - { name: kicker, label: Short heading, type: string, required: true }
               - { name: title, label: Main heading, type: string, required: true }
-              - { name: lead, label: Introduction, type: text, required: true }
-          - name: start
-            label: Starting recommendation
+              - { name: description, label: Introduction, type: text, required: true }
+          - name: categories
+            label: Staff categories
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{title}" } }
+            fields:
+              - { name: title, label: Title, type: string, required: true }
+              - { name: icon, label: Font Awesome icon, type: string, required: true }
+              - { name: buttonLabel, label: Button text, type: string, required: true }
+              - { name: href, label: Page link, type: string, required: true }
+          - name: feature
+            label: Featured staff photograph
             type: object
             fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Heading, type: string, required: true }
-              - { name: description, label: Description, type: text, required: true }
-              - { name: label, label: Button text, type: string, required: true }
-              - { name: href, label: Button link, type: string, required: true }
-          - name: stages
-            label: Study stages
-            type: object
-            list: { collapsible: { collapsed: true, summary: "{number} — {title}" } }
-            fields:
-              - { name: id, label: Section ID, type: string, required: true }
-              - { name: number, label: Stage number, type: string, required: true }
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Heading, type: string, required: true }
-              - { name: image, label: Illustration, type: image, required: true, options: { media: images } }
-              - { name: imageAlt, label: Image description, type: string, required: true }
-              - name: programmes
-                label: Programme cards
-                type: object
-                list: { collapsible: { collapsed: true, summary: "{page}" } }
-                fields:
-                  - { name: page, label: Programme page, type: string, required: true }
-                  - { name: level, label: Language or level, type: string, required: true }
-                  - { name: duration, label: Duration, type: string, required: true }
-                  - { name: linkLabel, label: Link text, type: string, required: true }
-          - name: comparison
-            label: Comparison table
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Heading, type: string, required: true }
-              - { name: columns, label: Column headings, type: string, list: true }
-              - name: rows
-                label: Table rows
-                type: object
-                list: { collapsible: { collapsed: true, summary: "{programme}" } }
-                fields:
-                  - { name: programme, label: Programme, type: string, required: true }
-                  - { name: duration, label: Duration, type: string, required: true }
-                  - { name: suitableFor, label: Suitable for, type: string, required: true }
-          - name: banner
-            label: Programme banner
-            type: object
-            fields:
+              - { name: title, label: Caption, type: string, required: true }
+              - { name: date, label: Display date, type: string, required: true }
+              - { name: dateTime, label: Machine-readable date, type: string, required: true, description: "Use YYYY-MM-DD." }
               - { name: image, label: Image, type: image, required: true, options: { media: images } }
               - { name: imageAlt, label: Image description, type: string, required: true }
-          - name: guidance
-            label: Contact prompt
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Heading, type: string, required: true }
-              - { name: label, label: Button text, type: string, required: true }
-              - { name: href, label: Button link, type: string, required: true }
-      - name: contact-page
-        label: General — Contact
-        type: file
-        path: public/content/contact.json
-        format: json
-        fields:
-          - { name: meta, component: programme-meta }
-          - name: hero
-            label: Page introduction
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Main heading, type: string, required: true }
-              - { name: description, label: Introduction, type: text, required: true }
-          - name: form
-            label: Contact form
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Heading, type: string, required: true }
-              - { name: action, label: FormSubmit address, type: string, required: true }
-              - { name: redirect, label: Thank-you page URL, type: string, required: true }
-              - { name: subjects, label: Subject choices, type: string, list: true }
-              - { name: subjectLabel, label: Subject field label, type: string, required: true }
-              - { name: nameLabel, label: Name field label, type: string, required: true }
-              - { name: emailLabel, label: Email field label, type: string, required: true }
-              - { name: messageLabel, label: Message field label, type: string, required: true }
-              - { name: buttonLabel, label: Submit button text, type: string, required: true }
-          - name: details
-            label: College contact details
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Heading, type: string, required: true }
-              - { name: image, label: Temple image, type: image, required: true, options: { media: images } }
-              - { name: imageAlt, label: Image description, type: string, required: true }
-              - { name: addressLabel, label: Address heading, type: string, required: true }
-              - { name: address, label: Address lines, type: string, list: true }
-              - { name: emailLabel, label: Email heading, type: string, required: true }
-              - { name: emails, label: Email addresses, type: string, list: true }
-              - { name: phoneLabel, label: Telephone heading, type: string, required: true }
-              - { name: phone, label: Telephone number, type: string, required: true }
-              - { name: visitLabel, label: Visit link text, type: string, required: true }
-          - name: visit
-            label: Visit and map
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Heading, type: string, required: true }
-              - { name: address, label: Displayed address, type: string, list: true }
-              - { name: mapUrl, label: Google Maps embed URL, type: text, required: true }
-              - { name: mapTitle, label: Map description, type: string, required: true }
-      - name: thank-you-page
-        label: General — Thank You
-        type: file
-        path: public/content/thank-you.json
-        format: json
-        fields:
-          - { name: meta, component: programme-meta }
-          - name: hero
-            label: Confirmation introduction
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Main heading, type: string, required: true }
-              - { name: description, label: Introduction, type: text, required: true }
-          - name: confirmation
-            label: Confirmation card
-            type: object
-            fields:
-              - { name: title, label: Heading, type: string, required: true }
-              - { name: description, label: Description, type: text, required: true }
-              - name: buttons
-                label: Buttons
-                type: object
-                list: { collapsible: { collapsed: true, summary: "{label}" } }
-                fields:
-                  - { name: label, label: Button text, type: string, required: true }
-                  - { name: href, label: Button link, type: string, required: true }
-                  - { name: primary, label: Primary button, type: boolean }
-      - name: intro-page
-        label: Programmes — Introduction to Buddhism
-        type: file
-        path: public/content/pages/intro.json
-        format: json
-        fields: &programme-page-fields
-          - { name: meta, component: programme-meta }
-          - { name: chinese, label: Chinese page, type: boolean }
-          - { name: pageClass, label: Optional style class, type: string }
-          - { name: backLabel, label: Back link text, type: string, required: true }
-          - { name: secondaryDownload, label: Secondary button downloads file, type: boolean }
-          - { name: factsLabel, label: Facts heading, type: string, required: true }
-          - { name: heroNote, component: programme-hero-note }
-          - { name: facts, component: programme-facts }
-          - { name: overview, component: programme-overview }
-          - { name: curriculum, component: programme-curriculum }
-          - { name: progression, component: programme-progression }
-          - { name: enrol, component: programme-enrol }
-      - name: intro-chinese-page
-        label: Programmes — Introduction to Buddhism (Chinese)
-        type: file
-        path: public/content/pages/introc.json
-        format: json
-        fields: *programme-page-fields
-      - name: diploma-chinese-page
-        label: Programmes — Diploma in Buddhism (Chinese)
-        type: file
-        path: public/content/pages/dipc.json
-        format: json
-        fields: *programme-page-fields
-      - name: counselling-page
-        label: Programmes — Buddhist Counselling (archive)
-        type: file
-        path: public/bc.html
-        format: code
+
+
+  - name: resources-group
+    label: Resources
+    type: group
+    items:
       - name: key-dates-page
-        label: Resources — Key Dates
+        label: Key Dates
         type: file
         path: public/content/key-dates.json
         format: json
@@ -1108,8 +1192,9 @@ content:
                   - { name: role, label: Role, type: string, required: true }
                   - { name: email, label: Email, type: string, required: true }
                   - { name: phone, label: Phone, type: string, required: true }
+
       - name: recommended-texts-page
-        label: Resources — Recommended Texts
+        label: Recommended Texts
         type: file
         path: public/content/books.json
         format: json
@@ -1145,8 +1230,9 @@ content:
             fields:
               - { name: label, label: Button text, type: string, required: true }
               - { name: href, label: Button link, type: string, required: true }
+
       - name: elibrary-page
-        label: Resources — eLibrary
+        label: eLibrary
         type: file
         path: public/content/elibrary.json
         format: json
@@ -1171,93 +1257,13 @@ content:
               - { name: image, label: Image, type: image, required: true, options: { media: images } }
               - { name: imageAlt, label: Image description, type: string, required: true }
           - { name: credit, label: Credit line, type: text, required: true }
-      - name: people-overview-page
-        label: People — Overview
-        type: file
-        path: public/content/people-overview.json
-        format: json
-        fields:
-          - { name: meta, component: programme-meta }
-          - name: hero
-            label: Page introduction
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Main heading, type: string, required: true }
-              - { name: description, label: Introduction, type: text, required: true }
-          - name: categories
-            label: Staff categories
-            type: object
-            list: { collapsible: { collapsed: true, summary: "{title}" } }
-            fields:
-              - { name: title, label: Title, type: string, required: true }
-              - { name: icon, label: Font Awesome icon, type: string, required: true }
-              - { name: buttonLabel, label: Button text, type: string, required: true }
-              - { name: href, label: Page link, type: string, required: true }
-          - name: feature
-            label: Featured staff photograph
-            type: object
-            fields:
-              - { name: title, label: Caption, type: string, required: true }
-              - { name: date, label: Display date, type: string, required: true }
-              - { name: dateTime, label: Machine-readable date, type: string, required: true, description: "Use YYYY-MM-DD." }
-              - { name: image, label: Image, type: image, required: true, options: { media: images } }
-              - { name: imageAlt, label: Image description, type: string, required: true }
-      - name: visit-page
-        label: Archive — Visit Us
-        type: file
-        path: public/visit.html
-        format: code
 
-  - name: people-group
-    label: Our People
-    type: group
-    items:
-      - name: people
-        label: Staff directories
-        type: file
-        path: public/content/people.json
-        format: json
-        fields:
-          - name: categories
-            label: Staff categories
-            type: object
-            list:
-              collapsible: { collapsed: true, summary: "{title}" }
-            fields:
-              - { name: id, label: Category ID, type: string, required: true, description: "Do not change unless the page structure changes." }
-              - { name: page, label: Page filename, type: string, required: true, description: "For example teamac.html." }
-              - { name: title, label: Category title, type: string, required: true }
-              - { name: description, label: Page description, type: text, required: true }
-              - name: people
-                label: People
-                type: object
-                list:
-                  collapsible: { collapsed: true, summary: "{name}" }
-                fields:
-                  - { name: name, label: Name, type: string, required: true }
-                  - { name: role, label: Role, type: string, required: true }
-                  - { name: qualifications, label: Qualifications, type: string }
-                  - { name: details, label: Teaching details, type: text }
-                  - { name: email, label: Email, type: string }
-                  - { name: image, label: Portrait, type: image, required: true, options: { media: images } }
-                  - { name: imageAlt, label: Image description, type: string, required: true }
-                  - name: social
-                    label: Social links
-                    type: object
-                    list:
-                      collapsible: { collapsed: true, summary: "{label}" }
-                    fields:
-                      - { name: label, label: Platform, type: string, required: true }
-                      - { name: icon, label: Font Awesome icon, type: string, required: true }
-                      - { name: href, label: Link, type: string, required: true }
-
-  - name: alumni-group
-    label: Alumni and e-Bulletins
+  - name: community-group
+    label: Community
     type: group
     items:
       - name: bulletins
-        label: Alumni page and e-Bulletins
+        label: Alumni and e-Bulletins
         type: file
         path: public/content/bulletins.json
         format: json
@@ -1306,12 +1312,8 @@ content:
               - { name: href, label: Archive.org link, type: string, required: true }
               - { name: buttonLabel, label: Button text, type: string, required: true }
 
-  - name: gallery-events-group
-    label: Gallery and events
-    type: group
-    items:
       - name: gallery
-        label: Gallery page and events
+        label: Gallery and events
         type: file
         path: public/content/gallery.json
         format: json
@@ -1348,3 +1350,20 @@ content:
               - { name: date, label: Event date, type: string, description: "Use a readable date such as 5 April 2026. Leave blank for archive entries." }
               - { name: image, label: Thumbnail, type: image, required: true, options: { media: images } }
               - { name: href, label: Album or event link, type: string, required: true }
+
+
+  - name: archive-group
+    label: Archived pages
+    type: group
+    items:
+      - name: counselling-page
+        label: Buddhist Counselling
+        type: file
+        path: public/bc.html
+        format: code
+
+      - name: visit-page
+        label: Visit Us
+        type: file
+        path: public/visit.html
+        format: code
