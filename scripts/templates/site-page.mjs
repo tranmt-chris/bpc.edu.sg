@@ -11,7 +11,8 @@ export function renderSitePage({
   description,
   body,
   language = "en",
-  revampVersion = "20260830-home-emails"
+  revampVersion = "20260830-home-emails",
+  additionalHead = ""
 }) {
   const safeTitle = escapeAttribute(title);
   const safeDescription = escapeAttribute(description);
@@ -28,7 +29,7 @@ export function renderSitePage({
   <meta property="og:image" content="images/bpclogo2x2a.png">
   <meta property="og:site_name" content="Buddhist and Pali College of Singapore">
   <meta property="og:type" content="website">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+${additionalHead ? `  ${additionalHead}\n` : ""}  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-33Q9D4MNQF"></script>
   <script>

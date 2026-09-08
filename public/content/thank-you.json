@@ -1,0 +1,12 @@
+{
+  "meta": { "pageTitle": "Thank You", "description": "Thank you for contacting the Buddhist and Pali College of Singapore." },
+  "hero": { "kicker": "Enquiry received", "title": "Thank you for contacting us", "description": "Your message has been sent to the Buddhist and Pali College of Singapore." },
+  "confirmation": {
+    "title": "We will be in touch",
+    "description": "Thank you for your enquiry. A member of the College will respond as soon as possible.",
+    "buttons": [
+      { "label": "Return to Home", "href": "index.html", "primary": true },
+      { "label": "Explore Programmes", "href": "courses.html", "primary": false }
+    ]
+  }
+}

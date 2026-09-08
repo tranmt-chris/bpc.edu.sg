@@ -16,6 +16,8 @@ then publish a clean package to cPanel.
 | Recommended Texts | `public/content/books.json` |
 | eLibrary | `public/content/elibrary.json` |
 | Our People overview | `public/content/people-overview.json` |
+| Contact form and details | `public/content/contact.json` |
+| Contact confirmation page | `public/content/thank-you.json` |
 | Gallery events | `public/content/gallery.json` |
 | Academic, administrative and visiting staff | `public/content/people.json` |
 | Alumni page and e-Bulletins | `public/content/bulletins.json` |
@@ -27,7 +29,8 @@ then publish a clean package to cPanel.
 Do not edit `public/js/site-data.js`, `public/alumni.html`, the three staff HTML
 pages, `public/intro.html`, `public/introc.html`, `public/dipc.html`,
 `public/courses.html`, `public/key.html`, `public/books.html`,
-`public/elibrary.html` or `public/team.html` directly. They are generated from
+`public/elibrary.html`, `public/team.html`, `public/contact.html` or
+`public/thank-you.html` directly. They are generated from
 structured content. After changing a file in `public/content/`, regenerate the website with:
 
 ```powershell

@@ -3,6 +3,7 @@ import { readFile, readdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { renderAlumniPage } from "./templates/alumni-page.mjs";
 import { renderCoursesPage } from "./templates/courses-page.mjs";
+import { renderContactPage, renderThankYouPage } from "./templates/contact-pages.mjs";
 import { renderKeyDatesPage } from "./templates/key-dates-page.mjs";
 import { renderPeoplePages } from "./templates/people-pages.mjs";
 import { renderProgrammePage } from "./templates/programme-page.mjs";
@@ -77,6 +78,14 @@ for (const [filename, html] of Object.entries(resourcePages)) {
   await writeFile(resolve(publicDirectory, filename), html, "utf8");
 }
 
+const contactPages = {
+  "contact.html": renderContactPage(await readJson("contact.json")),
+  "thank-you.html": renderThankYouPage(await readJson("thank-you.json"))
+};
+for (const [filename, html] of Object.entries(contactPages)) {
+  await writeFile(resolve(publicDirectory, filename), html, "utf8");
+}
+
 const publicFiles = await readdir(publicDirectory, { withFileTypes: true });
 let updatedHtmlFiles = 0;
 
@@ -97,5 +106,5 @@ for (const entry of publicFiles) {
 }
 
 console.log(
-  `Generated site data and ${Object.keys(peoplePages).length + 6 + Object.keys(resourcePages).length} structured pages with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
+  `Generated site data and ${Object.keys(peoplePages).length + 6 + Object.keys(resourcePages).length + Object.keys(contactPages).length} structured pages with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
 );

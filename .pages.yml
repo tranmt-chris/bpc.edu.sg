@@ -916,13 +916,83 @@ content:
       - name: contact-page
         label: General — Contact
         type: file
-        path: public/contact.html
-        format: code
+        path: public/content/contact.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Page introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: description, label: Introduction, type: text, required: true }
+          - name: form
+            label: Contact form
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: action, label: FormSubmit address, type: string, required: true }
+              - { name: redirect, label: Thank-you page URL, type: string, required: true }
+              - { name: subjects, label: Subject choices, type: string, list: true }
+              - { name: subjectLabel, label: Subject field label, type: string, required: true }
+              - { name: nameLabel, label: Name field label, type: string, required: true }
+              - { name: emailLabel, label: Email field label, type: string, required: true }
+              - { name: messageLabel, label: Message field label, type: string, required: true }
+              - { name: buttonLabel, label: Submit button text, type: string, required: true }
+          - name: details
+            label: College contact details
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: image, label: Temple image, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+              - { name: addressLabel, label: Address heading, type: string, required: true }
+              - { name: address, label: Address lines, type: string, list: true }
+              - { name: emailLabel, label: Email heading, type: string, required: true }
+              - { name: emails, label: Email addresses, type: string, list: true }
+              - { name: phoneLabel, label: Telephone heading, type: string, required: true }
+              - { name: phone, label: Telephone number, type: string, required: true }
+              - { name: visitLabel, label: Visit link text, type: string, required: true }
+          - name: visit
+            label: Visit and map
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: address, label: Displayed address, type: string, list: true }
+              - { name: mapUrl, label: Google Maps embed URL, type: text, required: true }
+              - { name: mapTitle, label: Map description, type: string, required: true }
       - name: thank-you-page
         label: General — Thank You
         type: file
-        path: public/thank-you.html
-        format: code
+        path: public/content/thank-you.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Confirmation introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: description, label: Introduction, type: text, required: true }
+          - name: confirmation
+            label: Confirmation card
+            type: object
+            fields:
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: description, label: Description, type: text, required: true }
+              - name: buttons
+                label: Buttons
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{label}" } }
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+                  - { name: primary, label: Primary button, type: boolean }
       - name: intro-page
         label: Programmes — Introduction to Buddhism
         type: file
