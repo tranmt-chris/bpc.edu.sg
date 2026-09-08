@@ -1,0 +1,25 @@
+{
+  "meta": { "pageTitle": "Recommended Texts", "description": "Recommended Buddhist and Pali texts for students and readers who wish to deepen their learning." },
+  "hero": { "kicker": "Study resources", "title": "Recommended Texts", "description": "A collection of recommended Buddhist and Pali texts for students and readers who wish to deepen their learning." },
+  "purchase": { "kicker": "Available from the College", "title": "Purchase by donation", "description": "The recommended texts for Diploma and Degree course are available for purchase (donation).", "buttonLabel": "Contact Sister Sandra · 9129 7763", "buttonHref": "https://wa.me/6591297763" },
+  "books": [
+    { "title": "An Approach to Buddhist Social Philosophy", "image": "images/b1.jpg", "price": "$10.00 donation" },
+    { "title": "Aspects of Early Buddhist Sociological Thought", "image": "images/b2.jpg", "price": "$10.00 donation" },
+    { "title": "What the Buddha Taught", "image": "images/b3.jpg", "price": "$10.00 donation" },
+    { "title": "The Dhammapada", "image": "images/b4.jpg", "price": "$10.00 donation" },
+    { "title": "The Buddha and His Teachings", "image": "images/b5.jpg", "price": "$10.00 donation" },
+    { "title": "Essentials of Buddhism", "image": "images/b6.jpg", "price": "$10.00 donation" },
+    { "title": "The Charter for An Ideal Society", "image": "images/b7.jpg", "price": "$10.00 donation" },
+    { "title": "Buddhism in Myanmar", "image": "images/b8.jpg", "price": "$10.00 donation" },
+    { "title": "Pali Buddhist Texts", "image": "images/b9.jpg", "price": "$10.00 donation" },
+    { "title": "The New Pali Course Part I", "image": "images/b10.jpg", "price": "$10.00 donation" },
+    { "title": "The New Pali Course Part II", "image": "images/b11.jpg", "price": "$10.00 donation" },
+    { "title": "The New Pali Course Part III", "image": "images/b12.jpg", "price": "$10.00 donation" },
+    { "title": "Concise Pali-English Dictionary", "image": "images/b13.jpg", "price": "$10.00 donation" },
+    { "title": "Palipathavali", "image": "images/b14.jpg", "price": "$10.00 donation" },
+    { "title": "Buddhism in Sri Lanka", "image": "images/b15.jpg", "price": "$10.00 donation" },
+    { "title": "Buddhism in Thailand", "image": "images/b16.jpg", "price": "$10.00 donation" },
+    { "title": "History of Theravada Buddhism in South-East Asia", "image": "images/b17.jpg", "price": "$10.00 donation" }
+  ],
+  "footerButton": { "label": "Explore Courses", "href": "courses.html" }
+}

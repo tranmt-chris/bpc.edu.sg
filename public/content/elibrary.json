@@ -1,0 +1,14 @@
+{
+  "meta": { "pageTitle": "eLibrary", "description": "Explore Buddhist texts and reference works gathered in BPC's convenient online collection." },
+  "hero": { "kicker": "Learning Resources", "title": "eLibrary", "description": "Explore Buddhist texts and reference works gathered in one convenient online collection." },
+  "feature": {
+    "kicker": "Online collection",
+    "title": "Buddhist reading for study and reflection",
+    "description": "The collection includes the Nikāyas, the Encyclopaedia of Buddhism, the Comprehensive Manual of Abhidhamma, The Path of Purification, and many other Buddhist books.",
+    "buttonLabel": "Open the eLibrary",
+    "buttonHref": "https://drive.google.com/drive/u/1/folders/0BzdgfyWViYSAN0hfd2dscmpmSm8?resourcekey=0-Lm86l1z2xSm9vpbFbo4A8g",
+    "image": "images/elibrary-books-clean.webp",
+    "imageAlt": "Five Buddhist scripture volumes from the Wisdom Publications collection"
+  },
+  "credit": "With thanks to Mangala Vihara Buddhist Temple’s eLibrary."
+}

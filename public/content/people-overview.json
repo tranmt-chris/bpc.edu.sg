@@ -1,0 +1,16 @@
+{
+  "meta": { "pageTitle": "Our People", "description": "Meet the academic, administrative and visiting staff who support BPC and its programmes." },
+  "hero": { "kicker": "Our People", "title": "The people behind Buddhist education at BPC", "description": "Meet the academic, administrative and visiting staff who support the College and its programmes." },
+  "categories": [
+    { "title": "Administrative Staff", "icon": "leanpub", "buttonLabel": "View Staff", "href": "teamnac.html" },
+    { "title": "Academic Staff", "icon": "graduation-cap", "buttonLabel": "View Staff", "href": "teamac.html" },
+    { "title": "Visiting Lecturers", "icon": "users", "buttonLabel": "View Staff", "href": "teamvisit.html" }
+  ],
+  "feature": {
+    "title": "Celebrating Together: BPC Staff at the 2024 Convocation",
+    "date": "28 August 2024",
+    "dateTime": "2024-08-28",
+    "image": "images/bpc-staff-convocation-2024.webp",
+    "imageAlt": "BPC staff gathered at the 28 August 2024 Convocation"
+  }
+}

@@ -1039,18 +1039,98 @@ content:
       - name: recommended-texts-page
         label: Resources — Recommended Texts
         type: file
-        path: public/books.html
-        format: code
+        path: public/content/books.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Page introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: description, label: Introduction, type: text, required: true }
+          - name: purchase
+            label: Purchase information
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: description, label: Description, type: text, required: true }
+              - { name: buttonLabel, label: Contact button text, type: string, required: true }
+              - { name: buttonHref, label: Contact button link, type: string, required: true }
+          - name: books
+            label: Recommended books
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{title}" } }
+            fields:
+              - { name: title, label: Book title, type: string, required: true }
+              - { name: image, label: Cover image, type: image, required: true, options: { media: images } }
+              - { name: price, label: Donation amount, type: string, required: true }
+          - name: footerButton
+            label: Footer button
+            type: object
+            fields:
+              - { name: label, label: Button text, type: string, required: true }
+              - { name: href, label: Button link, type: string, required: true }
       - name: elibrary-page
         label: Resources — eLibrary
         type: file
-        path: public/elibrary.html
-        format: code
+        path: public/content/elibrary.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Page introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: description, label: Introduction, type: text, required: true }
+          - name: feature
+            label: eLibrary feature
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Heading, type: string, required: true }
+              - { name: description, label: Description, type: text, required: true }
+              - { name: buttonLabel, label: Button text, type: string, required: true }
+              - { name: buttonHref, label: Collection link, type: string, required: true }
+              - { name: image, label: Image, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+          - { name: credit, label: Credit line, type: text, required: true }
       - name: people-overview-page
         label: People — Overview
         type: file
-        path: public/team.html
-        format: code
+        path: public/content/people-overview.json
+        format: json
+        fields:
+          - { name: meta, component: programme-meta }
+          - name: hero
+            label: Page introduction
+            type: object
+            fields:
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Main heading, type: string, required: true }
+              - { name: description, label: Introduction, type: text, required: true }
+          - name: categories
+            label: Staff categories
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{title}" } }
+            fields:
+              - { name: title, label: Title, type: string, required: true }
+              - { name: icon, label: Font Awesome icon, type: string, required: true }
+              - { name: buttonLabel, label: Button text, type: string, required: true }
+              - { name: href, label: Page link, type: string, required: true }
+          - name: feature
+            label: Featured staff photograph
+            type: object
+            fields:
+              - { name: title, label: Caption, type: string, required: true }
+              - { name: date, label: Display date, type: string, required: true }
+              - { name: dateTime, label: Machine-readable date, type: string, required: true, description: "Use YYYY-MM-DD." }
+              - { name: image, label: Image, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
       - name: gallery-page
         label: Community — Gallery Page Layout
         type: file

@@ -13,6 +13,9 @@ then publish a clean package to cPanel.
 | Introduction and Chinese Diploma page details | `public/content/pages/intro.json`, `introc.json`, `dipc.json` |
 | All Courses page | `public/content/pages/courses.json` |
 | Key dates, timetables and contacts | `public/content/key-dates.json` |
+| Recommended Texts | `public/content/books.json` |
+| eLibrary | `public/content/elibrary.json` |
+| Our People overview | `public/content/people-overview.json` |
 | Gallery events | `public/content/gallery.json` |
 | Academic, administrative and visiting staff | `public/content/people.json` |
 | Alumni page and e-Bulletins | `public/content/bulletins.json` |
@@ -23,9 +26,9 @@ then publish a clean package to cPanel.
 
 Do not edit `public/js/site-data.js`, `public/alumni.html`, the three staff HTML
 pages, `public/intro.html`, `public/introc.html`, `public/dipc.html`,
-`public/courses.html` or `public/key.html` directly. They are generated from
-structured content. After changing a file in `public/content/`, regenerate the
-website with:
+`public/courses.html`, `public/key.html`, `public/books.html`,
+`public/elibrary.html` or `public/team.html` directly. They are generated from
+structured content. After changing a file in `public/content/`, regenerate the website with:
 
 ```powershell
 npm run build:content

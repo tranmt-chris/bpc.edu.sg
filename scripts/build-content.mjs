@@ -6,6 +6,7 @@ import { renderCoursesPage } from "./templates/courses-page.mjs";
 import { renderKeyDatesPage } from "./templates/key-dates-page.mjs";
 import { renderPeoplePages } from "./templates/people-pages.mjs";
 import { renderProgrammePage } from "./templates/programme-page.mjs";
+import { renderBooksPage, renderElibraryPage, renderPeopleOverviewPage } from "./templates/resource-pages.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const readJson = async (name) => JSON.parse(await readFile(resolve(root, "public/content", name), "utf8"));
@@ -67,6 +68,15 @@ await writeFile(
   "utf8"
 );
 
+const resourcePages = {
+  "books.html": renderBooksPage(await readJson("books.json")),
+  "elibrary.html": renderElibraryPage(await readJson("elibrary.json")),
+  "team.html": renderPeopleOverviewPage(await readJson("people-overview.json"))
+};
+for (const [filename, html] of Object.entries(resourcePages)) {
+  await writeFile(resolve(publicDirectory, filename), html, "utf8");
+}
+
 const publicFiles = await readdir(publicDirectory, { withFileTypes: true });
 let updatedHtmlFiles = 0;
 
@@ -87,5 +97,5 @@ for (const entry of publicFiles) {
 }
 
 console.log(
-  `Generated site data and ${Object.keys(peoplePages).length + 6} structured pages with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
+  `Generated site data and ${Object.keys(peoplePages).length + 6 + Object.keys(resourcePages).length} structured pages with version ${contentVersion}; updated ${updatedHtmlFiles} HTML file(s).`
 );
