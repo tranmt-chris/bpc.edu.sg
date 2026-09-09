@@ -44,12 +44,34 @@ e-Bulletins, the remaining individual HTML pages, gallery events, images and doc
 
 1. Sign in to Pages CMS with GitHub.
 2. Install the Pages CMS GitHub App for this repository only.
-3. Open the repository and select the `main` branch.
-4. Edit an item and save it. Pages CMS commits the changed content file to GitHub.
-5. The GitHub Pages workflow generates and publishes the site, including the
-   shared header and footer. Generated HTML is not committed back to Git.
+3. Create or select a branch for the change, for example
+   `content/update-contact-details`. Do not edit the `main` branch directly.
+4. Edit an item and save it. Pages CMS commits the changed content file to that
+   branch.
+5. Open a pull request from the branch into `main` and review it before merging.
 
-After a Pages CMS update, run `git pull` before making further local edits.
+## Review and publish changes
+
+Every website change, including Pages CMS edits, must be reviewed in a pull
+request before it reaches `main` and deploys.
+
+1. Create a descriptive branch, such as `content/update-contact-details` for
+   CMS changes or `codex/improve-navigation` for code changes.
+2. Make and validate the change. Pages CMS saves content and media to the
+   branch currently open in the CMS.
+3. Push the branch and open a pull request into `main`.
+4. Review the pull request's **Files changed** tab for the source changes.
+5. In the pull request's **Checks** tab, open **Deploy website preview** and
+   download the `generated-html-diff` artifact. It compares the complete cPanel
+   deployment package: generated HTML, CSS, JavaScript, documents, images,
+   fonts, additions and removals. Text files show line-by-line changes; changed
+   binary assets are identified as binary changes.
+6. Merge the pull request only after the source and deployment-package changes
+   are approved. The merge to `main` triggers the GitHub Pages deployment and
+   creates the downloadable `bpc-cpanel-deployment` package.
+
+After another change is merged, run `git pull` before making further local
+edits.
 
 ## Preview locally
 
@@ -104,16 +126,19 @@ build tools, temporary files and unreferenced eBulletin PDFs.
 Upload the ZIP to the intended cPanel directory and extract it there. Test in a
 preview directory before replacing the live website.
 
-## Routine update workflow
+## Routine local update workflow
 
 1. Pull the latest changes from GitHub.
-2. Edit the local source.
-3. Run `pnpm run check` to validate CMS JSON, generated pages and local links.
-4. Regenerate and preview the site locally.
-5. Commit and push the change to GitHub.
-6. Build a clean cPanel ZIP.
-7. Upload and test it in the cPanel preview directory.
-8. Promote the approved version to the live site.
+2. Create a branch; do not work directly on `main`.
+3. Edit the local source.
+4. Run `pnpm run check` to validate CMS JSON, generated pages and local links.
+5. Regenerate and preview the site locally.
+6. Commit and push the branch, then open a pull request into `main`.
+7. Review the source and `generated-html-diff` artifact as described above.
+8. Merge only after approval, then use the generated cPanel package or build a
+   clean ZIP locally.
+9. Upload and test the package in the cPanel preview directory.
+10. Promote the approved version to the live site.
 
 Never store mailbox passwords, SFTP credentials, API keys or other secrets in
 this repository.
