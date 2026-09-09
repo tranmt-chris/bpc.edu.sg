@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -38,6 +38,13 @@ jobs:
       - name: Prepare website
         run: |
           touch dist/.nojekyll
+
+      - name: Save cPanel deployment download
+        uses: actions/upload-artifact@v4
+        with:
+          name: bpc-cpanel-deployment
+          path: dist
+          if-no-files-found: error
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
