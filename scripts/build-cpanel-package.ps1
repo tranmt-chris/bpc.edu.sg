@@ -4,11 +4,15 @@ param(
 
 $ErrorActionPreference = "Stop"
 $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
-$publicRoot = Join-Path $projectRoot "public"
+$publicRoot = Join-Path $projectRoot "dist"
 $outputRoot = [System.IO.Path]::GetFullPath($OutputDirectory)
 $dateStamp = Get-Date -Format "yyyy-MM-dd"
 $stageRoot = Join-Path $outputRoot "bpc-cpanel-clean-$dateStamp"
 $zipPath = Join-Path $outputRoot "BPC-cPanel-deployment-$dateStamp.zip"
+
+if (-not (Test-Path (Join-Path $publicRoot "index.html"))) {
+    throw "The deployable site is missing. Run 'pnpm run build:content' before creating a cPanel package."
+}
 
 New-Item -ItemType Directory -Path $outputRoot -Force | Out-Null
 

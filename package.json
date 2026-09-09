@@ -7,8 +7,9 @@
   },
   "scripts": {
     "dev": "vinext dev",
-    "build:content": "node scripts/build-content.mjs",
-    "build": "node scripts/build-content.mjs && vinext build",
+    "build:content": "node scripts/build-content.mjs --output dist",
+    "check": "node scripts/validate-site.mjs",
+    "build": "node scripts/build-content.mjs --output dist",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },

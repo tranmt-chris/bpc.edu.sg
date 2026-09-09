@@ -1359,11 +1359,11 @@ content:
       - name: counselling-page
         label: Buddhist Counselling
         type: file
-        path: public/bc.html
+        path: scripts/templates/legacy/bc.html
         format: code
 
       - name: visit-page
         label: Visit Us
         type: file
-        path: public/visit.html
+        path: scripts/templates/legacy/visit.html
         format: code

@@ -1,8 +1,8 @@
 # Buddhist and Pali College of Singapore website
 
 This repository is the master source for the Buddhist and Pali College of
-Singapore website. Make content changes here, preview them locally, and only
-then publish a clean package to cPanel.
+Singapore website. Pages CMS edits source content here; the deployable site is
+generated into `dist/`. Do not edit files in `dist/`.
 
 ## Where to make changes
 
@@ -23,22 +23,16 @@ then publish a clean package to cPanel.
 | Gallery page and events | `public/content/gallery.json` |
 | Academic, administrative and visiting staff | `public/content/people.json` |
 | Alumni page and e-Bulletins | `public/content/bulletins.json` |
-| Page-specific text | Relevant file in `public/` |
+| Legacy page source | `scripts/templates/legacy/` |
 | Shared visual styles | `public/css/revamp.css` |
 | Website images | `public/images/` |
 | Contact form service | FormSubmit (`https://formsubmit.co`) |
 
-Do not edit `public/alumni.html`, the three staff HTML pages,
-`public/intro.html`, `public/introc.html`, `public/dip.html`, `public/dipc.html`,
-`public/ba.html`, `public/ma.html`,
-`public/courses.html`, `public/key.html`, `public/books.html`,
-`public/elibrary.html`, `public/team.html`, `public/contact.html` or
-`public/thank-you.html`, `public/gallery.html`, `public/index.html` or
-`public/about.html` directly. They are generated from
-structured content. After changing a file in `public/content/`, regenerate the website with:
+Do not edit generated HTML. It is created from structured content and templates.
+After changing a file in `public/content/`, regenerate the website with:
 
 ```powershell
-npm run build:content
+pnpm run build:content
 ```
 
 ## Edit shared content with Pages CMS
@@ -53,8 +47,8 @@ e-Bulletins, the remaining individual HTML pages, gallery events, images and doc
 2. Install the Pages CMS GitHub App for this repository only.
 3. Open the repository and select the `main` branch.
 4. Edit an item and save it. Pages CMS commits the changed content file to GitHub.
-5. The GitHub Pages workflow regenerates the HTML pages, including their shared
-   header and footer, and publishes the updated preview automatically.
+5. The GitHub Pages workflow generates and publishes the site, including the
+   shared header and footer. Generated HTML is not committed back to Git.
 
 After a Pages CMS update, run `git pull` before making further local edits.
 
@@ -63,7 +57,8 @@ After a Pages CMS update, run `git pull` before making further local edits.
 From the repository folder, run:
 
 ```powershell
-python -m http.server 5173 --bind 127.0.0.1 --directory public
+pnpm run build:content
+python -m http.server 5173 --bind 127.0.0.1 --directory dist
 ```
 
 Then open <http://127.0.0.1:5173/>. Stop the preview with `Ctrl+C`.
@@ -92,12 +87,12 @@ three staff HTML pages are regenerated automatically after saving.
 
 1. Optimize the thumbnail for the web and place it in `public/images/`.
 2. Add the event to `public/content/gallery.json`.
-3. Run `npm run build:content`.
+3. Run `pnpm run build:content`.
 4. Preview `gallery.html` on desktop and mobile.
 
 ## Create the cPanel deployment package
 
-Run:
+First run `pnpm run build:content`, then run:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts/build-cpanel-package.ps1
@@ -114,8 +109,8 @@ preview directory before replacing the live website.
 
 1. Pull the latest changes from GitHub.
 2. Edit the local source.
-3. Regenerate shared content when JSON files change.
-4. Preview and test locally.
+3. Run `pnpm run check` to validate CMS JSON, generated pages and local links.
+4. Regenerate and preview the site locally.
 5. Commit and push the change to GitHub.
 6. Build a clean cPanel ZIP.
 7. Upload and test it in the cPanel preview directory.
