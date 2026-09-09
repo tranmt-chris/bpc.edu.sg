@@ -47,7 +47,7 @@ jobs:
 
       - name: Compare generated HTML
         run: |
-          if git diff --no-index --no-ext-diff -- baseline/dist proposed/dist > generated-html.diff; then
+          if git diff --no-index --no-ext-diff -- baseline/dist proposed/dist -- '*.html' > generated-html.diff; then
             status=0
           else
             status=$?
