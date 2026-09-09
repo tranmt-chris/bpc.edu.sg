@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -12,11 +15,55 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  generated-html-diff:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out proposed website
+        uses: actions/checkout@v4
+        with:
+          path: proposed
+
+      - name: Check out current main website
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: baseline
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate both versions of the website
+        run: |
+          (cd baseline && npm run build:content)
+          (cd proposed && npm run build:content)
+
+      - name: Compare generated HTML
+        run: |
+          if git diff --no-index --no-ext-diff -- baseline/dist proposed/dist > generated-html.diff; then
+            status=0
+          else
+            status=$?
+          fi
+          if [ $status -gt 1 ]; then exit $status; fi
+          if [ ! -s generated-html.diff ]; then echo "No generated site changes." > generated-html.diff; fi
+
+      - name: Save generated HTML comparison
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-html-diff
+          path: generated-html.diff
+          if-no-files-found: error
+
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
