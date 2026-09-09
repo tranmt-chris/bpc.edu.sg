@@ -829,6 +829,7 @@ input, select, textarea {
   line-height: 1.6;
   text-decoration: none;
 }
+.contact-modern-email-list { display: grid; gap: 4px; }
 .contact-modern-visit-link { margin-top: 22px; }
 .contact-thank-you-main { padding: clamp(60px,9vw,110px) 0; }
 .contact-thank-you-card { max-width: 760px; margin: 0 auto; padding: clamp(34px,6vw,64px); border: 1px solid var(--bpc-line); border-radius: 18px; background: var(--bpc-paper); box-shadow: 0 18px 50px rgba(69,38,29,.08); text-align: center; }

@@ -4,7 +4,7 @@ const lines = (items = []) => items.map(escapeHtml).join("<br>");
 
 export function renderContactPage(page) {
   const subjects = page.form.subjects.map((subject) => `<option value="${escapeHtml(subject)}">${escapeHtml(subject)}</option>`).join("");
-  const emails = page.details.emails.map((email) => `<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>`).join("");
+  const emails = `<div class="contact-modern-email-list">${page.details.emails.map((email) => `<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>`).join("")}</div>`;
   const phoneHref = page.details.phone.replace(/[^+\d]/g, "");
   return renderSitePage({
     title: page.meta.pageTitle,
