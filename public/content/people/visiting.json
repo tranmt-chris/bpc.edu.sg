@@ -1,0 +1,44 @@
+{
+  "id": "visiting",
+  "page": "teamvisit.html",
+  "title": "Visiting Lecturers",
+  "description": "Meet the visiting lecturers who contribute specialist teaching to BPC programmes.",
+  "people": [
+    {
+      "name": "Ven. Vijithapura Gunarathana",
+      "role": "Senior Lecturer (visiting)",
+      "qualifications": "",
+      "details": "Current conducting class: Pali analytical studies - BA final year",
+      "email": "",
+      "image": "images/gunarathana.jpg",
+      "imageAlt": "Photo of Venerable Vijithapura Gunarathana"
+    },
+    {
+      "name": "Ven. Dr. Panahaduwe Yasassi",
+      "role": "Professor (visiting)",
+      "qualifications": "BA Hons (USJ); MA (PGIPBS)(Kelaniya); MA (BPU); PhD (USJ)",
+      "details": "Current conducting class: Buddhism and Management - MA class",
+      "email": "",
+      "image": "images/yasassi.jpg",
+      "imageAlt": "Photo of Venerable Dr. Panahaduwe Yasassi"
+    },
+    {
+      "name": "Prof. P.R.W Priyadarshana",
+      "role": "Professor (visiting)",
+      "qualifications": "",
+      "details": "Current conducting class: Buddhist counselling certificate course - 2021 group",
+      "email": "",
+      "image": "images/priyadarshana.jpg",
+      "imageAlt": "Photo of Professor PR.W Priyadarshana "
+    },
+    {
+      "name": "Prof. Samantha Ilangakoon",
+      "role": "Professor (visiting)",
+      "qualifications": "",
+      "details": "Current conducting class: Buddhist Psychotherapy - MA class",
+      "email": "",
+      "image": "images/ilangakoon.jpg",
+      "imageAlt": "Photo of Professor Samantha Ilangakoon"
+    }
+  ]
+}

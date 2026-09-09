@@ -1,0 +1,206 @@
+{
+  "id": "academic",
+  "page": "teamac.html",
+  "title": "Academic Staff",
+  "description": "Meet the academic staff who teach and support Buddhist and Pali studies at BPC.",
+  "people": [
+    {
+      "name": "Ven. G. Udita",
+      "role": "Teacher of Pali",
+      "qualifications": "BA Hons, MA, PhD",
+      "details": "",
+      "email": "uditatherovengalle@gmail.com",
+      "image": "images/Udita.jpg",
+      "imageAlt": "Photo of Venerable Udita"
+    },
+    {
+      "name": "Ven. K. Anoma",
+      "role": "Teaching of Pali",
+      "qualifications": "BA Hons, MA",
+      "details": "",
+      "email": "kanoma77@gmail.com",
+      "image": "images/Anoma.jpg",
+      "imageAlt": "Photo of Venerable K. Anoma"
+    },
+    {
+      "name": "Ven. D. Gnanarathana",
+      "role": "Teacher of Pali",
+      "qualifications": "BA Hons, MA",
+      "details": "",
+      "email": "bseewali2@gmail.com",
+      "image": "images/Gnanarathana.jpg",
+      "imageAlt": "Photo of Venerable D. Gnanrathana"
+    },
+    {
+      "name": "Ven. Hao Xiang",
+      "role": "Teacher of Buddhist Culture",
+      "qualifications": "BA Hons, MA",
+      "details": "",
+      "email": "haoxiang004@yahoo.com",
+      "image": "images/haoxiang.jpg",
+      "imageAlt": "Photo of Bhikkhuni HaoXiang"
+    },
+    {
+      "name": "Dr. Atula Foo",
+      "role": "Teacher of Buddhist Philosophy",
+      "qualifications": "BSc, BA, MA, PhD",
+      "details": "",
+      "email": "admin@groupsurvey4.com",
+      "image": "images/Atula.jpg",
+      "imageAlt": "Photo of Dr. Atula"
+    },
+    {
+      "name": "Ms. Ng Lay Kieng",
+      "role": "Teacher of Buddhist Culture",
+      "qualifications": "BA Hons, MA",
+      "details": "",
+      "email": "nglaykieng@gmail.com",
+      "image": "images/laykieng.jpg",
+      "imageAlt": "Photo of Ms. Ng Lay Kieng"
+    },
+    {
+      "name": "Ms.Narmada Makawita",
+      "role": "Teacher of Pali Language",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "narmadtm@gmail.com",
+      "image": "images/Narmada.jpg",
+      "imageAlt": "Photo of Ms. Narmada Makawita"
+    },
+    {
+      "name": "Mr. Lau Kim Koon",
+      "role": "Teacher of Pali",
+      "qualifications": "BACC, BA, MA",
+      "details": "",
+      "email": "laukimkoon@gmail.com",
+      "image": "images/KKLAU.jpg",
+      "imageAlt": "Photo of Mr. Lau Kim Koon"
+    },
+    {
+      "name": "Ms. Jean Lau",
+      "role": "Teacher of Buddhist Culture",
+      "qualifications": "BA, MA, BA (Eco & Soc)",
+      "details": "",
+      "email": "metta_moon@yahoo.com.sg",
+      "image": "images/jeanlau.jpg",
+      "imageAlt": "Photo of Ms Jean Lau"
+    },
+    {
+      "name": "Mr. Ong Keng Boon",
+      "role": "Teacher of Buddhist Philosophy",
+      "qualifications": "BA, BSc, MA",
+      "details": "",
+      "email": "kengboon@aga.com.sg",
+      "image": "images/kengboon.jpg",
+      "imageAlt": "Photo of Mr. Ong Keng Boon"
+    },
+    {
+      "name": "Ms. Jasmine Tan",
+      "role": "Teacher of Buddhist Culture",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "shuxia8@gmail.com",
+      "image": "images/jasminetan.jpg",
+      "imageAlt": "Photo of Ms Jasmine Tan"
+    },
+    {
+      "name": "Mr. Lau Ng Siong",
+      "role": "Teacher of Buddhist Philosophy",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "launs@singnet.com.sg",
+      "image": "images/nslau.jpg",
+      "imageAlt": "Photo of Mr. Lau Ng Siong"
+    },
+    {
+      "name": "Mr. Jebsons Chia",
+      "role": "Teacher of Buddhist Culture",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "jebsonschia@yahoo.com.sg",
+      "image": "images/jebsonchia.jpg",
+      "imageAlt": "Photo of Mr. Jebsons Chia"
+    },
+    {
+      "name": "Mr. Tan Sing Hoon",
+      "role": "Teacher of Buddhist Philosophy",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "shtan49@hotmail.com",
+      "image": "images/singhoon.jpg",
+      "imageAlt": "Photo of Mr. Tan Sing Hoon"
+    },
+    {
+      "name": "Ms. Lily Chan",
+      "role": "Teacher of Buddhist Culture",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "mindistheforerunner@gmail.com",
+      "image": "images/lilychan.jpg",
+      "imageAlt": "Photo of Ms. Lily Chan"
+    },
+    {
+      "name": "Mr. Wahyu Perdana Yudistiawan",
+      "role": "Teacher of Pali",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "wahyupy@gmail.com",
+      "image": "images/wahyu.jpg",
+      "imageAlt": "Photo of Mr. Wahyu Perdana Yudistiawan"
+    },
+    {
+      "name": "Ms. Lee Mee Yin",
+      "role": "Teacher of Buddhist Philosophy",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "yin.mee689@gmail.com",
+      "image": "images/meeyin.jpg",
+      "imageAlt": "Photo of Ms. Lee Mee Yin"
+    },
+    {
+      "name": "Dr. Lim Ah Swan",
+      "role": "Teacher of Pali",
+      "qualifications": "BA Hons, MA, PhD",
+      "details": "",
+      "email": "ahswanlim@gmail.com",
+      "image": "images/Ahswan.jpg",
+      "imageAlt": "Photo of Dr. Lim Ah Swan"
+    },
+    {
+      "name": "Ms. Angela Ko Guat Hua",
+      "role": "Teacher of Buddhist Philosophy",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "angelako1188@gmail.com",
+      "image": "images/angelako.jpg",
+      "imageAlt": "Photo of Ms. Angela Ko Guat Hua"
+    },
+    {
+      "name": "Ms. Leong Huey Miin",
+      "role": "Teacher of Buddhist Philosophy",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "miinleon2001@yahoo.co.uk",
+      "image": "images/hueymiin.jpg",
+      "imageAlt": "Photo of Ms. Leong Huey Miin"
+    },
+    {
+      "name": "Ms. Wong Lai Peng",
+      "role": "Teacher of Buddhist Culture",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "lp_wong@hotmail.com",
+      "image": "images/laipeng.jpg",
+      "imageAlt": "Photo of Ms. Wong Lai Peng"
+    },
+    {
+      "name": "Ms. Linda Sim",
+      "role": "Teacher of Buddhist Philosophy",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "lindasimha@gmail.com",
+      "image": "images/lindasim.jpg",
+      "imageAlt": "Photo of Ms Linda Sim"
+    }
+  ]
+}

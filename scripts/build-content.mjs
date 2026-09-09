@@ -24,6 +24,11 @@ const readProgrammes = async () => {
   const files = (await readdir(directory)).filter((file) => file.endsWith(".json")).sort();
   return Promise.all(files.map(async (file) => JSON.parse(await readFile(resolve(directory, file), "utf8"))));
 };
+const readStaffCategories = async () => {
+  const directory = resolve(root, "public/content/people");
+  const files = (await readdir(directory)).filter((file) => file.endsWith(".json")).sort();
+  return Promise.all(files.map(async (file) => JSON.parse(await readFile(resolve(directory, file), "utf8"))));
+};
 
 const programmeEntries = await readProgrammes();
 const programmes = new Map(programmeEntries.map((programme) => [programme.id, programme]));
@@ -59,7 +64,7 @@ await cp(publicDirectory, outputDirectory, {
   }
 });
 
-const peoplePages = renderPeoplePages(await readJson("people.json"));
+const peoplePages = renderPeoplePages({ categories: await readStaffCategories() });
 for (const [filename, html] of Object.entries(peoplePages)) {
   await writeFile(resolve(outputDirectory, filename), html, "utf8");
 }

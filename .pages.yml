@@ -367,12 +367,19 @@ content:
               - name: programmes
                 label: Programme cards
                 type: object
-                list: { collapsible: { collapsed: true, summary: "{page}" } }
+                list: { collapsible: { collapsed: true, summary: "{programme}" } }
                 fields:
-                  - { name: page, label: Programme page, type: string, required: true }
-                  - { name: level, label: Language or level, type: string, required: true }
-                  - { name: duration, label: Duration, type: string, required: true }
-                  - { name: linkLabel, label: Link text, type: string, required: true }
+                  - name: programme
+                    label: Programme record
+                    type: select
+                    required: true
+                    options:
+                      - { label: Introduction to Buddhism, value: intro-en }
+                      - { label: Introduction to Buddhism (Chinese), value: intro-zh }
+                      - { label: Diploma in Buddhism (English), value: diploma-en }
+                      - { label: Diploma in Buddhism (Chinese), value: diploma-zh }
+                      - { label: BA in Buddhist Studies, value: ba }
+                      - { label: MA in Buddhist Studies, value: ma }
           - name: comparison
             label: Comparison table
             type: object
@@ -490,18 +497,13 @@ content:
     label: Programmes
     type: group
     items:
-      - name: programme-records
-        label: Programme records
-        type: collection
-        path: public/content/programmes
+      - name: intro-en-page
+        label: Introduction to Buddhism
+        type: file
+        path: public/content/programmes/intro-en.json
         format: json
-        filename: "{fields.id}.json"
-        operations: { create: false, rename: false, delete: false }
-        view:
-          primary: hero.title
-          fields: [hero.title, language, card.duration]
-          search: [hero.title, hero.lead, language]
-        fields:
+        operations: { delete: false }
+        fields: &programme-record-fields
           - { name: id, label: Programme ID, type: string, readonly: true }
           - { name: route, label: Published page URL, type: string, readonly: true }
           - { name: template, label: Layout, type: string, readonly: true }
@@ -1015,48 +1017,99 @@ content:
 
 
 
+      - name: intro-zh-page
+        label: Introduction to Buddhism (Chinese)
+        type: file
+        path: public/content/programmes/intro-zh.json
+        format: json
+        operations: { delete: false }
+        fields: *programme-record-fields
+
+      - name: diploma-en-page
+        label: Diploma in Buddhism (English)
+        type: file
+        path: public/content/programmes/diploma-en.json
+        format: json
+        operations: { delete: false }
+        fields: *programme-record-fields
+
+      - name: diploma-zh-page
+        label: Diploma in Buddhism (Chinese)
+        type: file
+        path: public/content/programmes/diploma-zh.json
+        format: json
+        operations: { delete: false }
+        fields: *programme-record-fields
+
+      - name: ba-page
+        label: BA in Buddhist Studies
+        type: file
+        path: public/content/programmes/ba.json
+        format: json
+        operations: { delete: false }
+        fields: *programme-record-fields
+
+      - name: ma-page
+        label: MA in Buddhist Studies
+        type: file
+        path: public/content/programmes/ma.json
+        format: json
+        operations: { delete: false }
+        fields: *programme-record-fields
+
   - name: people-group
     label: Our People
     type: group
     items:
-      - name: people
-        label: Staff directory details
+      - name: academic-staff
+        label: Academic Staff
         type: file
-        path: public/content/people.json
+        path: public/content/people/academic.json
         format: json
-        fields:
-          - name: categories
-            label: Staff categories
+        operations: { delete: false }
+        fields: &staff-category-fields
+          - { name: id, label: Category ID, type: string, readonly: true }
+          - { name: page, label: Published page URL, type: string, readonly: true }
+          - { name: title, label: Category title, type: string, required: true }
+          - { name: description, label: Page description, type: text, required: true }
+          - name: people
+            label: People
             type: object
             list:
-              collapsible: { collapsed: true, summary: "{title}" }
+              collapsible: { collapsed: true, summary: "{name}" }
             fields:
-              - { name: id, label: Category ID, type: string, required: true, description: "Do not change unless the page structure changes." }
-              - { name: page, label: Page filename, type: string, required: true, description: "For example teamac.html." }
-              - { name: title, label: Category title, type: string, required: true }
-              - { name: description, label: Page description, type: text, required: true }
-              - name: people
-                label: People
+              - { name: name, label: Name, type: string, required: true }
+              - { name: role, label: Role, type: string, required: true }
+              - { name: qualifications, label: Qualifications, type: string }
+              - { name: details, label: Teaching details, type: text }
+              - { name: email, label: Email, type: string }
+              - { name: image, label: Portrait, type: image, required: true, options: { media: images } }
+              - { name: imageAlt, label: Image description, type: string, required: true }
+              - name: social
+                label: Social links
                 type: object
                 list:
-                  collapsible: { collapsed: true, summary: "{name}" }
+                  collapsible: { collapsed: true, summary: "{label}" }
                 fields:
-                  - { name: name, label: Name, type: string, required: true }
-                  - { name: role, label: Role, type: string, required: true }
-                  - { name: qualifications, label: Qualifications, type: string }
-                  - { name: details, label: Teaching details, type: text }
-                  - { name: email, label: Email, type: string }
-                  - { name: image, label: Portrait, type: image, required: true, options: { media: images } }
-                  - { name: imageAlt, label: Image description, type: string, required: true }
-                  - name: social
-                    label: Social links
-                    type: object
-                    list:
-                      collapsible: { collapsed: true, summary: "{label}" }
-                    fields:
-                      - { name: label, label: Platform, type: string, required: true }
-                      - { name: icon, label: Font Awesome icon, type: string, required: true }
-                      - { name: href, label: Link, type: string, required: true }
+                  - { name: label, label: Platform, type: string, required: true }
+                  - { name: icon, label: Font Awesome icon, type: string, required: true }
+                  - { name: href, label: Link, type: string, required: true }
+
+      - name: administrative-staff
+        label: Administrative Staff
+        type: file
+        path: public/content/people/administrative.json
+        format: json
+        operations: { delete: false }
+        fields: *staff-category-fields
+
+      - name: visiting-lecturers
+        label: Visiting Lecturers
+        type: file
+        path: public/content/people/visiting.json
+        format: json
+        operations: { delete: false }
+        fields: *staff-category-fields
 
       - name: people-overview-page
         label: Our People overview

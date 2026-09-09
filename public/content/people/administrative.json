@@ -1,0 +1,70 @@
+{
+  "id": "administrative",
+  "page": "teamnac.html",
+  "title": "Administrative Staff",
+  "description": "Meet the administrative staff who support the College and its students.",
+  "people": [
+    {
+      "name": "Ven. P. Seelananda",
+      "role": "Principal",
+      "qualifications": "BA Hons, MA",
+      "details": "",
+      "email": "banteseela@gmail.com",
+      "image": "images/Seelanada.jpg",
+      "imageAlt": "Photo of Venerable P. Seelananda",
+      "social": [
+        {
+          "label": "Facebook",
+          "icon": "facebook",
+          "href": "https://facebook.com/seelanandathero.pupule"
+        },
+        {
+          "label": "Instagram",
+          "icon": "instagram",
+          "href": "https://instagram.com/bhanteseelananda/"
+        },
+        {
+          "label": "YouTube",
+          "icon": "youtube",
+          "href": "https://youtube.com/user/banteseela"
+        }
+      ]
+    },
+    {
+      "name": "Mr. Jebsons Chia",
+      "role": "Chairman, BPC Alumni Committee",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "jebsonschia@yahoo.com.sg",
+      "image": "images/jebsonchia.jpg",
+      "imageAlt": "Photo of Mr. Jebsons Chia"
+    },
+    {
+      "name": "Dr. Lim Ah Swan",
+      "role": "Chairman, MV Management Committee",
+      "qualifications": "BA Hons, MA, PhD",
+      "details": "",
+      "email": "ahswanlim@gmail.com",
+      "image": "images/Ahswan.jpg",
+      "imageAlt": "Photo of Dr. Lim Ah Swan"
+    },
+    {
+      "name": "Ms. Maureen Hui",
+      "role": "Course Administrator",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "maw69xyz@gmail.com",
+      "image": "images/maureen.jpg",
+      "imageAlt": "Photo of Ms. Maureen Hui"
+    },
+    {
+      "name": "Ms. Sandra Koh",
+      "role": "Assistant Course Administrator",
+      "qualifications": "BA, MA",
+      "details": "",
+      "email": "chaturikoh@yahoo.com.sg",
+      "image": "images/sandra.jpg",
+      "imageAlt": "Photo of Ms. Sandra Koh"
+    }
+  ]
+}

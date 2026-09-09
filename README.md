@@ -20,7 +20,7 @@ generated into `dist/`. Do not edit files in `dist/`.
 | Homepage and About page | `public/content/pages/index.json`, `about.json` |
 | Diploma, BA and MA details | Their individual file in `public/content/programmes/` |
 | Gallery page and events | `public/content/gallery.json` |
-| Academic, administrative and visiting staff | `public/content/people.json` |
+| Academic, administrative and visiting staff | `public/content/people/academic.json`, `administrative.json`, `visiting.json` |
 | Alumni page and e-Bulletins | `public/content/bulletins.json` |
 | Legacy page source | `scripts/templates/legacy/` |
 | Shared visual styles | `public/css/revamp.css` |
