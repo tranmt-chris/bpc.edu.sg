@@ -45,17 +45,18 @@ jobs:
           (cd baseline && npm run build:content)
           (cd proposed && npm run build:content)
 
-      - name: Compare generated HTML
+      - name: Compare generated cPanel deployment packages
         run: |
-          if git diff --no-index --no-ext-diff -- baseline/dist proposed/dist -- '*.html' > generated-html.diff; then
+          touch baseline/dist/.nojekyll proposed/dist/.nojekyll
+          if git diff --no-index --no-ext-diff --binary -- baseline/dist proposed/dist > generated-html.diff; then
             status=0
           else
             status=$?
           fi
           if [ $status -gt 1 ]; then exit $status; fi
-          if [ ! -s generated-html.diff ]; then echo "No generated site changes." > generated-html.diff; fi
+          if [ ! -s generated-html.diff ]; then echo "No cPanel deployment-package changes." > generated-html.diff; fi
 
-      - name: Save generated HTML comparison
+      - name: Save cPanel deployment-package comparison
         uses: actions/upload-artifact@v4
         with:
           name: generated-html-diff
