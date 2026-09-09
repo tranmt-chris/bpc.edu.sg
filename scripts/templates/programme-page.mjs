@@ -15,7 +15,7 @@ export function renderProgrammePage(programme, detail) {
     <section class="programme-modern-hero"><div class="programme-modern-shell programme-modern-hero-grid"><div>
       <a class="programme-modern-back" href="courses.html">${escapeHtml(detail.backLabel)}</a>
       <p class="programme-modern-kicker">${escapeHtml(programme.kicker)}</p><h1>${escapeHtml(programme.title)}</h1><p class="programme-modern-lead">${escapeHtml(programme.lead)}</p>
-      <div class="programme-modern-actions"><a class="programme-modern-primary" href="${escapeHtml(programme.primary.href)}"${externalAttributes(programme.primary.href)}>${escapeHtml(programme.primary.label)}</a><a class="programme-modern-secondary" href="${escapeHtml(programme.secondary.href)}"${detail.secondaryDownload ? " download" : externalAttributes(programme.secondary.href)}>${escapeHtml(programme.secondary.label)}</a></div>
+      <div class="programme-modern-actions"><a class="programme-modern-primary" href="${escapeHtml(programme.primary.href)}"${externalAttributes(programme.primary.href)}>${escapeHtml(programme.primary.label)}</a><a class="programme-modern-secondary" href="${escapeHtml(programme.secondary.href)}"${programme.secondary.download ? " download" : externalAttributes(programme.secondary.href)}>${escapeHtml(programme.secondary.label)}</a></div>
     </div><aside class="programme-modern-hero-note"><span>${escapeHtml(detail.heroNote.label)}</span><strong>${escapeHtml(detail.heroNote.value)}</strong>${detail.heroNote.lines?.length ? `<p>${renderLines(detail.heroNote.lines)}</p>` : ""}</aside></div></section>
     <section class="programme-modern-facts" aria-label="${escapeHtml(detail.factsLabel)}"><div class="programme-modern-shell programme-modern-fact-grid${factsClass}">${detail.facts.map((fact) => `<div><span>${escapeHtml(fact.label)}</span><strong>${escapeHtml(fact.value)}</strong></div>`).join("")}</div></section>
     <section class="programme-modern-body"><div class="programme-modern-shell programme-modern-content-grid"><div class="programme-modern-content">
@@ -32,5 +32,10 @@ export function renderProgrammePage(programme, detail) {
     </aside></div></section>
   </main>`;
 
-  return renderSitePage({ title: detail.meta.pageTitle, description: detail.meta.description, language: programme.language, body });
+  return renderSitePage({
+    title: programme.seo?.pageTitle || programme.title,
+    description: programme.seo?.description || programme.lead,
+    language: programme.language,
+    body
+  });
 }

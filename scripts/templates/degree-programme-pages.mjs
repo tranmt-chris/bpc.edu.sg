@@ -3,7 +3,7 @@ import { escapeHtml, renderSitePage } from "./site-page.mjs";
 const externalAttributes = (href = "") => /^https?:\/\//i.test(href) ? ' rel="noreferrer" target="_blank"' : "";
 const renderLines = (values = []) => values.map(escapeHtml).join("<br>");
 const renderFacts = (facts = []) => facts.map((fact) => `<div><span>${escapeHtml(fact.label)}</span><strong>${escapeHtml(fact.value)}</strong></div>`).join("");
-const renderHeroNote = (note = {}) => `<aside class="programme-modern-hero-note"><span>${escapeHtml(note.label)}</span><strong>${escapeHtml(note.value)}</strong>${note.description?.length ? `<p>${renderLines(note.description)}</p>` : ""}</aside>`;
+const renderHeroNote = (note = {}) => `<aside class="programme-modern-hero-note"><span>${escapeHtml(note.label)}</span><strong>${escapeHtml(note.value)}</strong>${note.lines?.length ? `<p>${renderLines(note.lines)}</p>` : ""}</aside>`;
 
 function renderHero(programme, note) {
   return `<section class="programme-modern-hero"><div class="programme-modern-shell programme-modern-hero-grid"><div><a class="programme-modern-back" href="courses.html">All Courses</a><p class="programme-modern-kicker">${escapeHtml(programme.kicker)}</p><h1>${escapeHtml(programme.title)}</h1><p class="programme-modern-lead">${escapeHtml(programme.lead)}</p><div class="programme-modern-actions"><a class="programme-modern-primary" href="${escapeHtml(programme.primary.href)}"${externalAttributes(programme.primary.href)}>${escapeHtml(programme.primary.label)}</a><a class="programme-modern-secondary" href="${escapeHtml(programme.secondary.href)}"${externalAttributes(programme.secondary.href) || ' target="_blank"'}>${escapeHtml(programme.secondary.label)}</a></div></div>${renderHeroNote(note)}</div></section>`;

@@ -490,547 +490,529 @@ content:
     label: Programmes
     type: group
     items:
-      - name: programmes
-        label: Titles and buttons for all programmes
-        type: file
-        path: public/content/programmes.json
+      - name: programme-records
+        label: Programme records
+        type: collection
+        path: public/content/programmes
         format: json
-        list: true
+        filename: "{fields.id}.json"
+        operations: { create: false, rename: false, delete: false }
+        view:
+          primary: hero.title
+          fields: [hero.title, language, card.duration]
+          search: [hero.title, hero.lead, language]
         fields:
-          - name: page
-            label: Page filename
+          - { name: id, label: Programme ID, type: string, readonly: true }
+          - { name: route, label: Published page URL, type: string, readonly: true }
+          - { name: template, label: Layout, type: string, readonly: true }
+          - { name: language, label: Language, type: string, readonly: true }
+          - name: styleClass
+            label: Display style
             type: string
-            required: true
-          - name: language
-            label: Page language
-            type: string
-            required: true
-          - name: kicker
-            label: Short heading
-            type: string
-            required: true
-          - name: title
-            label: Programme title
-            type: string
-            required: true
-          - name: lead
-            label: Introduction
-            type: text
-            required: true
-          - name: primary
-            label: Primary button
+            readonly: true
+          - name: card
+            label: All Courses card
             type: object
             fields:
-              - name: label
-                label: Button text
-                type: string
-                required: true
-              - name: href
-                label: Button link
-                type: string
-                required: true
-          - name: secondary
-            label: Secondary button
+              - { name: level, label: Level or language, type: string, required: true }
+              - { name: duration, label: Displayed duration, type: string, required: true }
+              - { name: linkLabel, label: Card link text, type: string, required: true }
+          - name: hero
+            label: Page title and main actions
             type: object
             fields:
-              - name: label
-                label: Button text
-                type: string
-                required: true
-              - name: href
-                label: Button link
-                type: string
-                required: true
+              - { name: kicker, label: Short heading, type: string, required: true }
+              - { name: title, label: Programme title, type: string, required: true }
+              - { name: lead, label: Introduction, type: text, required: true }
+              - name: primary
+                label: Primary button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+              - name: secondary
+                label: Secondary button
+                type: object
+                fields:
+                  - { name: label, label: Button text, type: string, required: true }
+                  - { name: href, label: Button link, type: string, required: true }
+                  - { name: download, label: Download this linked file, type: boolean }
+          - name: seo
+            label: Search metadata
+            type: object
+            fields:
+              - { name: pageTitle, label: Browser page title, type: string }
+              - { name: description, label: Search description, type: text }
+          - name: details
+            label: Programme details
+            type: block
+            list: true
+            blockKey: type
+            blocks:
+              - name: foundation
+                label: Foundation programme details
+                fields:
+                  - { name: backLabel, label: Back link text, type: string, required: true }
+                  - { name: factsLabel, label: Facts heading, type: string, required: true }
+                  - { name: heroNote, component: programme-hero-note }
+                  - { name: facts, component: programme-facts }
+                  - { name: overview, component: programme-overview }
+                  - { name: curriculum, component: programme-curriculum }
+                  - { name: progression, component: programme-progression }
+                  - { name: enrol, component: programme-enrol }
 
-      - name: intro-page
-        label: Introduction to Buddhism
-        type: file
-        path: public/content/pages/intro.json
-        format: json
-        fields: &programme-page-fields
-          - { name: meta, component: programme-meta }
-          - { name: chinese, label: Chinese page, type: boolean }
-          - { name: pageClass, label: Optional style class, type: string }
-          - { name: backLabel, label: Back link text, type: string, required: true }
-          - { name: secondaryDownload, label: Secondary button downloads file, type: boolean }
-          - { name: factsLabel, label: Facts heading, type: string, required: true }
-          - { name: heroNote, component: programme-hero-note }
-          - { name: facts, component: programme-facts }
-          - { name: overview, component: programme-overview }
-          - { name: curriculum, component: programme-curriculum }
-          - { name: progression, component: programme-progression }
-          - { name: enrol, component: programme-enrol }
 
-      - name: intro-chinese-page
-        label: Introduction to Buddhism (Chinese)
-        type: file
-        path: public/content/pages/introc.json
-        format: json
-        fields: *programme-page-fields
-
-      - name: diploma-page
-        label: Diploma in Buddhism (English)
-        type: file
-        path: public/content/pages/dip.json
-        format: json
-        fields:
-          - name: heroNote
-            label: Course duration panel
-            type: object
-            fields:
-              - name: label
-                label: Label
-                type: string
-                required: true
-              - name: value
-                label: Course duration
-                type: string
-                required: true
-              - name: description
-                label: Supporting lines
-                type: string
-                list: true
-          - name: facts
-            label: Quick course facts
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{label}"
-            fields:
-              - name: label
-                label: Label
-                type: string
-                required: true
-              - name: value
-                label: Value
-                type: string
-                required: true
-          - name: overview
-            label: Programme overview and eligibility
-            type: object
-            fields:
-              - name: kicker
-                label: Short heading
-                type: string
-                required: true
-              - name: title
-                label: Section title
-                type: string
-                required: true
-              - name: description
-                label: Description
-                type: text
-                required: true
-              - name: eligibility
-                label: Eligibility requirements
-                type: string
-                list: true
-          - name: curriculum
-            label: Curriculum
-            type: object
-            fields:
-              - name: kicker
-                label: Short heading
-                type: string
-                required: true
-              - name: title
-                label: Section title
-                type: string
-                required: true
-              - name: items
-                label: Subjects
-                type: string
-                list: true
-          - name: venues
-            label: Venues and schedules
-            type: object
-            fields:
-              - name: kicker
-                label: Short heading
-                type: string
-                required: true
-              - name: title
-                label: Section title
-                type: string
-                required: true
-              - name: items
-                label: Venues
-                type: object
-                list:
-                  collapsible:
-                    collapsed: true
-                    summary: "{name}"
+              - name: diploma
+                label: Diploma programme details
                 fields:
-                  - name: label
-                    label: Card label
-                    type: string
-                    required: true
-                  - name: name
-                    label: Temple name
-                    type: string
-                    required: true
-                  - name: image
-                    label: Temple image
-                    type: image
-                    required: true
-                    options:
-                      media: images
-                  - name: imageAlt
-                    label: Image description
-                    type: string
-                    required: true
-                  - name: address
-                    label: Address lines
-                    type: string
-                    list: true
-                  - name: schedule
-                    label: Class schedule
-                    type: string
-                    list: true
-                  - name: commences
-                    label: Commencement date
-                    type: string
-                    required: true
-          - name: progression
-            label: Academic progression
-            type: object
-            fields:
-              - name: kicker
-                label: Short heading
-                type: string
-                required: true
-              - name: title
-                label: Section title
-                type: string
-                required: true
-              - name: prefix
-                label: Text before BA link
-                type: text
-                required: true
-              - name: ba
-                label: BA link
-                type: object
-                fields:
-                  - name: label
-                    label: Link text
-                    type: string
-                    required: true
-                  - name: href
-                    label: Link
-                    type: string
-                    required: true
-              - name: between
-                label: Text between BA and MA links
-                type: string
-                required: true
-              - name: ma
-                label: MA link
-                type: object
-                fields:
-                  - name: label
-                    label: Link text
-                    type: string
-                    required: true
-                  - name: href
-                    label: Link
-                    type: string
-                    required: true
-          - name: registration
-            label: Registration panel
-            type: object
-            fields:
-              - name: kicker
-                label: Short heading
-                type: string
-                required: true
-              - name: title
-                label: Section title
-                type: string
-                required: true
-              - name: poster
-                label: Course poster
-                type: object
-                fields:
-                  - name: image
-                    label: Poster image
-                    type: image
-                    required: true
-                    options:
-                      media: images
-                  - name: href
-                    label: Poster link
-                    type: string
-                    required: true
-                  - name: alt
-                    label: Image description
-                    type: text
-                    required: true
-              - name: options
-                label: Registration options
-                type: object
-                list:
-                  collapsible:
-                    collapsed: true
-                    summary: "{label}: {title}"
-                fields:
-                  - name: label
-                    label: Option label
-                    type: string
-                    required: true
-                  - name: title
-                    label: Option title
-                    type: string
-                    required: true
-                  - name: description
-                    label: Description
-                    type: text
-                    required: true
-                  - name: dates
-                    label: Preview dates
+                  - name: heroNote
+                    label: Course duration panel
+                    type: object
+                    fields:
+                      - name: label
+                        label: Label
+                        type: string
+                        required: true
+                      - name: value
+                        label: Course duration
+                        type: string
+                        required: true
+                      - name: lines
+                        label: Supporting lines
+                        type: string
+                        list: true
+                  - name: facts
+                    label: Quick course facts
                     type: object
                     list:
                       collapsible:
                         collapsed: true
-                        summary: "{venue}: {date}"
-                    fields:
-                      - name: venue
-                        label: Venue
-                        type: string
-                        required: true
-                      - name: date
-                        label: Date
-                        type: string
-                        required: true
-                      - name: time
-                        label: Time
-                        type: string
-                        required: true
-                  - name: button
-                    label: Main button
-                    type: object
+                        summary: "{label}"
                     fields:
                       - name: label
-                        label: Button text
+                        label: Label
                         type: string
                         required: true
-                      - name: href
-                        label: Button link
+                      - name: value
+                        label: Value
                         type: string
                         required: true
-                  - name: contact
-                    label: Optional contact link
+                  - name: overview
+                    label: Programme overview and eligibility
                     type: object
                     fields:
-                      - name: label
-                        label: Link text
+                      - name: kicker
+                        label: Short heading
                         type: string
-                      - name: href
-                        label: Link
+                        required: true
+                      - name: title
+                        label: Section title
                         type: string
-              - name: enquiry
-                label: Enquiry details
-                type: object
-                fields:
-                  - name: label
-                    label: Section label
-                    type: string
-                    required: true
-                  - name: email
-                    label: Email address
-                    type: string
-                    required: true
-                  - name: contactName
-                    label: Contact name
-                    type: string
-                    required: true
-                  - name: phoneDisplay
-                    label: Displayed telephone number
-                    type: string
-                    required: true
-                  - name: phone
-                    label: Telephone link number
-                    type: string
-                    required: true
-              - name: note
-                label: Registration note
-                type: text
-                required: true
+                        required: true
+                      - name: description
+                        label: Description
+                        type: text
+                        required: true
+                      - name: eligibility
+                        label: Eligibility requirements
+                        type: string
+                        list: true
+                  - name: curriculum
+                    label: Curriculum
+                    type: object
+                    fields:
+                      - name: kicker
+                        label: Short heading
+                        type: string
+                        required: true
+                      - name: title
+                        label: Section title
+                        type: string
+                        required: true
+                      - name: items
+                        label: Subjects
+                        type: string
+                        list: true
+                  - name: venues
+                    label: Venues and schedules
+                    type: object
+                    fields:
+                      - name: kicker
+                        label: Short heading
+                        type: string
+                        required: true
+                      - name: title
+                        label: Section title
+                        type: string
+                        required: true
+                      - name: items
+                        label: Venues
+                        type: object
+                        list:
+                          collapsible:
+                            collapsed: true
+                            summary: "{name}"
+                        fields:
+                          - name: label
+                            label: Card label
+                            type: string
+                            required: true
+                          - name: name
+                            label: Temple name
+                            type: string
+                            required: true
+                          - name: image
+                            label: Temple image
+                            type: image
+                            required: true
+                            options:
+                              media: images
+                          - name: imageAlt
+                            label: Image description
+                            type: string
+                            required: true
+                          - name: address
+                            label: Address lines
+                            type: string
+                            list: true
+                          - name: schedule
+                            label: Class schedule
+                            type: string
+                            list: true
+                          - name: commences
+                            label: Commencement date
+                            type: string
+                            required: true
+                  - name: progression
+                    label: Academic progression
+                    type: object
+                    fields:
+                      - name: kicker
+                        label: Short heading
+                        type: string
+                        required: true
+                      - name: title
+                        label: Section title
+                        type: string
+                        required: true
+                      - name: prefix
+                        label: Text before BA link
+                        type: text
+                        required: true
+                      - name: ba
+                        label: BA link
+                        type: object
+                        fields:
+                          - name: label
+                            label: Link text
+                            type: string
+                            required: true
+                          - name: href
+                            label: Link
+                            type: string
+                            required: true
+                      - name: between
+                        label: Text between BA and MA links
+                        type: string
+                        required: true
+                      - name: ma
+                        label: MA link
+                        type: object
+                        fields:
+                          - name: label
+                            label: Link text
+                            type: string
+                            required: true
+                          - name: href
+                            label: Link
+                            type: string
+                            required: true
+                  - name: registration
+                    label: Registration panel
+                    type: object
+                    fields:
+                      - name: kicker
+                        label: Short heading
+                        type: string
+                        required: true
+                      - name: title
+                        label: Section title
+                        type: string
+                        required: true
+                      - name: poster
+                        label: Course poster
+                        type: object
+                        fields:
+                          - name: image
+                            label: Poster image
+                            type: image
+                            required: true
+                            options:
+                              media: images
+                          - name: href
+                            label: Poster link
+                            type: string
+                            required: true
+                          - name: alt
+                            label: Image description
+                            type: text
+                            required: true
+                      - name: options
+                        label: Registration options
+                        type: object
+                        list:
+                          collapsible:
+                            collapsed: true
+                            summary: "{label}: {title}"
+                        fields:
+                          - name: label
+                            label: Option label
+                            type: string
+                            required: true
+                          - name: title
+                            label: Option title
+                            type: string
+                            required: true
+                          - name: description
+                            label: Description
+                            type: text
+                            required: true
+                          - name: dates
+                            label: Preview dates
+                            type: object
+                            list:
+                              collapsible:
+                                collapsed: true
+                                summary: "{venue}: {date}"
+                            fields:
+                              - name: venue
+                                label: Venue
+                                type: string
+                                required: true
+                              - name: date
+                                label: Date
+                                type: string
+                                required: true
+                              - name: time
+                                label: Time
+                                type: string
+                                required: true
+                          - name: button
+                            label: Main button
+                            type: object
+                            fields:
+                              - name: label
+                                label: Button text
+                                type: string
+                                required: true
+                              - name: href
+                                label: Button link
+                                type: string
+                                required: true
+                          - name: contact
+                            label: Optional contact link
+                            type: object
+                            fields:
+                              - name: label
+                                label: Link text
+                                type: string
+                              - name: href
+                                label: Link
+                                type: string
+                      - name: enquiry
+                        label: Enquiry details
+                        type: object
+                        fields:
+                          - name: label
+                            label: Section label
+                            type: string
+                            required: true
+                          - name: email
+                            label: Email address
+                            type: string
+                            required: true
+                          - name: contactName
+                            label: Contact name
+                            type: string
+                            required: true
+                          - name: phoneDisplay
+                            label: Displayed telephone number
+                            type: string
+                            required: true
+                          - name: phone
+                            label: Telephone link number
+                            type: string
+                            required: true
+                      - name: note
+                        label: Registration note
+                        type: text
+                        required: true
 
-      - name: diploma-chinese-page
-        label: Diploma in Buddhism (Chinese)
-        type: file
-        path: public/content/pages/dipc.json
-        format: json
-        fields: *programme-page-fields
 
-      - name: ba-page
-        label: BA in Buddhist Studies
-        type: file
-        path: public/content/pages/ba.json
-        format: json
-        fields:
-          - name: heroNote
-            label: Course duration panel
-            type: object
-            fields:
-              - { name: label, label: Label, type: string, required: true }
-              - { name: value, label: Course duration, type: string, required: true }
-              - { name: description, label: Supporting lines, type: string, list: true }
-          - name: facts
-            label: Quick course facts
-            type: object
-            list:
-              collapsible: { collapsed: true, summary: "{label}" }
-            fields:
-              - { name: label, label: Label, type: string, required: true }
-              - { name: value, label: Value, type: string, required: true }
-          - name: eligibility
-            label: Eligibility
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - { name: prefix, label: Text before link, type: text, required: true }
-              - name: link
-                label: Diploma link
-                type: object
+              - name: ba
+                label: BA programme details
                 fields:
-                  - { name: label, label: Link text, type: string, required: true }
-                  - { name: href, label: Link, type: string, required: true }
-              - { name: suffix, label: Text after link, type: text, required: true }
-              - { name: requirements, label: Requirements, type: string, list: true }
-          - name: structure
-            label: Programme structure
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - name: years
-                label: Years of study
-                type: object
-                list:
-                  collapsible: { collapsed: true, summary: "{label}: {title}" }
-                fields:
-                  - { name: label, label: Year label, type: string, required: true }
-                  - { name: title, label: Year title, type: string, required: true }
-                  - { name: description, label: Description, type: text, required: true }
-          - name: progression
-            label: Academic progression
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - { name: prefix, label: Text before link, type: text, required: true }
-              - name: link
-                label: MA link
-                type: object
-                fields:
-                  - { name: label, label: Link text, type: string, required: true }
-                  - { name: href, label: Link, type: string, required: true }
-          - name: admissions
-            label: Admissions panel
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - name: button
-                label: Main button
-                type: object
-                fields:
-                  - { name: label, label: Button text, type: string, required: true }
-                  - { name: href, label: Button link, type: string, required: true }
-              - { name: contactLabel, label: Contact heading, type: string, required: true }
-              - name: contacts
-                label: Contacts
-                type: object
-                list:
-                  collapsible: { collapsed: true, summary: "{label}" }
-                fields:
-                  - { name: label, label: Display text, type: string, required: true }
-                  - { name: href, label: Link, type: string, required: true }
-              - { name: location, label: Location and schedule lines, type: string, list: true }
-              - { name: note, label: Note, type: text, required: true }
+                  - name: heroNote
+                    label: Course duration panel
+                    type: object
+                    fields:
+                      - { name: label, label: Label, type: string, required: true }
+                      - { name: value, label: Course duration, type: string, required: true }
+                      - { name: lines, label: Supporting lines, type: string, list: true }
+                  - name: facts
+                    label: Quick course facts
+                    type: object
+                    list:
+                      collapsible: { collapsed: true, summary: "{label}" }
+                    fields:
+                      - { name: label, label: Label, type: string, required: true }
+                      - { name: value, label: Value, type: string, required: true }
+                  - name: eligibility
+                    label: Eligibility
+                    type: object
+                    fields:
+                      - { name: kicker, label: Short heading, type: string, required: true }
+                      - { name: title, label: Section title, type: string, required: true }
+                      - { name: prefix, label: Text before link, type: text, required: true }
+                      - name: link
+                        label: Diploma link
+                        type: object
+                        fields:
+                          - { name: label, label: Link text, type: string, required: true }
+                          - { name: href, label: Link, type: string, required: true }
+                      - { name: suffix, label: Text after link, type: text, required: true }
+                      - { name: requirements, label: Requirements, type: string, list: true }
+                  - name: structure
+                    label: Programme structure
+                    type: object
+                    fields:
+                      - { name: kicker, label: Short heading, type: string, required: true }
+                      - { name: title, label: Section title, type: string, required: true }
+                      - name: years
+                        label: Years of study
+                        type: object
+                        list:
+                          collapsible: { collapsed: true, summary: "{label}: {title}" }
+                        fields:
+                          - { name: label, label: Year label, type: string, required: true }
+                          - { name: title, label: Year title, type: string, required: true }
+                          - { name: description, label: Description, type: text, required: true }
+                  - name: progression
+                    label: Academic progression
+                    type: object
+                    fields:
+                      - { name: kicker, label: Short heading, type: string, required: true }
+                      - { name: title, label: Section title, type: string, required: true }
+                      - { name: prefix, label: Text before link, type: text, required: true }
+                      - name: link
+                        label: MA link
+                        type: object
+                        fields:
+                          - { name: label, label: Link text, type: string, required: true }
+                          - { name: href, label: Link, type: string, required: true }
+                  - name: admissions
+                    label: Admissions panel
+                    type: object
+                    fields:
+                      - { name: kicker, label: Short heading, type: string, required: true }
+                      - { name: title, label: Section title, type: string, required: true }
+                      - name: button
+                        label: Main button
+                        type: object
+                        fields:
+                          - { name: label, label: Button text, type: string, required: true }
+                          - { name: href, label: Button link, type: string, required: true }
+                      - { name: contactLabel, label: Contact heading, type: string, required: true }
+                      - name: contacts
+                        label: Contacts
+                        type: object
+                        list:
+                          collapsible: { collapsed: true, summary: "{label}" }
+                        fields:
+                          - { name: label, label: Display text, type: string, required: true }
+                          - { name: href, label: Link, type: string, required: true }
+                      - { name: location, label: Location and schedule lines, type: string, list: true }
+                      - { name: note, label: Note, type: text, required: true }
 
-      - name: ma-structured-page
-        label: MA in Buddhist Studies
-        type: file
-        path: public/content/pages/ma.json
-        format: json
-        fields:
-          - name: heroNote
-            label: Course duration panel
-            type: object
-            fields:
-              - { name: label, label: Label, type: string, required: true }
-              - { name: value, label: Course duration, type: string, required: true }
-              - { name: description, label: Supporting lines, type: string, list: true }
-          - name: facts
-            label: Quick course facts
-            type: object
-            list:
-              collapsible: { collapsed: true, summary: "{label}" }
-            fields:
-              - { name: label, label: Label, type: string, required: true }
-              - { name: value, label: Value, type: string, required: true }
-          - name: eligibility
-            label: Eligibility
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - { name: prefix, label: Text before BA link, type: text, required: true }
-              - name: link
-                label: BA link
-                type: object
+
+              - name: ma
+                label: MA programme details
                 fields:
-                  - { name: label, label: Link text, type: string, required: true }
-                  - { name: href, label: Link, type: string, required: true }
-              - { name: suffix, label: Text after BA link, type: text, required: true }
-          - name: curriculum
-            label: Course content
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - { name: items, label: Areas of study, type: string, list: true }
-          - name: assessment
-            label: Assessment
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - { name: description, label: Description, type: text, required: true }
-          - name: admissions
-            label: Admissions panel
-            type: object
-            fields:
-              - { name: kicker, label: Short heading, type: string, required: true }
-              - { name: title, label: Section title, type: string, required: true }
-              - name: poster
-                label: Course poster
-                type: object
-                fields:
-                  - { name: image, label: Poster image, type: image, required: true, options: { media: images } }
-                  - { name: href, label: Poster link, type: string, required: true }
-                  - { name: alt, label: Image description, type: string, required: true }
-              - name: button
-                label: Main button
-                type: object
-                fields:
-                  - { name: label, label: Button text, type: string, required: true }
-                  - { name: href, label: Button link, type: string, required: true }
-              - { name: contactLabel, label: Contact heading, type: string, required: true }
-              - name: contacts
-                label: Contacts
-                type: object
-                list:
-                  collapsible: { collapsed: true, summary: "{label}" }
-                fields:
-                  - { name: label, label: Display text, type: string, required: true }
-                  - { name: href, label: Link, type: string, required: true }
-              - { name: location, label: Location and schedule lines, type: string, list: true }
-              - { name: note, label: Fees note, type: text, required: true }
+                  - name: heroNote
+                    label: Course duration panel
+                    type: object
+                    fields:
+                      - { name: label, label: Label, type: string, required: true }
+                      - { name: value, label: Course duration, type: string, required: true }
+                      - { name: lines, label: Supporting lines, type: string, list: true }
+                  - name: facts
+                    label: Quick course facts
+                    type: object
+                    list:
+                      collapsible: { collapsed: true, summary: "{label}" }
+                    fields:
+                      - { name: label, label: Label, type: string, required: true }
+                      - { name: value, label: Value, type: string, required: true }
+                  - name: eligibility
+                    label: Eligibility
+                    type: object
+                    fields:
+                      - { name: kicker, label: Short heading, type: string, required: true }
+                      - { name: title, label: Section title, type: string, required: true }
+                      - { name: prefix, label: Text before BA link, type: text, required: true }
+                      - name: link
+                        label: BA link
+                        type: object
+                        fields:
+                          - { name: label, label: Link text, type: string, required: true }
+                          - { name: href, label: Link, type: string, required: true }
+                      - { name: suffix, label: Text after BA link, type: text, required: true }
+                  - name: curriculum
+                    label: Course content
+                    type: object
+                    fields:
+                      - { name: kicker, label: Short heading, type: string, required: true }
+                      - { name: title, label: Section title, type: string, required: true }
+                      - { name: items, label: Areas of study, type: string, list: true }
+                  - name: assessment
+                    label: Assessment
+                    type: object
+                    fields:
+                      - { name: kicker, label: Short heading, type: string, required: true }
+                      - { name: title, label: Section title, type: string, required: true }
+                      - { name: description, label: Description, type: text, required: true }
+                  - name: admissions
+                    label: Admissions panel
+                    type: object
+                    fields:
+                      - { name: kicker, label: Short heading, type: string, required: true }
+                      - { name: title, label: Section title, type: string, required: true }
+                      - name: poster
+                        label: Course poster
+                        type: object
+                        fields:
+                          - { name: image, label: Poster image, type: image, required: true, options: { media: images } }
+                          - { name: href, label: Poster link, type: string, required: true }
+                          - { name: alt, label: Image description, type: string, required: true }
+                      - name: button
+                        label: Main button
+                        type: object
+                        fields:
+                          - { name: label, label: Button text, type: string, required: true }
+                          - { name: href, label: Button link, type: string, required: true }
+                      - { name: contactLabel, label: Contact heading, type: string, required: true }
+                      - name: contacts
+                        label: Contacts
+                        type: object
+                        list:
+                          collapsible: { collapsed: true, summary: "{label}" }
+                        fields:
+                          - { name: label, label: Display text, type: string, required: true }
+                          - { name: href, label: Link, type: string, required: true }
+                      - { name: location, label: Location and schedule lines, type: string, list: true }
+                      - { name: note, label: Fees note, type: text, required: true }
+
+
 
 
   - name: people-group

@@ -24,8 +24,12 @@
       "image": "images/course-pathway-begin.webp",
       "imageAlt": "An opening book, golden lotus and Bodhi leaf symbolising the beginning of Buddhist study",
       "programmes": [
-        { "page": "intro.html", "level": "English", "duration": "10 weeks", "linkLabel": "View programme" },
-        { "page": "introc.html", "level": "中文", "duration": "8 lessons", "linkLabel": "查看课程" }
+        {
+          "programme": "intro-en"
+        },
+        {
+          "programme": "intro-zh"
+        }
       ]
     },
     {
@@ -36,8 +40,12 @@
       "image": "images/course-pathway-foundation.webp",
       "imageAlt": "Books supporting a golden Dhamma wheel, symbolising structured Buddhist study",
       "programmes": [
-        { "page": "dip.html", "level": "English", "duration": "1 year", "linkLabel": "View programme" },
-        { "page": "dipc.html", "level": "中文", "duration": "10 months", "linkLabel": "查看课程" }
+        {
+          "programme": "diploma-en"
+        },
+        {
+          "programme": "diploma-zh"
+        }
       ]
     },
     {
@@ -48,20 +56,44 @@
       "image": "images/course-pathway-degree.webp",
       "imageAlt": "A golden Bodhi tree growing from an open book, symbolising advanced study and research",
       "programmes": [
-        { "page": "ba.html", "level": "Undergraduate", "duration": "3 years", "linkLabel": "View programme" },
-        { "page": "ma.html", "level": "Postgraduate", "duration": "1 year", "linkLabel": "View programme" }
+        {
+          "programme": "ba"
+        },
+        {
+          "programme": "ma"
+        }
       ]
     }
   ],
   "comparison": {
     "kicker": "At a glance",
     "title": "Compare study pathways",
-    "columns": ["Programme", "Duration", "Suitable for"],
+    "columns": [
+      "Programme",
+      "Duration",
+      "Suitable for"
+    ],
     "rows": [
-      { "programme": "Introduction (English or Chinese)", "duration": "10 weeks", "suitableFor": "New learners" },
-      { "programme": "Diploma (English or Chinese)", "duration": "1 year", "suitableFor": "Foundation study" },
-      { "programme": "BA in Buddhist Studies", "duration": "3 years", "suitableFor": "Degree-level study" },
-      { "programme": "MA in Buddhist Studies", "duration": "1 year", "suitableFor": "Postgraduate study" }
+      {
+        "programme": "Introduction (English or Chinese)",
+        "duration": "10 weeks",
+        "suitableFor": "New learners"
+      },
+      {
+        "programme": "Diploma (English or Chinese)",
+        "duration": "1 year",
+        "suitableFor": "Foundation study"
+      },
+      {
+        "programme": "BA in Buddhist Studies",
+        "duration": "3 years",
+        "suitableFor": "Degree-level study"
+      },
+      {
+        "programme": "MA in Buddhist Studies",
+        "duration": "1 year",
+        "suitableFor": "Postgraduate study"
+      }
     ]
   },
   "banner": {

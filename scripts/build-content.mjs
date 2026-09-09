@@ -1,4 +1,4 @@
-import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { renderAlumniPage } from "./templates/alumni-page.mjs";
 import { renderCoursesPage } from "./templates/courses-page.mjs";
@@ -19,17 +19,27 @@ if (outputArgument !== -1 && !process.argv[outputArgument + 1]) {
   throw new Error("Expected a directory after --output.");
 }
 const readJson = async (name) => JSON.parse(await readFile(resolve(root, "public/content", name), "utf8"));
+const readProgrammes = async () => {
+  const directory = resolve(root, "public/content/programmes");
+  const files = (await readdir(directory)).filter((file) => file.endsWith(".json")).sort();
+  return Promise.all(files.map(async (file) => JSON.parse(await readFile(resolve(directory, file), "utf8"))));
+};
 
-const programmeEntries = await readJson("programmes.json");
-const programmes = Array.isArray(programmeEntries)
-  ? Object.fromEntries(programmeEntries.map(({ page, ...programme }) => [page, programme]))
-  : programmeEntries;
+const programmeEntries = await readProgrammes();
+const programmes = new Map(programmeEntries.map((programme) => [programme.id, programme]));
+const programmeDetails = (programme) => programme.details?.[0] || {};
+const requiredProgrammeIds = ["intro-en", "intro-zh", "diploma-en", "diploma-zh", "ba", "ma"];
+if (programmes.size !== programmeEntries.length || requiredProgrammeIds.some((id) => !programmes.has(id))) {
+  throw new Error("Programme records must contain each required unique programme ID.");
+}
+for (const programme of programmeEntries) {
+  if (!programme.route || !programme.hero?.title || !programme.card || programme.details?.length !== 1) {
+    throw new Error(`Programme record ${programme.id || "(unknown)"} is incomplete.`);
+  }
+}
 const gallery = await readJson("gallery.json");
 const homePage = await readJson("pages/index.json");
 const aboutPage = await readJson("pages/about.json");
-const baPage = await readJson("pages/ba.json");
-const diplomaPage = await readJson("pages/dip.json");
-const maPage = await readJson("pages/ma.json");
 
 const site = await readJson("site.json");
 setSiteShell(site);
@@ -59,12 +69,12 @@ await writeFile(
   "utf8"
 );
 
-for (const filename of ["intro.html", "introc.html", "dipc.html"]) {
+for (const programme of programmeEntries.filter(({ template }) => template === "foundation")) {
   await writeFile(
-    resolve(outputDirectory, filename),
+    resolve(outputDirectory, programme.route),
     renderProgrammePage(
-      { page: filename, ...programmes[filename] },
-      await readJson(`pages/${filename.replace(".html", ".json")}`)
+      programme.hero,
+      { ...programmeDetails(programme), chinese: programme.language === "zh-Hans", pageClass: programme.styleClass }
     ),
     "utf8"
   );
@@ -102,9 +112,9 @@ for (const [filename, html] of Object.entries(contactPages)) {
 await writeFile(resolve(outputDirectory, "gallery.html"), renderGalleryPage(gallery), "utf8");
 await writeFile(resolve(outputDirectory, "index.html"), renderHomePage(homePage, gallery.events[0]), "utf8");
 await writeFile(resolve(outputDirectory, "about.html"), renderAboutPage(aboutPage), "utf8");
-await writeFile(resolve(outputDirectory, "ba.html"), renderBaPage(programmes["ba.html"], baPage), "utf8");
-await writeFile(resolve(outputDirectory, "dip.html"), renderDiplomaPage(programmes["dip.html"], diplomaPage), "utf8");
-await writeFile(resolve(outputDirectory, "ma.html"), renderMaPage(programmes["ma.html"], maPage), "utf8");
+await writeFile(resolve(outputDirectory, "ba.html"), renderBaPage(programmes.get("ba").hero, programmeDetails(programmes.get("ba"))), "utf8");
+await writeFile(resolve(outputDirectory, "dip.html"), renderDiplomaPage(programmes.get("diploma-en").hero, programmeDetails(programmes.get("diploma-en"))), "utf8");
+await writeFile(resolve(outputDirectory, "ma.html"), renderMaPage(programmes.get("ma").hero, programmeDetails(programmes.get("ma"))), "utf8");
 
 let updatedArchivedPages = 0;
 for (const filename of ["bc.html", "visit.html"]) {

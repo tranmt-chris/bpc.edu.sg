@@ -9,8 +9,7 @@ generated into `dist/`. Do not edit files in `dist/`.
 | Content | File or folder |
 | --- | --- |
 | Navigation, footer and social links | `public/content/site.json` |
-| Programme summaries | `public/content/programmes.json` |
-| Introduction and Chinese Diploma page details | `public/content/pages/intro.json`, `introc.json`, `dipc.json` |
+| Programme pages, cards, enrolment and details | `public/content/programmes/*.json` |
 | All Courses page | `public/content/pages/courses.json` |
 | Key dates, timetables and contacts | `public/content/key-dates.json` |
 | Recommended Texts | `public/content/books.json` |
@@ -19,7 +18,7 @@ generated into `dist/`. Do not edit files in `dist/`.
 | Contact form and details | `public/content/contact.json` |
 | Contact confirmation page | `public/content/thank-you.json` |
 | Homepage and About page | `public/content/pages/index.json`, `about.json` |
-| Diploma, BA and MA pages | `public/content/programmes.json`, plus `public/content/pages/dip.json`, `ba.json`, `ma.json` |
+| Diploma, BA and MA details | Their individual file in `public/content/programmes/` |
 | Gallery page and events | `public/content/gallery.json` |
 | Academic, administrative and visiting staff | `public/content/people.json` |
 | Alumni page and e-Bulletins | `public/content/bulletins.json` |

@@ -1,13 +1,13 @@
 import { escapeHtml, renderSitePage } from "./site-page.mjs";
 
 const renderProgrammeCard = (reference, programmes) => {
-  const programme = programmes.get(reference.page);
-  if (!programme) throw new Error(`Unknown programme page: ${reference.page}`);
-  return `<a class="courses-modern-card" href="${escapeHtml(reference.page)}"${programme.language === "zh-Hans" ? ' lang="zh-Hans"' : ""}><div class="courses-modern-meta"><span>${escapeHtml(reference.level)}</span><span>${escapeHtml(reference.duration)}</span></div><h3>${escapeHtml(programme.title)}</h3><p>${escapeHtml(programme.lead)}</p><strong>${escapeHtml(reference.linkLabel)} <span aria-hidden="true">&rarr;</span></strong></a>`;
+  const programme = programmes.get(reference.programme);
+  if (!programme) throw new Error(`Unknown programme: ${reference.programme}`);
+  return `<a class="courses-modern-card" href="${escapeHtml(programme.route)}"${programme.language === "zh-Hans" ? ' lang="zh-Hans"' : ""}><div class="courses-modern-meta"><span>${escapeHtml(programme.card.level)}</span><span>${escapeHtml(programme.card.duration)}</span></div><h3>${escapeHtml(programme.hero.title)}</h3><p>${escapeHtml(programme.hero.lead)}</p><strong>${escapeHtml(programme.card.linkLabel)} <span aria-hidden="true">&rarr;</span></strong></a>`;
 };
 
 export function renderCoursesPage(programmeEntries, page) {
-  const programmes = new Map(programmeEntries.map((programme) => [programme.page, programme]));
+  const programmes = new Map(programmeEntries.map((programme) => [programme.id, programme]));
   const stages = page.stages.map((stage) => `<div class="courses-modern-stage" id="${escapeHtml(stage.id)}"><div class="courses-modern-stage-intro"><div class="courses-modern-stage-heading"><span>${escapeHtml(stage.number)}</span><div><p class="courses-modern-kicker">${escapeHtml(stage.kicker)}</p><h2>${escapeHtml(stage.title)}</h2></div></div><figure><img src="${escapeHtml(stage.image)}" alt="${escapeHtml(stage.imageAlt)}" width="960" height="640" loading="lazy" decoding="async"></figure></div><div class="courses-modern-grid">${stage.programmes.map((reference) => renderProgrammeCard(reference, programmes)).join("")}</div></div>`).join("");
   const comparisonHead = page.comparison.columns.map((column) => `<th>${escapeHtml(column)}</th>`).join("");
   const comparisonRows = page.comparison.rows.map((row) => `<tr><td>${escapeHtml(row.programme)}</td><td>${escapeHtml(row.duration)}</td><td>${escapeHtml(row.suitableFor)}</td></tr>`).join("");
