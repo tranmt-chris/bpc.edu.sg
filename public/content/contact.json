@@ -11,7 +11,7 @@
   "form": {
     "kicker": "Send an enquiry",
     "title": "How can we help?",
-    "action": "https://formsubmit.co/7b118880f1f7075583766456fb6d0189",
+    "action": "https://formsubmit.co/enquiry@bpc.edu.sg?7b118880f1f7075583766456fb6d0189",
     "redirect": "https://bpc.edu.sg/thank-you.html",
     "subjects": [
       "General Enquiry",
