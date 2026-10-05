@@ -436,21 +436,15 @@
     "items": [
       {
         "name": "Ven P. Seelananda",
-        "role": "Principal",
-        "email": "banteseela@gmail.com",
-        "phone": "81808639"
+        "role": "Principal"
       },
       {
         "name": "Sis Maureen Hui",
-        "role": "Administrator",
-        "email": "maw69xyz@gmail.com",
-        "phone": "84016866"
+        "role": "Administrator"
       },
       {
         "name": "Sis Sandra Koh",
-        "role": "Assistant Administrator",
-        "email": "chaturikoh@yahoo.com.sg",
-        "phone": "91297763"
+        "role": "Assistant Administrator"
       }
     ]
   }
