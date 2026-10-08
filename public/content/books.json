@@ -52,11 +52,6 @@
       "price": "$10.00 donation"
     },
     {
-      "title": "Buddhism in Myanmar",
-      "image": "images/b8.jpg",
-      "price": "$10.00 donation"
-    },
-    {
       "title": "Pali Buddhist Texts",
       "image": "images/b9.jpg",
       "price": "$10.00 donation"
@@ -84,16 +79,6 @@
     {
       "title": "Palipathavali",
       "image": "images/b14.jpg",
-      "price": "$10.00 donation"
-    },
-    {
-      "title": "Buddhism in Sri Lanka",
-      "image": "images/b15.jpg",
-      "price": "$10.00 donation"
-    },
-    {
-      "title": "Buddhism in Thailand",
-      "image": "images/b16.jpg",
       "price": "$10.00 donation"
     },
     {
