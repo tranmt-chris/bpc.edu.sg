@@ -19,7 +19,8 @@
     },
     "secondary": {
       "label": "电邮查询",
-      "href": "mailto:diplomabuddhismchinese@gmail.com"
+      "href": "mailto:diplomabuddhismchinese@gmail.com",
+      "download": false
     }
   },
   "seo": {
@@ -33,8 +34,7 @@
       "factsLabel": "课程详情",
       "heroNote": {
         "label": "上课日期",
-        "value": "2027年1月至12月",
-        "lines": []
+        "value": "2027年1月至12月"
       },
       "facts": [
         {
@@ -49,7 +49,6 @@
       "overview": {
         "kicker": "学习资格",
         "title": "通过理论、实践和评估相结合，旨在更好地掌握佛学知识。",
-        "paragraphs": [],
         "requirements": true,
         "questions": [
           "年满18岁。",
@@ -99,8 +98,8 @@
         "kicker": "查询与报名",
         "title": "联络课程负责人",
         "poster": {
-          "image": "images/chinese-diploma-course-poster.webp",
-          "href": "uploads/4th-BPC-Chinese-Diploma-Published.pdf",
+          "image": "images/2027-diploma-chinese.jpeg",
+          "href": "images/2027-diploma-chinese.jpeg",
           "alt": "第四期中文佛学文凭课程海报"
         },
         "button": {
@@ -127,8 +126,7 @@
           "30 Jalan Eunos, Singapore 419495",
           "星期二 7:30pm–9:30pm",
           "星期日 2:00pm–5:15pm"
-        ],
-        "note": ""
+        ]
       }
     }
   ]
